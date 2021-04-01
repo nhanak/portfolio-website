@@ -2203,6 +2203,11 @@ react-lottie-player@^1.1.1:
     fast-deep-equal "^3.1.3"
     lottie-web "^5.7.6"
 
+react-outline-manager@^1.2.2:
+  version "1.2.2"
+  resolved "https://registry.yarnpkg.com/react-outline-manager/-/react-outline-manager-1.2.2.tgz#beeceb89cf6840f63e79a68bb2f3a4cc26bdd621"
+  integrity sha512-xgoyqIDE88odLISa6uPsh+OftbFYRGZzzP4Ub8kiDJJqn5HfFuJhRdX40IMIzD0GC9WrhxuEzD6w5eTchGjYCg==
+
 react-refresh@0.8.3:
   version "0.8.3"
   resolved "https://registry.yarnpkg.com/react-refresh/-/react-refresh-0.8.3.tgz#721d4657672d400c5e3c75d063c4a85fb2d5d68f"

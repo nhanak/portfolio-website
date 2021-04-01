@@ -2,6 +2,35 @@
 import React, {useState} from "react";
 import { ThemeContext, themes} from "../components/Theme/Theme";
 import { createGlobalStyle } from 'styled-components';
+
+const GlobalStyle = createGlobalStyle`
+    html,
+    body {
+    padding: 0;
+    margin: 0;
+    font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
+        Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+    }
+
+    html{
+        font-size:62.5%;
+    }
+
+    a {
+    color: inherit;
+    text-decoration: none;
+    }
+
+    * {
+    box-sizing: border-box;
+    }
+    body {
+        background-color: ${props => (props.theme === "dark" ? themes.dark.primaryBackgroundColor : themes.light.primaryBackgroundColor)};
+        transition:background-color 0.5s ease;
+    }
+`
+
+
 function MyApp({ Component, pageProps }) {
 
     const [theme, setTheme] = useState("light");
@@ -19,33 +48,6 @@ function MyApp({ Component, pageProps }) {
         return (theme==="dark");
     }
 
-    const GlobalStyle = createGlobalStyle`
-        html,
-        body {
-        padding: 0;
-        margin: 0;
-        font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-            Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
-        }
-        
-        html{
-            font-size:62.5%;
-        }
-        
-        a {
-        color: inherit;
-        text-decoration: none;
-        }
-        
-        * {
-        box-sizing: border-box;
-        }
-        body {
-            background-color: ${props => (props.theme === "dark" ? themes.dark.primaryBackgroundColor : themes.light.primaryBackgroundColor)};
-            transition:background-color 0.5s ease;
-        }
-    `
-
   return( 
     <ThemeContext.Provider value={theme === "dark" ? themes.dark : themes.light}>
         <GlobalStyle theme={theme} themes={themes}/>
@@ -54,4 +56,4 @@ function MyApp({ Component, pageProps }) {
   )
 }
 
-export default MyApp
+export default MyApp;

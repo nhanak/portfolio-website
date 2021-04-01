@@ -6,6 +6,7 @@ import FlatButton from "../FlatButton/FlatButton";
 import NavbarItem from "./NavbarItem";
 import DarkModeToggle from "react-dark-mode-toggle";
 import Link_ from "../LinkWithUnderlineAnimation/LinkWithUnderlineAnimation";
+import ReactOutlineManager from 'react-outline-manager';
 
 
 export default function Navbar(props){
@@ -38,7 +39,9 @@ export default function Navbar(props){
                              <FlatButton theme={context} href="/">Say hello</FlatButton>
                         </NavbarItem>
                         <NavbarItem>
-                            <DarkModeToggle onChange={changeTheme} checked={isDarkMode} size={"6rem"}/>
+                            <ReactOutlineManager toggle={true}>
+                                <DarkModeToggle onChange={changeTheme} checked={isDarkMode} size={"6rem"}/>
+                            </ReactOutlineManager>
                         </NavbarItem>
                     </LinkInnerDivStyled>
                 </LinkDivStyled>

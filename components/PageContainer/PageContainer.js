@@ -21,7 +21,7 @@ export default function PageContainer(props){
 }
 
 const PageContainerStyled = styled.div`
-    max-width:120rem;
+    max-width:110rem;
     min-width:42rem;
     height:100vh;
     margin:auto;
