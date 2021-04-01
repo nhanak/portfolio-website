@@ -5,14 +5,15 @@ import PageSectionContainer from "../PageSectionContainer/PageSectionContainer";
 import FlatButton from "../FlatButton/FlatButton";
 import NavbarItem from "./NavbarItem";
 import DarkModeToggle from "react-dark-mode-toggle";
+import Link_ from "../LinkWithUnderlineAnimation/LinkWithUnderlineAnimation";
 
 
 export default function Navbar(props){
     const context = useContext(ThemeContext);
-    const [isDarkMode, setIsDarkMode] = useState(()=>true);
+
+    const isDarkMode = props.isDarkMode();
 
     function changeTheme(){
-        setIsDarkMode(!isDarkMode);
         props.toggleTheme();
     }
 
@@ -25,19 +26,19 @@ export default function Navbar(props){
                 <LinkDivStyled  theme={context}>
                     <LinkInnerDivStyled>
                         <NavbarItem>
-                            <DarkModeToggle onChange={changeTheme} checked={isDarkMode} size={60}/>
+                            <Link_ fontSize="1.6rem" initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor} href="/">Blog</Link_>
                         </NavbarItem>
                         <NavbarItem>
-                            <LinkStyled href="/">Blog</LinkStyled>
+                            <Link_ fontSize="1.6rem" initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor} href="/">Projects</Link_>
                         </NavbarItem>
                         <NavbarItem>
-                            <LinkStyled href="/">Projects</LinkStyled>
+                            <Link_ fontSize="1.6rem" initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor} href="/">About</Link_>
                         </NavbarItem>
                         <NavbarItem>
-                            <LinkStyled href="/">About</LinkStyled>
+                             <FlatButton theme={context} href="/">Say hello</FlatButton>
                         </NavbarItem>
                         <NavbarItem>
-                             <FlatButton href="/">Say hello</FlatButton>
+                            <DarkModeToggle onChange={changeTheme} checked={isDarkMode} size={"6rem"}/>
                         </NavbarItem>
                     </LinkInnerDivStyled>
                 </LinkDivStyled>
@@ -48,7 +49,7 @@ export default function Navbar(props){
 
 const NavbarStyled = styled.nav`
     display:flex;
-    padding-top:4rem;
+    padding-top:3rem;
 `
 
 const LogoDivStyled = styled.div`
@@ -75,8 +76,4 @@ const LinkDivStyled = styled.div`
 const LinkInnerDivStyled = styled.div`
     display:flex;
     align-items:center;
-`
-const LinkStyled = styled.a`
-    margin:0px;
-    font-size:1.6rem;
 `

@@ -2,6 +2,7 @@ import React, {useContext} from "react";
 import styled from "styled-components";
 import { ThemeContext } from "../Theme/Theme";
 import PageSectionContainer from "../PageSectionContainer/PageSectionContainer";
+import Link_ from "../LinkWithUnderlineAnimation/LinkWithUnderlineAnimation";
 
 export default function Footer(){
     const context = useContext(ThemeContext);
@@ -10,25 +11,36 @@ export default function Footer(){
                 <FooterStyled>
                     <FooterStartStyled>
                         <FooterText theme={context}>Made with&nbsp; 
-                            <FooterSpanLink theme={context} href="/">Next.js</FooterSpanLink>
+                            <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="/">Next.js</Link_>
                             &nbsp;and&nbsp;
-                             <FooterSpanLink theme={context} href="/">Sanity</FooterSpanLink> 
+                            <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="/">Sanity</Link_>
                              . Hosted on&nbsp;
-                             <FooterSpanLink theme={context} href="/">Vercel</FooterSpanLink>
+                             <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="/">Vercel</Link_>
                         </FooterText>
-                        <FooterText theme={context}>MIT License © 2021–present  <FooterSpanLink theme={context} href="/">Neil Hanak</FooterSpanLink></FooterText>
+                        <FooterText theme={context}>MIT License © 2021–present  <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="/">Neil Hanak</Link_></FooterText>
                         <FooterText theme={context}>Made with ❤️ in Canada</FooterText>
                     </FooterStartStyled>
                     <FooterEndStyled>
-                        <FooterLink theme={context} href={"/"}>Blog</FooterLink>
-                        <FooterLink theme={context} href={"/"}>Projects</FooterLink>
-                        <FooterLink theme={context} href={"/"}>About</FooterLink>
+                        <FooterLinkItem>
+                            <Link_ initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor} href="/">
+                                Blog
+                            </Link_>
+                        </FooterLinkItem>
+                        <FooterLinkItem>
+                            <Link_ initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor} href="/">
+                                Projects
+                            </Link_>
+                        </FooterLinkItem>
+                        <FooterLinkItem>
+                            <Link_ initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor} href="/">
+                                About
+                            </Link_>
+                        </FooterLinkItem>
                     </FooterEndStyled>
                 </FooterStyled>
             </PageSectionContainer>
     )
 }
-
 
 const FooterStyled = styled.div`
     display:flex;
@@ -57,11 +69,6 @@ const FooterText = styled.p`
     margin-bottom:20px;
 `
 
-const FooterLink = styled.a`
-    color: ${props=>props.theme.primaryTextColor};
+const FooterLinkItem = styled.div`
     margin-bottom:20px;
-`
-
-const FooterSpanLink = styled.a`
-    color:${props=>props.theme.primaryAccentColor};
 `

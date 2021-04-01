@@ -7,7 +7,7 @@ export const themes = {
         primaryAccentColor:"#00ffde",
         primaryBackgroundColor:"#121212",
         primaryBorderColor:"white",
-        secondaryBackgroundColor:"#121212",
+        secondaryBackgroundColor:"#2a2a2a",
     },
     light:{
         primaryTextColor:"black",
@@ -15,7 +15,7 @@ export const themes = {
         primaryAccentColor:"#742aff",
         primaryBackgroundColor:"white",
         primaryBorderColor:"white",
-        secondaryBackgroundColor:"#121212",
+        secondaryBackgroundColor:"#f0f0f0",
     }
 }
 

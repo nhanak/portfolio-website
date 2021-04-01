@@ -19,6 +19,7 @@ const FlatButtonStyled = styled.a`
     padding-right:3.5rem;
     padding-top:0.75rem;
     padding-bottom:0.75rem;
+    transition:background-color 0.2s ease;
 
     :hover{
         color:${props=> props.theme.primaryBackgroundColor};

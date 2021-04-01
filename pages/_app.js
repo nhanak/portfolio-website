@@ -4,7 +4,7 @@ import { ThemeContext, themes} from "../components/Theme/Theme";
 import { createGlobalStyle } from 'styled-components';
 function MyApp({ Component, pageProps }) {
 
-    const [theme, setTheme] = useState("dark");
+    const [theme, setTheme] = useState("light");
 
     function toggleTheme(){
         if (theme === "dark"){
@@ -13,6 +13,10 @@ function MyApp({ Component, pageProps }) {
         else{
             setTheme("dark");
         }
+    }
+
+    function isDarkMode(){
+        return (theme==="dark");
     }
 
     const GlobalStyle = createGlobalStyle`
@@ -45,7 +49,7 @@ function MyApp({ Component, pageProps }) {
   return( 
     <ThemeContext.Provider value={theme === "dark" ? themes.dark : themes.light}>
         <GlobalStyle theme={theme} themes={themes}/>
-        <Component toggleTheme={toggleTheme} {...pageProps} />
+        <Component currentTheme={theme} isDarkMode={isDarkMode} toggleTheme={toggleTheme} {...pageProps} />
     </ThemeContext.Provider>
   )
 }

@@ -1,4 +1,4 @@
-import React from "react";
+import React, {useContext} from "react";
 import PageContainer from "../components/PageContainer/PageContainer";
 import PageSectionContainer from "../components/PageSectionContainer/PageSectionContainer";
 import ProjectCardsGrid from "../components/ProjectCardsGrid/ProjectCardsGrid";
@@ -7,20 +7,24 @@ import styled from "styled-components";
 import H1 from "../components/H1/H1";
 import H2 from "../components/H2/H2";
 import P from "../components/P/P";
+import { ThemeContext } from "../components/Theme/Theme";
+import Link_ from "../components/LinkWithUnderlineAnimation/LinkWithUnderlineAnimation";
 
 export default function Home(props) {
+
+    const context = useContext(ThemeContext);
   return (
-      <PageContainer toggleTheme={props.toggleTheme}>
+      <PageContainer toggleTheme={props.toggleTheme} isDarkMode={props.isDarkMode}>
         <PageSectionContainer>
                 <HeroSectionStyled>
                     <HeroSectionTextContentStyled>
-                        <H1>Hi, my name is Neil 👋</H1>
+                        <H1>Hi, I'm Neil 👋</H1>
                         <P>I code human friendly interfaces, and I love what I do.</P>
-                        <P>For business inquiries I can be reached at neil@info.com</P>
+                        <P>For business inquiries I can be reached at <Link_ href="/" initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor}>neil@info.com</Link_></P>
                     </HeroSectionTextContentStyled>
                 </HeroSectionStyled>
         </PageSectionContainer>
-        <PageSectionContainer roundedEdges={true} backgroundColor="#2A2A2A">
+        <PageSectionContainer roundedEdges={true} backgroundColor={context.secondaryBackgroundColor} paddingBottom="30px">
             <ProjectSectionStyled>
                 <H2>Projects</H2>
                 <ProjectCardsGrid>
@@ -29,7 +33,7 @@ export default function Home(props) {
                 </ProjectCardsGrid>
             </ProjectSectionStyled>
         </PageSectionContainer>     
-            <PageSectionContainer roundedEdges={true} marginTop="40px" backgroundColor="#2A2A2A">
+            <PageSectionContainer roundedEdges={true} marginTop="40px" backgroundColor={context.secondaryBackgroundColor} paddingBottom="30px">
                 <ProjectSectionStyled>
                     <H2>Blog</H2>
                     <ProjectCardsGrid>
@@ -44,7 +48,7 @@ export default function Home(props) {
 
 const HeroSectionStyled = styled.div`
     display:flex;
-    height:320px;
+    height:26rem;
     align-items:flex-end;
     margin-bottom:50px;
 `
