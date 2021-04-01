@@ -1,65 +1,61 @@
-import Head from 'next/head'
-import styles from '../styles/Home.module.css'
+import React from "react";
+import PageContainer from "../components/PageContainer/PageContainer";
+import PageSectionContainer from "../components/PageSectionContainer/PageSectionContainer";
+import ProjectCardsGrid from "../components/ProjectCardsGrid/ProjectCardsGrid";
+import ProjectCard from "../components/ProjectCard/ProjectCard";
+import styled from "styled-components";
+import H1 from "../components/H1/H1";
+import H2 from "../components/H2/H2";
+import P from "../components/P/P";
 
-export default function Home() {
+export default function Home(props) {
   return (
-    <div className={styles.container}>
-      <Head>
-        <title>Create Next App</title>
-        <link rel="icon" href="/favicon.ico" />
-      </Head>
-
-      <main className={styles.main}>
-        <h1 className={styles.title}>
-          Welcome to <a href="https://nextjs.org">Next.js!</a>
-        </h1>
-
-        <p className={styles.description}>
-          Get started by editing{' '}
-          <code className={styles.code}>pages/index.js</code>
-        </p>
-
-        <div className={styles.grid}>
-          <a href="https://nextjs.org/docs" className={styles.card}>
-            <h3>Documentation &rarr;</h3>
-            <p>Find in-depth information about Next.js features and API.</p>
-          </a>
-
-          <a href="https://nextjs.org/learn" className={styles.card}>
-            <h3>Learn &rarr;</h3>
-            <p>Learn about Next.js in an interactive course with quizzes!</p>
-          </a>
-
-          <a
-            href="https://github.com/vercel/next.js/tree/master/examples"
-            className={styles.card}
-          >
-            <h3>Examples &rarr;</h3>
-            <p>Discover and deploy boilerplate example Next.js projects.</p>
-          </a>
-
-          <a
-            href="https://vercel.com/new?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-            className={styles.card}
-          >
-            <h3>Deploy &rarr;</h3>
-            <p>
-              Instantly deploy your Next.js site to a public URL with Vercel.
-            </p>
-          </a>
-        </div>
-      </main>
-
-      <footer className={styles.footer}>
-        <a
-          href="https://vercel.com?utm_source=create-next-app&utm_medium=default-template&utm_campaign=create-next-app"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Powered by{' '}
-          <img src="/vercel.svg" alt="Vercel Logo" className={styles.logo} />
-        </a>
-      </footer>
-    </div>
+      <PageContainer toggleTheme={props.toggleTheme}>
+        <PageSectionContainer>
+                <HeroSectionStyled>
+                    <HeroSectionTextContentStyled>
+                        <H1>Hi, my name is Neil 👋</H1>
+                        <P>I code human friendly interfaces, and I love what I do.</P>
+                        <P>For business inquiries I can be reached at neil@info.com</P>
+                    </HeroSectionTextContentStyled>
+                </HeroSectionStyled>
+        </PageSectionContainer>
+        <PageSectionContainer roundedEdges={true} backgroundColor="#2A2A2A">
+            <ProjectSectionStyled>
+                <H2>Projects</H2>
+                <ProjectCardsGrid>
+                    <ProjectCard title="Hyperion Website" tags="Next.js, Vercel" src="/images/lighthouse.jpeg" href="/"/>
+                    <ProjectCard title="Up and Down Game"  tags="Next.js, Vercel" src="/images/lighthouse.jpeg" href="/"/>
+                </ProjectCardsGrid>
+            </ProjectSectionStyled>
+        </PageSectionContainer>     
+            <PageSectionContainer roundedEdges={true} marginTop="40px" backgroundColor="#2A2A2A">
+                <ProjectSectionStyled>
+                    <H2>Blog</H2>
+                    <ProjectCardsGrid>
+                        <ProjectCard title="Hyperion Website" tags="Next.js, Vercel" src="/images/lighthouse.jpeg" href="/"/>
+                        <ProjectCard title="Up and Down Game"  tags="Next.js, Vercel" src="/images/lighthouse.jpeg" href="/"/>
+                    </ProjectCardsGrid>
+                </ProjectSectionStyled>
+            </PageSectionContainer> 
+        </PageContainer>
   )
 }
+
+const HeroSectionStyled = styled.div`
+    display:flex;
+    height:320px;
+    align-items:flex-end;
+    margin-bottom:50px;
+`
+
+const HeroSectionTextContentStyled= styled.div`
+
+
+`
+
+const ProjectSectionStyled = styled.div`
+    padding-top:10px;
+    padding-bottom:10px;
+
+`
