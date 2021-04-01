@@ -7,9 +7,12 @@ export default function ProjectCard(props){
     const context = useContext(ThemeContext);
     return(
         <ProjectCardStyled>
-            <a href="">
-                <ProjectCardImg src={props.src}/>
-            </a>
+            <ProjectCardImageWrapper>
+                <a href="">
+                    <ProjectCardOverlay/>
+                    <ProjectCardImg src={props.src}/>
+                </a>
+            </ProjectCardImageWrapper>
             <ProjectCardTitleTextStyled href="" theme={context}>{props.title}</ProjectCardTitleTextStyled>
             <ProjectCardTagTextStyled href="" theme={context}>{props.tags}</ProjectCardTagTextStyled>
         </ProjectCardStyled>
@@ -21,8 +24,28 @@ const ProjectCardStyled = styled.div`
 
 `
 
+const ProjectCardImageWrapper = styled.div`
+    position:relative;
+`
+
+const ProjectCardOverlay = styled.div`
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    height: 100%;
+    width: 100%;
+    opacity: 0;
+    transition: .5s ease;
+    background-color: white;
+    :hover{
+        opacity:0.2;
+    }
+`
+
 const ProjectCardImg = styled.img`
-    width:95%;
+    width:100%;
     max-height:300px;
     object-fit:cover;
     border-radius:10px;

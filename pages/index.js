@@ -15,7 +15,7 @@ export default function Home(props) {
     const context = useContext(ThemeContext);
   return (
       <PageContainer toggleTheme={props.toggleTheme} isDarkMode={props.isDarkMode}>
-        <PageSectionContainer>
+            <PageSectionContainer>
                 <HeroSectionStyled>
                     <HeroSectionTextContentStyled>
                         <H1>Hi, I'm Neil 👋</H1>
@@ -23,7 +23,7 @@ export default function Home(props) {
                         <P>For business inquiries I can be reached at <Link_ href="/" initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor}>neil@info.com</Link_></P>
                     </HeroSectionTextContentStyled>
                 </HeroSectionStyled>
-        </PageSectionContainer>
+            </PageSectionContainer>
         <PageSectionContainer roundedEdges={true} backgroundColor={context.secondaryBackgroundColor} paddingBottom="30px">
             <ProjectSectionStyled>
                 <H2>Projects</H2>
@@ -33,16 +33,16 @@ export default function Home(props) {
                 </ProjectCardsGrid>
             </ProjectSectionStyled>
         </PageSectionContainer>     
-            <PageSectionContainer roundedEdges={true} marginTop="40px" backgroundColor={context.secondaryBackgroundColor} paddingBottom="30px">
-                <ProjectSectionStyled>
-                    <H2>Blog</H2>
-                    <ProjectCardsGrid>
-                        <ProjectCard title="Hyperion Website" tags="Next.js, Vercel" src="/images/lighthouse.jpeg" href="/"/>
-                        <ProjectCard title="Up and Down Game"  tags="Next.js, Vercel" src="/images/lighthouse.jpeg" href="/"/>
-                    </ProjectCardsGrid>
-                </ProjectSectionStyled>
-            </PageSectionContainer> 
-        </PageContainer>
+        <PageSectionContainer roundedEdges={true} marginTop="40px" backgroundColor={context.secondaryBackgroundColor} paddingBottom="30px">
+            <ProjectSectionStyled>
+                <H2>Blog</H2>
+                <ProjectCardsGrid>
+                    <ProjectCard title="Hyperion Website" tags="Next.js, Vercel" src="/images/lighthouse.jpeg" href="/"/>
+                    <ProjectCard title="Up and Down Game"  tags="Next.js, Vercel" src="/images/lighthouse.jpeg" href="/"/>
+                </ProjectCardsGrid>
+            </ProjectSectionStyled>
+        </PageSectionContainer> 
+    </PageContainer>
   )
 }
 
