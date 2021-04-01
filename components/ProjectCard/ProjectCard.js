@@ -19,7 +19,6 @@ export default function ProjectCard(props){
     )
 }
 
-
 const ProjectCardStyled = styled.div`
 
 `

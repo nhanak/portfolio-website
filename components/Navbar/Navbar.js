@@ -26,18 +26,20 @@ export default function Navbar(props){
                 </LogoDivStyled>
                 <LinkDivStyled  theme={context}>
                     <LinkInnerDivStyled>
-                        <NavbarItem>
-                            <Link_ initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor} href="/">Blog</Link_>
-                        </NavbarItem>
-                        <NavbarItem>
-                            <Link_ initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor} href="/">Projects</Link_>
-                        </NavbarItem>
-                        <NavbarItem>
-                            <Link_ initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor} href="/">About</Link_>
-                        </NavbarItem>
-                        <NavbarItem>
-                             <FlatButton theme={context} href="/">Say hello</FlatButton>
-                        </NavbarItem>
+                        <DisappearOnMobile>
+                            <NavbarItem>
+                                <Link_ initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor} href="/">Blog</Link_>
+                            </NavbarItem>
+                            <NavbarItem>
+                                <Link_ initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor} href="/">Projects</Link_>
+                            </NavbarItem>
+                            <NavbarItem>
+                                <Link_ initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor} href="/">About</Link_>
+                            </NavbarItem>
+                            <NavbarItem>
+                                <FlatButton theme={context} href="/">Say hello</FlatButton>
+                            </NavbarItem>
+                        </DisappearOnMobile>
                         <NavbarItem>
                             <ReactOutlineManager toggle={true}>
                                 <DarkModeToggle onChange={changeTheme} checked={isDarkMode} size={"6rem"}/>
@@ -49,6 +51,13 @@ export default function Navbar(props){
         </PageSectionContainer>
     )
 }
+
+const DisappearOnMobile = styled.div`
+    display:inherit;
+    @media (max-width: 950px){
+        display:none;
+    }
+`
 
 const NavbarStyled = styled.nav`
     display:flex;
@@ -64,6 +73,9 @@ const LogoDivStyled = styled.div`
     font-size:1.8rem;
     margin:0px;
     font-weight:bold;
+    @media (max-width: 950px){
+        width:50%;
+    }
 `
 
 const LinkDivStyled = styled.div`
@@ -71,6 +83,9 @@ const LinkDivStyled = styled.div`
     justify-content:flex-end;
     width:75%;
     color: ${(props)=>props.theme.primaryTextColor};
+    @media (max-width: 950px){
+        width:50%;
+    }
 `
 
 const LinkInnerDivStyled = styled.div`

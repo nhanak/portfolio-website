@@ -11,6 +11,7 @@ export default function NavbarItem(props){
 
 const NavbarItemStyled = styled.div`
     line-height:1.5;
+    height:4.1rem;
     padding-left:6rem;
     display:flex;
     align-items:center;
