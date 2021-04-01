@@ -14,6 +14,7 @@ const NavbarItemStyled = styled.div`
     padding-left:6rem;
     display:flex;
     align-items:center;
+    font-size:1.6rem;
 `
 
 

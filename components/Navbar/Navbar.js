@@ -27,13 +27,13 @@ export default function Navbar(props){
                 <LinkDivStyled  theme={context}>
                     <LinkInnerDivStyled>
                         <NavbarItem>
-                            <Link_ fontSize="1.6rem" initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor} href="/">Blog</Link_>
+                            <Link_ initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor} href="/">Blog</Link_>
                         </NavbarItem>
                         <NavbarItem>
-                            <Link_ fontSize="1.6rem" initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor} href="/">Projects</Link_>
+                            <Link_ initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor} href="/">Projects</Link_>
                         </NavbarItem>
                         <NavbarItem>
-                            <Link_ fontSize="1.6rem" initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor} href="/">About</Link_>
+                            <Link_ initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor} href="/">About</Link_>
                         </NavbarItem>
                         <NavbarItem>
                              <FlatButton theme={context} href="/">Say hello</FlatButton>
