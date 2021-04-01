@@ -22,7 +22,7 @@ export default function Navbar(props){
         <PageSectionContainer>
             <NavbarStyled>
                 <LogoDivStyled theme={context}>
-                    <LogoStyled href="/">Neil Hanak</LogoStyled>
+                    <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="/">Neil Hanak</Link_>
                 </LogoDivStyled>
                 <LinkDivStyled  theme={context}>
                     <LinkInnerDivStyled>
@@ -61,9 +61,6 @@ const LogoDivStyled = styled.div`
     align-items:center;
     width:25%;
     color: ${(props)=>props.theme.primaryAccentColor};
-`
-
-const LogoStyled = styled.a`
     font-size:1.8rem;
     margin:0px;
     font-weight:bold;

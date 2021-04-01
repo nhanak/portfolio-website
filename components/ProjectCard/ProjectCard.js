@@ -29,6 +29,7 @@ const ProjectCardImageWrapper = styled.div`
 `
 
 const ProjectCardOverlay = styled.div`
+    border-radius:10px;
     position: absolute;
     top: 0;
     bottom: 0;
@@ -49,6 +50,7 @@ const ProjectCardImg = styled.img`
     max-height:300px;
     object-fit:cover;
     border-radius:10px;
+    display:block;
 `
 
 const ProjectCardTitleTextStyled = styled.a`
