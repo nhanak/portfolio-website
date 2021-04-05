@@ -28,8 +28,8 @@ export default function Home(props) {
             <ProjectSectionStyled>
                 <H2>Projects</H2>
                 <ProjectCardsGrid>
-                    <ProjectCard title="Hyperion Website" tags="Next.js, Vercel" src="/images/lighthouse.jpeg" href="/"/>
-                    <ProjectCard title="Up and Down Game"  tags="Next.js, Vercel" src="/images/lighthouse.jpeg" href="/"/>
+                    <ProjectCard title="Hyperion Website" tags="Next.js, Vercel" src="/images/Hyperion_Logo_Stars_Original.jpg" href="/"/>
+                    <ProjectCard title="Up and Down Game"  tags="Next.js, Vercel" src="/images/Up_and_Down_Logo_Original.png" href="/"/>
                 </ProjectCardsGrid>
             </ProjectSectionStyled>
         </PageSectionContainer>     

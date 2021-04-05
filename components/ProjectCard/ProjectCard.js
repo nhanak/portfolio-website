@@ -46,10 +46,14 @@ const ProjectCardOverlay = styled.div`
 
 const ProjectCardImg = styled.img`
     width:100%;
-    max-height:300px;
+    height:25rem;
     object-fit:cover;
     border-radius:10px;
     display:block;
+
+    @media (min-width: 576px) {
+        height:30rem;
+    }
 `
 
 const ProjectCardTitleTextStyled = styled.a`
