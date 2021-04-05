@@ -50,17 +50,27 @@ const FooterStyled = styled.div`
 `
 
 const FooterStartStyled = styled.div`
+    width:100%;
     display:flex;
-    width:50%;
+    text-align:center;
     flex-direction:column;
-    align-items:flex-start;
+    align-items:center;
+    @media (min-width:992px){
+        width:50%;
+        align-items:flex-start;
+    }
 `
 
 const FooterEndStyled = styled.div`
-    display:flex;
-    width:50%;
+    width:0%;
+    display:none;
     flex-direction:column;
     align-items:flex-end;
+    @media (min-width:992px){
+
+        display:flex;
+        width:50%;
+    }
 `
 
 const FooterText = styled.p`
