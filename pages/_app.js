@@ -27,6 +27,9 @@ const GlobalStyle = createGlobalStyle`
     body {
         background-color: ${props => (props.theme === "dark" ? themes.dark.primaryBackgroundColor : themes.light.primaryBackgroundColor)};
         transition:background-color 0.5s ease;
+        height: ${props=>props.mobileNavbarIsOpen? "100vh;" :"auto;"}
+        overflow-y: ${props=>props.mobileNavbarIsOpen? "hidden;" :"auto;"}
+        
     }
 `
 
@@ -34,6 +37,7 @@ const GlobalStyle = createGlobalStyle`
 function MyApp({ Component, pageProps }) {
 
     const [theme, setTheme] = useState("light");
+    const [mobileNavbarIsOpen, setMobileNavbarOpen] = useState(false);
 
     function toggleTheme(){
         if (theme === "dark"){
@@ -50,8 +54,8 @@ function MyApp({ Component, pageProps }) {
 
   return( 
     <ThemeContext.Provider value={theme === "dark" ? themes.dark : themes.light}>
-        <GlobalStyle theme={theme} themes={themes}/>
-        <Component currentTheme={theme} isDarkMode={isDarkMode} toggleTheme={toggleTheme} {...pageProps} />
+        <GlobalStyle theme={theme} themes={themes} mobileNavbarIsOpen={mobileNavbarIsOpen}/>
+        <Component currentTheme={theme} isDarkMode={isDarkMode} toggleTheme={toggleTheme} mobileNavbarIsOpen={mobileNavbarIsOpen} setMobileNavbarOpen={setMobileNavbarOpen} {...pageProps} />
     </ThemeContext.Provider>
   )
 }

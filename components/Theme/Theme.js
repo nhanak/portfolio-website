@@ -4,6 +4,7 @@ export const themes = {
     dark:{
         primaryTextColor:"white",
         secondaryTextColor:"grey",
+        invertedPrimaryTextColor:"black",
         primaryAccentColor:"#00ffde",
         primaryBackgroundColor:"#121212",
         primaryBorderColor:"white",
@@ -12,6 +13,7 @@ export const themes = {
     light:{
         primaryTextColor:"black",
         secondaryTextColor:"grey",
+        invertedPrimaryTextColor:"white",
         primaryAccentColor:"#742aff",
         primaryBackgroundColor:"white",
         primaryBorderColor:"white",

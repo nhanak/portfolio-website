@@ -10,16 +10,17 @@ export default function PageSectionContainer(props){
 }
 
 const PageSectionContainerStyled = styled.div`
-    padding-left:40px;
-    padding-right:40px;
+    padding-left:2.5rem;
+    padding-right:2.5rem;
     ${props=>props.paddingBottom && `padding-bottom:${props.paddingBottom};`}
-    ${props=>props.roundedEdges && `border-radius:10px;`}
     ${props=>props.borderTop && `border-top:${props.borderTop};`}
     ${props=>props.marginTop && `margin-top:${props.marginTop};`}
     ${props=>props.backgroundColor && `background-color:${props.backgroundColor};`}
+    border-radius:0;
 
-    @media (max-width:75rem){
-
-        border-radius:0;
+    @media (min-width:992px){
+        ${props=>props.roundedEdges && `border-radius:10px;`}
+        padding-left:40px;
+        padding-right:40px;
     }
 `

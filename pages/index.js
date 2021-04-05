@@ -14,7 +14,7 @@ export default function Home(props) {
 
     const context = useContext(ThemeContext);
   return (
-      <PageContainer toggleTheme={props.toggleTheme} isDarkMode={props.isDarkMode}>
+      <PageContainer toggleTheme={props.toggleTheme} isDarkMode={props.isDarkMode} mobileNavbarIsOpen={props.mobileNavbarIsOpen} setMobileNavbarOpen={props.setMobileNavbarOpen}>
             <PageSectionContainer>
                 <HeroSectionStyled>
                     <HeroSectionTextContentStyled>

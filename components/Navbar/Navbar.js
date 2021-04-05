@@ -54,7 +54,7 @@ export default function Navbar(props){
 
 const DisappearOnMobile = styled.div`
     display:inherit;
-    @media (max-width: 950px){
+    @media (max-width: 991px){
         display:none;
     }
 `

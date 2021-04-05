@@ -9,8 +9,11 @@ export default function LinkWithUnderlineAnimation(props){
             href={props.href} 
             fontSize={props.fontSize}
             initialColor={props.initialColor} 
-            hoverColor={props.hoverColor}>
+            hoverColor={props.hoverColor}
+            marginTop={props.marginTop}
+            marginBottom={props.marginBottom}>
                 {props.children}
+
             </LinkWithUnderlineAnimationStyled>
     )
 
@@ -18,6 +21,8 @@ export default function LinkWithUnderlineAnimation(props){
 
 const LinkWithUnderlineAnimationStyled = styled.a`
     margin:0px;
+    ${props=>props.marginTop && `margin-top:${props.marginTop};`}
+    ${props=>props.marginBottom && `margin-bottom:${props.marginBottom};`}
     font-size:${props=>props.fontSize};
     text-decoration: none;
     background-image: linear-gradient(currentColor, currentColor);
