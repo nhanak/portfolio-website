@@ -20,7 +20,7 @@ export default function PageContainer(props){
             </Head>
             <Navbar isDarkMode={props.isDarkMode} toggleTheme={props.toggleTheme}/>
             {props.children}
-            <NavButtonMobile navRef={mobileRef.current} mobileNavbarIsOpen={mobileNavbarIsOpen} setMobileNavbarOpen={setMobileNavbarOpen}/>
+            <NavButtonMobile navRef={mobileRef} mobileNavbarIsOpen={mobileNavbarIsOpen} setMobileNavbarOpen={setMobileNavbarOpen}/>
             <NavbarMobile ref={mobileRef} mobileNavbarIsOpen={mobileNavbarIsOpen} setMobileNavbarOpen={setMobileNavbarOpen}/>
             <Footer/>
         </PageContainerStyled>

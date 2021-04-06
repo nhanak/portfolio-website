@@ -2,37 +2,46 @@ import React, {useContext, useState} from "react";
 import styled, {keyframes,css} from "styled-components";
 import Link_ from "../LinkWithUnderlineAnimation/LinkWithUnderlineAnimation";
 import { ThemeContext } from "../Theme/Theme";
+import { enableBodyScroll } from 'body-scroll-lock';
 
-export default function NavbarMobile(props){
-    const context = useContext(ThemeContext);
-    const {mobileNavbarIsOpen, setMobileNavbarOpen} = props;
+export default class NavbarMobile extends React.Component{
+    static contextType = ThemeContext;
+    constructor(props){
+        super(props);
 
-    function handleExitClick(){
+    }
+
+    handleExitClick = () =>{
+        const {setMobileNavbarOpen} = this.props;
+        enableBodyScroll(this);
         setMobileNavbarOpen(false);
     }
 
-    return (
-        <NavbarMobileWrapper mobileNavbarIsOpen={mobileNavbarIsOpen}>
-            <NavbarMobileDarkener mobileNavbarIsOpen={mobileNavbarIsOpen} onClick={handleExitClick} />
-            <NavbarMobileContent theme={context} mobileNavbarIsOpen={mobileNavbarIsOpen}>
-                <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} fontSize="2.5rem" href="/">Neil Hanak</Link_>
-                <NavbarMobileLinkWrapper>
-                    <NavbarMobileItem>
-                        <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryTextColor} href="/">Home</Link_>
-                    </NavbarMobileItem>
-                    <NavbarMobileItem>
-                        <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryTextColor} href="/">Projects</Link_>
-                    </NavbarMobileItem>
-                    <NavbarMobileItem>
-                        <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryTextColor} href="/">Blog</Link_>
-                    </NavbarMobileItem>
-                    <NavbarMobileItem>
-                    <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryTextColor} href="/">About</Link_>
-                    </NavbarMobileItem>
-                </NavbarMobileLinkWrapper>
-            </NavbarMobileContent>
-        </NavbarMobileWrapper>
-    )
+    render(){
+        const {mobileNavbarIsOpen, setMobileNavbarOpen} = this.props;
+        return (
+            <NavbarMobileWrapper mobileNavbarIsOpen={mobileNavbarIsOpen}>
+                <NavbarMobileDarkener mobileNavbarIsOpen={mobileNavbarIsOpen} onClick={this.handleExitClick} />
+                <NavbarMobileContent theme={this.context} mobileNavbarIsOpen={mobileNavbarIsOpen}>
+                    <Link_ initialColor={this.context.primaryAccentColor} hoverColor={this.context.primaryAccentColor} fontSize="2.5rem" href="/">Neil Hanak</Link_>
+                    <NavbarMobileLinkWrapper>
+                        <NavbarMobileItem>
+                            <Link_ initialColor={this.context.primaryAccentColor} hoverColor={this.context.primaryTextColor} href="/">Home</Link_>
+                        </NavbarMobileItem>
+                        <NavbarMobileItem>
+                            <Link_ initialColor={this.context.primaryAccentColor} hoverColor={this.context.primaryTextColor} href="/">Projects</Link_>
+                        </NavbarMobileItem>
+                        <NavbarMobileItem>
+                            <Link_ initialColor={this.context.primaryAccentColor} hoverColor={this.context.primaryTextColor} href="/">Blog</Link_>
+                        </NavbarMobileItem>
+                        <NavbarMobileItem>
+                        <Link_ initialColor={this.context.primaryAccentColor} hoverColor={this.context.primaryTextColor} href="/">About</Link_>
+                        </NavbarMobileItem>
+                    </NavbarMobileLinkWrapper>
+                </NavbarMobileContent>
+            </NavbarMobileWrapper>
+        )
+    }
 }
 
 const darken= keyframes`
