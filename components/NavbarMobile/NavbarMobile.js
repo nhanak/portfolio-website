@@ -1,5 +1,5 @@
 import React, {useContext} from "react";
-import styled from "styled-components";
+import styled, {keyframes,css} from "styled-components";
 import Link_ from "../LinkWithUnderlineAnimation/LinkWithUnderlineAnimation";
 import { ThemeContext } from "../Theme/Theme";
 
@@ -13,7 +13,7 @@ export default function NavbarMobile(props){
 
     return (
         <NavbarMobileWrapper mobileNavbarIsOpen={mobileNavbarIsOpen}>
-            <NavbarMobileDarkener onClick={handleExitClick}/>
+            <NavbarMobileDarkener mobileNavbarIsOpen={mobileNavbarIsOpen} onClick={handleExitClick}/>
             <NavbarMobileContent theme={context} >
                 <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} fontSize="2.5rem" href="/">Neil Hanak</Link_>
                 <NavbarMobileLinkWrapper>
@@ -35,6 +35,29 @@ export default function NavbarMobile(props){
     )
 }
 
+const darken= keyframes`
+0%{
+    background-color:rgba(0,0,0,0);
+}
+
+100%{
+    background-color:rgba(0,0,0,0.5);
+}
+`;
+
+const slideRight = keyframes`
+  from{
+    transform: translateX(100%) translateZ(0px);
+  }
+  to{
+    transform: translateX(0%) translateZ(0px);
+  }
+`
+
+const NavbarMobileDarkener = styled.div`
+    width:50%;
+    height:100%;
+`;
 
 const NavbarMobileContent = styled.div`
     padding-top:4rem;
@@ -42,6 +65,7 @@ const NavbarMobileContent = styled.div`
     width:100%;
     height:100%;
     background-color:${props=>props.theme.secondaryBackgroundColor};
+    animation:${slideRight} 0.7s ease;
 
     @media (min-width: 768px) {
         padding-left:4rem;
@@ -51,7 +75,6 @@ const NavbarMobileContent = styled.div`
 const NavbarMobileItem = styled.div`
      margin-bottom:1rem;
      margin-top:1rem;
-
 `
 
 const NavbarMobileLinkWrapper = styled.div`
@@ -71,10 +94,6 @@ const NavbarMobileWrapper = styled.div`
     position:fixed;
     top:0;
     display: ${props=>props.mobileNavbarIsOpen ? "flex;":"none;"}
+    animation: ${props=>props.mobileNavbarIsOpen ? css`${darken} 0.5s ease;`:css`${darken} 0.5s ease reverse;`}
+    background-color:${props=>props.mobileNavbarIsOpen ? "rgba(0,0,0,0.5);":"rgba(0,0,0,0);"}
 `
-
-const NavbarMobileDarkener = styled.div`
-    width:50%;
-    height:100%;
-    background-color:rgba(0,0,0,0.5);
-`;
