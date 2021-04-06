@@ -17,10 +17,18 @@ export default function NavbarMobile(props){
             <NavbarMobileContent theme={context} >
                 <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} fontSize="2.5rem" href="/">Neil Hanak</Link_>
                 <NavbarMobileLinkWrapper>
-                    <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryTextColor} marginTop="1rem" marginBottom="1rem" href="/">Home</Link_>
-                    <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryTextColor} marginTop="1rem" marginBottom="1rem" href="/">Projects</Link_>
-                    <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryTextColor} marginTop="1rem" marginBottom="1rem" href="/">Blog</Link_>
-                    <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryTextColor} marginTop="1rem" marginBottom="1rem" href="/">About</Link_>
+                    <NavbarMobileItem>
+                        <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryTextColor} href="/">Home</Link_>
+                    </NavbarMobileItem>
+                    <NavbarMobileItem>
+                        <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryTextColor} href="/">Projects</Link_>
+                    </NavbarMobileItem>
+                    <NavbarMobileItem>
+                        <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryTextColor} href="/">Blog</Link_>
+                    </NavbarMobileItem>
+                    <NavbarMobileItem>
+                    <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryTextColor} href="/">About</Link_>
+                    </NavbarMobileItem>
                 </NavbarMobileLinkWrapper>
             </NavbarMobileContent>
         </NavbarMobileWrapper>
@@ -38,6 +46,12 @@ const NavbarMobileContent = styled.div`
     @media (min-width: 768px) {
         padding-left:4rem;
      }
+`
+
+const NavbarMobileItem = styled.div`
+     margin-bottom:1rem;
+     margin-top:1rem;
+
 `
 
 const NavbarMobileLinkWrapper = styled.div`
