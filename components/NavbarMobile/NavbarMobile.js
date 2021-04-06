@@ -4,11 +4,15 @@ import Link_ from "../LinkWithUnderlineAnimation/LinkWithUnderlineAnimation";
 import { ThemeContext } from "../Theme/Theme";
 import { enableBodyScroll } from 'body-scroll-lock';
 
+// The reason this is a class component instead of a functional component
+// is so that we can get a ref and lock the body from NavButtonMobile
 export default class NavbarMobile extends React.Component{
     static contextType = ThemeContext;
     constructor(props){
         super(props);
-
+        this.state = {
+            mobileNavbarHasOpened: false,
+        }
     }
 
     handleExitClick = () =>{
@@ -17,10 +21,18 @@ export default class NavbarMobile extends React.Component{
         setMobileNavbarOpen(false);
     }
 
+    // I do not want the nav to "close" if it has never been opened in the first place
+    componentDidUpdate(prevProps, prevState){
+        if (this.props.mobileNavbarIsOpen && (prevState.mobileNavbarHasOpened === false)){
+            this.setState({mobileNavbarHasOpened:true});
+        }
+    }
+
     render(){
         const {mobileNavbarIsOpen, setMobileNavbarOpen} = this.props;
+        const {mobileNavbarHasOpened} = this.state;
         return (
-            <NavbarMobileWrapper mobileNavbarIsOpen={mobileNavbarIsOpen}>
+            <NavbarMobileWrapper mobileNavbarIsOpen={mobileNavbarIsOpen} mobileNavbarHasOpened={mobileNavbarHasOpened}>
                 <NavbarMobileDarkener mobileNavbarIsOpen={mobileNavbarIsOpen} onClick={this.handleExitClick} />
                 <NavbarMobileContent theme={this.context} mobileNavbarIsOpen={mobileNavbarIsOpen}>
                     <Link_ initialColor={this.context.primaryAccentColor} hoverColor={this.context.primaryAccentColor} fontSize="2.5rem" href="/">Neil Hanak</Link_>
@@ -136,6 +148,6 @@ const NavbarMobileWrapper = styled.div`
     display: flex;
     top:0;
     transform:${props=>props.mobileNavbarIsOpen ? "translateX(0%) translateZ(0px)" : "translateX(100%) translateZ(0px)"};
-    animation: ${props=>props.mobileNavbarIsOpen ?  css`${darken} 0.5s ease, ${slideLeft} 0s`: css`${lighten} 0.3s ease, ${dissapear} 0.3s` };
+    animation: ${props=>props.mobileNavbarIsOpen ?  css`${darken} 0.5s ease, ${slideLeft} 0s`: (props.mobileNavbarHasOpened ? css`${lighten} 0.3s ease, ${dissapear} 0.3s`:"")};
     background-color:${props=>(props.mobileNavbarIsOpen ? "rgba(0,0,0,0.5)": "rgba(0,0,0,0)")};
 `

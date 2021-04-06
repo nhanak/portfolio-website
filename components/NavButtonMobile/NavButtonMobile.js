@@ -40,4 +40,3 @@ const HamburgerDivStyled = styled.div`
         display:none;
     }
 `
-
