@@ -2,14 +2,26 @@ import React, {useContext} from "react";
 import styled from "styled-components";
 import { Squash as Hamburger} from 'hamburger-react'
 import { ThemeContext } from "../Theme/Theme";
+import { disableBodyScroll, enableBodyScroll, clearAllBodyScrollLocks } from 'body-scroll-lock';
 //https://github.com/luukdv/hamburger-react
 
 export default function NavButtonMobile(props){
     const context = useContext(ThemeContext);
-    const {mobileNavbarIsOpen, setMobileNavbarOpen} = props;
+    const {mobileNavbarIsOpen, setMobileNavbarOpen, navRef} = props;
+
+    function toggleMobileNavBar(val){
+        console.log(navRef);
+        if (!mobileNavbarIsOpen){
+            disableBodyScroll(navRef);
+        }
+        else{
+            enableBodyScroll(navRef);
+        }
+        setMobileNavbarOpen(val);
+    }
     return (
         <HamburgerDivStyled theme={context}>
-            <Hamburger toggled={mobileNavbarIsOpen} toggle={setMobileNavbarOpen} color="white" size={20} />
+            <Hamburger toggled={mobileNavbarIsOpen} toggle={toggleMobileNavBar} color="white" size={20} />
         </HamburgerDivStyled>
     )
 }
@@ -27,4 +39,4 @@ const HamburgerDivStyled = styled.div`
         display:none;
     }
 `
-//    border:${props=>"1px solid "+props.theme.invertedPrimaryTextColor};
+

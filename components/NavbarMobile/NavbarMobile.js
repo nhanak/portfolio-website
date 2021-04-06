@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {useContext, useState} from "react";
 import styled, {keyframes,css} from "styled-components";
 import Link_ from "../LinkWithUnderlineAnimation/LinkWithUnderlineAnimation";
 import { ThemeContext } from "../Theme/Theme";
@@ -13,8 +13,8 @@ export default function NavbarMobile(props){
 
     return (
         <NavbarMobileWrapper mobileNavbarIsOpen={mobileNavbarIsOpen}>
-            <NavbarMobileDarkener mobileNavbarIsOpen={mobileNavbarIsOpen} onClick={handleExitClick}/>
-            <NavbarMobileContent theme={context} >
+            <NavbarMobileDarkener mobileNavbarIsOpen={mobileNavbarIsOpen} onClick={handleExitClick} />
+            <NavbarMobileContent theme={context} mobileNavbarIsOpen={mobileNavbarIsOpen}>
                 <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} fontSize="2.5rem" href="/">Neil Hanak</Link_>
                 <NavbarMobileLinkWrapper>
                     <NavbarMobileItem>
@@ -36,20 +36,51 @@ export default function NavbarMobile(props){
 }
 
 const darken= keyframes`
-0%{
-    background-color:rgba(0,0,0,0);
-}
+    0%{
+        background-color:rgba(0,0,0,0);
+    }
 
-100%{
-    background-color:rgba(0,0,0,0.5);
-}
+    100%{
+        background-color:rgba(0,0,0,0.5);
+    }
 `;
 
+const lighten = keyframes`
+    0%{
+        background-color:rgba(0,0,0,0.5);
+        
+    }
+    100%{
+        background-color:rgba(0,0,0,0);
+    }
+`;
+
+const dissapear = keyframes`
+    0%{
+        transform: translateX(0%) translateZ(0px);
+    }
+    99%{
+        transform: translateX(0%) translateZ(0px);
+    }
+    100%{
+        transform: translateX(100%) translateZ(0px);
+    }
+`
+
 const slideRight = keyframes`
-  from{
+  from {
+    transform: translateX(0%) translateZ(0px);
+  }
+  to {
     transform: translateX(100%) translateZ(0px);
   }
-  to{
+`
+
+const slideLeft = keyframes`
+  from {
+    transform: translateX(100%) translateZ(0px);
+  }
+  to {
     transform: translateX(0%) translateZ(0px);
   }
 `
@@ -65,7 +96,8 @@ const NavbarMobileContent = styled.div`
     width:100%;
     height:100%;
     background-color:${props=>props.theme.secondaryBackgroundColor};
-    animation:${slideRight} 0.7s ease;
+    animation:${props=>props.mobileNavbarIsOpen ? css`${slideLeft} 0.5s ease` : css`${slideRight} 0.30s ease`};
+    transform:${props=>props.mobileNavbarIsOpen ?  "translateX(0%) translateZ(0px)" : "translateX(100%) translateZ(0px)"};
 
     @media (min-width: 768px) {
         padding-left:4rem;
@@ -92,8 +124,9 @@ const NavbarMobileWrapper = styled.div`
     width:100vw;
     height:100%;
     position:fixed;
+    display: flex;
     top:0;
-    display: ${props=>props.mobileNavbarIsOpen ? "flex;":"none;"}
-    animation: ${props=>props.mobileNavbarIsOpen ? css`${darken} 0.5s ease;`:css`${darken} 0.5s ease reverse;`}
-    background-color:${props=>props.mobileNavbarIsOpen ? "rgba(0,0,0,0.5);":"rgba(0,0,0,0);"}
+    transform:${props=>props.mobileNavbarIsOpen ? "translateX(0%) translateZ(0px)" : "translateX(100%) translateZ(0px)"};
+    animation: ${props=>props.mobileNavbarIsOpen ?  css`${darken} 0.5s ease, ${slideLeft} 0s`: css`${lighten} 0.3s ease, ${dissapear} 0.3s` };
+    background-color:${props=>(props.mobileNavbarIsOpen ? "rgba(0,0,0,0.5)": "rgba(0,0,0,0)")};
 `

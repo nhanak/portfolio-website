@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, {useContext, useRef} from "react";
 import styled from "styled-components";
 import Navbar from "../Navbar/Navbar";
 import NavbarMobile from "../NavbarMobile/NavbarMobile";
@@ -11,6 +11,7 @@ import { ThemeContext } from "../Theme/Theme";
 export default function PageContainer(props){
     const context = useContext(ThemeContext);
     const {mobileNavbarIsOpen, setMobileNavbarOpen} = props;
+    const mobileRef = useRef(null);
     return (
         <PageContainerStyled theme={context}>
             <Head>
@@ -19,8 +20,8 @@ export default function PageContainer(props){
             </Head>
             <Navbar isDarkMode={props.isDarkMode} toggleTheme={props.toggleTheme}/>
             {props.children}
-            <NavButtonMobile mobileNavbarIsOpen={mobileNavbarIsOpen} setMobileNavbarOpen={setMobileNavbarOpen}/>
-            <NavbarMobile mobileNavbarIsOpen={mobileNavbarIsOpen} setMobileNavbarOpen={setMobileNavbarOpen}/>
+            <NavButtonMobile navRef={mobileRef.current} mobileNavbarIsOpen={mobileNavbarIsOpen} setMobileNavbarOpen={setMobileNavbarOpen}/>
+            <NavbarMobile ref={mobileRef} mobileNavbarIsOpen={mobileNavbarIsOpen} setMobileNavbarOpen={setMobileNavbarOpen}/>
             <Footer/>
         </PageContainerStyled>
     )

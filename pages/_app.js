@@ -27,12 +27,13 @@ const GlobalStyle = createGlobalStyle`
     body {
         background-color: ${props => (props.theme === "dark" ? themes.dark.primaryBackgroundColor : themes.light.primaryBackgroundColor)};
         transition:background-color 0.5s ease;
-        height: ${props=>props.mobileNavbarIsOpen? "100vh;" :"auto;"}
-        overflow-y: ${props=>props.mobileNavbarIsOpen? "hidden;" :"auto;"}
-        
     }
 `
+/*
+        height: ${props=>props.mobileNavbarIsOpen? "100vh;" :"auto;"}
+        overflow-y: ${props=>props.mobileNavbarIsOpen? "hidden;" :"auto;"}
 
+*/
 
 function MyApp({ Component, pageProps }) {
 
