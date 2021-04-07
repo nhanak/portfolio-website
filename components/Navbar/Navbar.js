@@ -7,6 +7,7 @@ import NavbarItem from "./NavbarItem";
 import DarkModeToggle from "react-dark-mode-toggle";
 import Link_ from "../LinkWithUnderlineAnimation/LinkWithUnderlineAnimation";
 import ReactOutlineManager from 'react-outline-manager';
+import Link from 'next/link';
 
 
 export default function Navbar(props){
@@ -22,16 +23,22 @@ export default function Navbar(props){
         <PageSectionContainer>
             <NavbarStyled>
                 <LogoDivStyled theme={context}>
-                    <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="/">Neil Hanak</Link_>
+                    <Link href="/" passHref>
+                        <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="/">Neil Hanak</Link_>
+                    </Link>
                 </LogoDivStyled>
                 <LinkDivStyled  theme={context}>
                     <LinkInnerDivStyled>
                         <DisappearOnMobile>
                             <NavbarItem>
-                                <Link_ initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor} href="/">Blog</Link_>
+                                <Link href="/blog" passHref>
+                                    <Link_ initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor} href="/">Blog</Link_>
+                                </Link>
                             </NavbarItem>
                             <NavbarItem>
-                                <Link_ initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor} href="/">Projects</Link_>
+                                <Link href="/projects" passHref>
+                                    <Link_ initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor}>Projects</Link_>
+                                </Link>
                             </NavbarItem>
                             <NavbarItem>
                                 <Link_ initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor} href="/">About</Link_>
