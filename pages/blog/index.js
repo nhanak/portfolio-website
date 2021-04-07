@@ -4,12 +4,12 @@ import ProjectCardsGrid from "../../components/ProjectCardsGrid/ProjectCardsGrid
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
 import styled from "styled-components";
 import H1 from "../../components/H1/H1";
-import H2 from "../../components/H2/H2";
+import ProjectSection from "../../components/ProjectSection/ProjectSection";
 import P from "../../components/P/P";
 import { ThemeContext } from "../../components/Theme/Theme";
 
 
-export default function Home() {
+export default function Blog() {
     const context = useContext(ThemeContext);
     return (
       <>
@@ -18,18 +18,16 @@ export default function Home() {
                 <HeroSectionTextContentStyled>
                     <H1>Blog</H1>
                     <P>Here are some of my thoughts</P>
-                    <P></P>
                 </HeroSectionTextContentStyled>
             </HeroSectionStyled>
         </PageSectionContainer>
         <PageSectionContainer roundedEdges={true} marginTop="40px" backgroundColor={context.secondaryBackgroundColor} paddingBottom="30px">
-            <ProjectSectionStyled>
-                <H2>Blog</H2>
+            <ProjectSection paddingTop={"10rem"} paddingBottom={"10px"}>
                 <ProjectCardsGrid>
                     <ProjectCard title="Hyperion Website" tags="Next.js, Vercel" src="/images/lighthouse.jpeg" href="/"/>
                     <ProjectCard title="Up and Down Game"  tags="Next.js, Vercel" src="/images/lighthouse.jpeg" href="/"/>
                 </ProjectCardsGrid>
-            </ProjectSectionStyled>
+            </ProjectSection>
         </PageSectionContainer> 
     </>
   )
@@ -47,8 +45,3 @@ const HeroSectionTextContentStyled= styled.div`
 
 `
 
-const ProjectSectionStyled = styled.div`
-    padding-top:10px;
-    padding-bottom:10px;
-
-`

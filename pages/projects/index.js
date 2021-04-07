@@ -7,9 +7,10 @@ import H1 from "../../components/H1/H1";
 import H2 from "../../components/H2/H2";
 import P from "../../components/P/P";
 import { ThemeContext } from "../../components/Theme/Theme";
+import ProjectSection from "../../components/ProjectSection/ProjectSection";
 
 
-export default function Home() {
+export default function Projects() {
     const context = useContext(ThemeContext);
     return (
       <>
@@ -22,13 +23,12 @@ export default function Home() {
                 </HeroSectionStyled>
             </PageSectionContainer>
         <PageSectionContainer roundedEdges={true} backgroundColor={context.secondaryBackgroundColor} paddingBottom="30px">
-            <ProjectSectionStyled>
-                <H2>Projects</H2>
+            <ProjectSection paddingTop={"10rem"} paddingBottom={"10px"}>
                 <ProjectCardsGrid>
                     <ProjectCard title="Hyperion Website" tags="Next.js, Vercel" src="/images/Hyperion_Logo_Stars_Original.jpg" href="/"/>
                     <ProjectCard title="Up and Down Game"  tags="Next.js, Vercel" src="/images/Up_and_Down_Logo_Original.png" href="/"/>
                 </ProjectCardsGrid>
-            </ProjectSectionStyled>
+            </ProjectSection>
         </PageSectionContainer>     
     </>
   )
@@ -46,8 +46,3 @@ const HeroSectionTextContentStyled= styled.div`
 
 `
 
-const ProjectSectionStyled = styled.div`
-    padding-top:10px;
-    padding-bottom:10px;
-
-`
