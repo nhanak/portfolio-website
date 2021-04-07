@@ -13,7 +13,7 @@ import Link from 'next/link';
 export default function Navbar(props){
     const context = useContext(ThemeContext);
 
-    const isDarkMode = props.isDarkMode();
+    const {isDarkMode} = props;
 
     function changeTheme(){
         props.toggleTheme();
@@ -24,7 +24,7 @@ export default function Navbar(props){
             <NavbarStyled>
                 <LogoDivStyled theme={context}>
                     <Link href="/" passHref>
-                        <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="/">Neil Hanak</Link_>
+                        <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor}>Neil Hanak</Link_>
                     </Link>
                 </LogoDivStyled>
                 <LinkDivStyled  theme={context}>

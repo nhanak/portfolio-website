@@ -2,22 +2,22 @@ import React from "react";
 import styled from "styled-components";
 
 
-export default function LinkWithUnderlineAnimation(props){
-
+const LinkWithUnderlineAnimation = React.forwardRef((props, ref) => {
     return (
         <LinkWithUnderlineAnimationStyled 
-            href={props.href} 
+            href={props.href}
+            onClick={props.onClick}
+            ref={ref}
             fontSize={props.fontSize}
             initialColor={props.initialColor} 
             hoverColor={props.hoverColor}
             marginTop={props.marginTop}
             marginBottom={props.marginBottom}>
                 {props.children}
-
             </LinkWithUnderlineAnimationStyled>
     )
+  });
 
-}
 
 const LinkWithUnderlineAnimationStyled = styled.a`
     margin:0px;
@@ -36,3 +36,4 @@ const LinkWithUnderlineAnimationStyled = styled.a`
         color:${props=>props.hoverColor};
     }
 `
+export default LinkWithUnderlineAnimation;

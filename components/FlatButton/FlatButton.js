@@ -1,12 +1,19 @@
 import React, {useContext} from "react";
 import styled from "styled-components";
 import {ThemeContext} from "../Theme/Theme";
-export default function FlatButton(props){
+
+const FlatButton = React.forwardRef((props, ref) => {
     const context = useContext(ThemeContext)
     return(
-        <FlatButtonStyled href={props.href} theme={context}>{props.children}</FlatButtonStyled>
+        <FlatButtonStyled
+            href={props.href}
+            onClick={props.onClick}
+            ref={ref}
+            theme={context}>
+            {props.children}
+        </FlatButtonStyled>
     )
-}
+});
 
 
 const FlatButtonStyled = styled.a`
@@ -26,3 +33,5 @@ const FlatButtonStyled = styled.a`
         background-color:${props=> props.theme.primaryAccentColor};
     }
 `
+
+export default FlatButton;

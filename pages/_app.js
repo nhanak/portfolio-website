@@ -38,20 +38,20 @@ const GlobalStyle = createGlobalStyle`
 function MyApp({ Component, pageProps }) {
 
     const [theme, setTheme] = useState("light");
+    const [isDarkMode, setDarkMode] = useState(false);
     const [mobileNavbarIsOpen, setMobileNavbarOpen] = useState(false);
 
     function toggleTheme(){
         if (theme === "dark"){
             setTheme("light")
+            setDarkMode(false);
         }
         else{
             setTheme("dark");
+            setDarkMode(true);
         }
     }
 
-    function isDarkMode(){
-        return (theme==="dark");
-    }
 
   return( 
     <ThemeContext.Provider value={theme === "dark" ? themes.dark : themes.light}>
