@@ -3,6 +3,8 @@ import React, {useState} from "react";
 import { ThemeContext, themes} from "../components/Theme/Theme";
 import { createGlobalStyle } from 'styled-components';
 
+import PageContainer from "../components/PageContainer/PageContainer";
+
 const GlobalStyle = createGlobalStyle`
     html,
     body {
@@ -56,7 +58,9 @@ function MyApp({ Component, pageProps }) {
   return( 
     <ThemeContext.Provider value={theme === "dark" ? themes.dark : themes.light}>
         <GlobalStyle theme={theme} themes={themes} mobileNavbarIsOpen={mobileNavbarIsOpen}/>
-        <Component currentTheme={theme} isDarkMode={isDarkMode} toggleTheme={toggleTheme} mobileNavbarIsOpen={mobileNavbarIsOpen} setMobileNavbarOpen={setMobileNavbarOpen} {...pageProps} />
+        <PageContainer toggleTheme={toggleTheme} isDarkMode={isDarkMode} mobileNavbarIsOpen={mobileNavbarIsOpen} setMobileNavbarOpen={setMobileNavbarOpen}>
+            <Component currentTheme={theme} isDarkMode={isDarkMode} toggleTheme={toggleTheme} mobileNavbarIsOpen={mobileNavbarIsOpen} setMobileNavbarOpen={setMobileNavbarOpen} {...pageProps} />
+        </PageContainer>
     </ThemeContext.Provider>
   )
 }

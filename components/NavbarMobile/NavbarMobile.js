@@ -58,6 +58,11 @@ export default class NavbarMobile extends React.Component{
                                 <Link_ initialColor={this.context.primaryAccentColor} hoverColor={this.context.primaryTextColor}>About</Link_>
                             </Link>
                         </NavbarMobileItem>
+                        <NavbarMobileItem>
+                            <Link href="/contact" passHref>
+                                <Link_ initialColor={this.context.primaryAccentColor} hoverColor={this.context.primaryTextColor}>Contact</Link_>
+                            </Link>
+                        </NavbarMobileItem>
                     </NavbarMobileLinkWrapper>
                 </NavbarMobileContent>
             </NavbarMobileWrapper>

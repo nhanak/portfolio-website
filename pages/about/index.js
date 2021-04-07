@@ -16,16 +16,16 @@ export default function Home(props) {
 
     const context = useContext(ThemeContext);
   return (
-      <PageContainer toggleTheme={props.toggleTheme} isDarkMode={props.isDarkMode} mobileNavbarIsOpen={props.mobileNavbarIsOpen} setMobileNavbarOpen={props.setMobileNavbarOpen}>
-            <PageSectionContainer>
-                <HeroSectionStyled>
-                    <HeroSectionTextContentStyled>
-                        <H1>About</H1>
-                        <P>If you wish to know more about me</P>
-                        <P></P>
-                    </HeroSectionTextContentStyled>
-                </HeroSectionStyled>
-            </PageSectionContainer>
+      <>
+        <PageSectionContainer>
+            <HeroSectionStyled>
+                <HeroSectionTextContentStyled>
+                    <H1>About</H1>
+                    <P>If you wish to know more about me</P>
+                    <P></P>
+                </HeroSectionTextContentStyled>
+            </HeroSectionStyled>
+        </PageSectionContainer>
         <PageSectionContainer roundedEdges={true} marginTop="40px" backgroundColor={context.secondaryBackgroundColor} paddingBottom="30px">
             <ProjectSectionStyled>
                 <H2>Blog</H2>
@@ -35,7 +35,7 @@ export default function Home(props) {
                 </ProjectCardsGrid>
             </ProjectSectionStyled>
         </PageSectionContainer> 
-    </PageContainer>
+    </>
   )
 }
 

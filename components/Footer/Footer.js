@@ -3,6 +3,7 @@ import styled from "styled-components";
 import { ThemeContext } from "../Theme/Theme";
 import PageSectionContainer from "../PageSectionContainer/PageSectionContainer";
 import Link_ from "../LinkWithUnderlineAnimation/LinkWithUnderlineAnimation";
+import Link from 'next/link';
 
 export default function Footer(){
     const context = useContext(ThemeContext);
@@ -17,24 +18,30 @@ export default function Footer(){
                              . Hosted on&nbsp;
                              <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="/">Vercel</Link_>
                         </FooterText>
-                        <FooterText theme={context}>MIT License © 2021–present  <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="/">Neil Hanak</Link_></FooterText>
+                        <FooterText theme={context}>MIT License © 2021–present  <Link href="/" passHref><Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor}>Neil Hanak</Link_></Link></FooterText>
                         <FooterText theme={context}>Made with ❤️ in Canada</FooterText>
                     </FooterStartStyled>
                     <FooterEndStyled>
                         <FooterLinkItem>
-                            <Link_ initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor} href="/">
-                                Blog
-                            </Link_>
+                            <Link href="/blog" passHref>
+                                <Link_ initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor}>
+                                    Blog
+                                </Link_>
+                            </Link>
                         </FooterLinkItem>
                         <FooterLinkItem>
-                            <Link_ initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor} href="/">
-                                Projects
-                            </Link_>
+                            <Link href="/projects" passHref>
+                                <Link_ initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor}>
+                                    Projects
+                                </Link_>
+                            </Link>
                         </FooterLinkItem>
                         <FooterLinkItem>
-                            <Link_ initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor} href="/">
-                                About
-                            </Link_>
+                            <Link href="/about" passHref>
+                                <Link_ initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor}>
+                                    About
+                                </Link_>
+                            </Link>
                         </FooterLinkItem>
                     </FooterEndStyled>
                 </FooterStyled>

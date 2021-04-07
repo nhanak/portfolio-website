@@ -31,7 +31,7 @@ const LinkWithUnderlineAnimationStyled = styled.a`
     background-size: 0% 1px;
     transition: background-size .3s;
     color:${props=>props.initialColor};
-    :hover, :focus{
+    :hover{
         background-size: 100% 1px;
         color:${props=>props.hoverColor};
     }
