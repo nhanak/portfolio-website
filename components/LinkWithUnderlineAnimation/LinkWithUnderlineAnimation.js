@@ -18,6 +18,7 @@ const LinkWithUnderlineAnimation = React.forwardRef((props, ref) => {
     )
   });
 
+LinkWithUnderlineAnimation.displayName = "LinkWithUnderlineAnimation";
 
 const LinkWithUnderlineAnimationStyled = styled.a`
     margin:0px;

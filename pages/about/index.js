@@ -1,5 +1,4 @@
 import React, {useContext} from "react";
-import PageContainer from "../../components/PageContainer/PageContainer";
 import PageSectionContainer from "../../components/PageSectionContainer/PageSectionContainer";
 import ProjectCardsGrid from "../../components/ProjectCardsGrid/ProjectCardsGrid";
 import ProjectCard from "../../components/ProjectCard/ProjectCard";
@@ -8,14 +7,10 @@ import H1 from "../../components/H1/H1";
 import H2 from "../../components/H2/H2";
 import P from "../../components/P/P";
 import { ThemeContext } from "../../components/Theme/Theme";
-import Link_ from "../../components/LinkWithUnderlineAnimation/LinkWithUnderlineAnimation";
-import Link from 'next/link';
 
-
-export default function Home(props) {
-
+export default function Home() {
     const context = useContext(ThemeContext);
-  return (
+    return (
       <>
         <PageSectionContainer>
             <HeroSectionStyled>

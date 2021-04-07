@@ -15,6 +15,7 @@ const FlatButton = React.forwardRef((props, ref) => {
     )
 });
 
+FlatButton.displayName = "FlatButton";
 
 const FlatButtonStyled = styled.a`
     border: 1px solid ${props=> props.theme.primaryAccentColor};
