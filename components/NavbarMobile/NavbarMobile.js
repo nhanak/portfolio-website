@@ -3,6 +3,7 @@ import styled, {keyframes,css} from "styled-components";
 import Link_ from "../LinkWithUnderlineAnimation/LinkWithUnderlineAnimation";
 import { ThemeContext } from "../Theme/Theme";
 import { enableBodyScroll } from 'body-scroll-lock';
+import Link from 'next/link';
 
 // The reason this is a class component instead of a functional component
 // is so that we can get a ref and lock the body from NavButtonMobile
@@ -38,16 +39,24 @@ export default class NavbarMobile extends React.Component{
                     <Link_ initialColor={this.context.primaryAccentColor} hoverColor={this.context.primaryAccentColor} fontSize="2.5rem" href="/">Neil Hanak</Link_>
                     <NavbarMobileLinkWrapper>
                         <NavbarMobileItem>
-                            <Link_ initialColor={this.context.primaryAccentColor} hoverColor={this.context.primaryTextColor} href="/">Home</Link_>
+                            <Link href="/" passHref>
+                                <Link_ initialColor={this.context.primaryAccentColor} hoverColor={this.context.primaryTextColor}>Home</Link_>
+                            </Link>
                         </NavbarMobileItem>
                         <NavbarMobileItem>
-                            <Link_ initialColor={this.context.primaryAccentColor} hoverColor={this.context.primaryTextColor} href="/">Projects</Link_>
+                            <Link href="/projects" passHref>
+                                <Link_ initialColor={this.context.primaryAccentColor} hoverColor={this.context.primaryTextColor}>Projects</Link_>
+                            </Link>
                         </NavbarMobileItem>
                         <NavbarMobileItem>
-                            <Link_ initialColor={this.context.primaryAccentColor} hoverColor={this.context.primaryTextColor} href="/">Blog</Link_>
+                            <Link href="/blog" passHref>
+                                <Link_ initialColor={this.context.primaryAccentColor} hoverColor={this.context.primaryTextColor}>Blog</Link_>
+                            </Link>
                         </NavbarMobileItem>
                         <NavbarMobileItem>
-                        <Link_ initialColor={this.context.primaryAccentColor} hoverColor={this.context.primaryTextColor} href="/">About</Link_>
+                            <Link href="/about" passHref>
+                                <Link_ initialColor={this.context.primaryAccentColor} hoverColor={this.context.primaryTextColor}>About</Link_>
+                            </Link>
                         </NavbarMobileItem>
                     </NavbarMobileLinkWrapper>
                 </NavbarMobileContent>

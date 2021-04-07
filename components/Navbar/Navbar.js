@@ -32,7 +32,7 @@ export default function Navbar(props){
                         <DisappearOnMobile>
                             <NavbarItem>
                                 <Link href="/blog" passHref>
-                                    <Link_ initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor} href="/">Blog</Link_>
+                                    <Link_ initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor}>Blog</Link_>
                                 </Link>
                             </NavbarItem>
                             <NavbarItem>
@@ -41,10 +41,14 @@ export default function Navbar(props){
                                 </Link>
                             </NavbarItem>
                             <NavbarItem>
-                                <Link_ initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor} href="/">About</Link_>
+                                <Link href="/about" passHref>
+                                    <Link_ initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor}>About</Link_>
+                                </Link>
                             </NavbarItem>
                             <NavbarItem>
-                                <FlatButton theme={context} href="/">Say hello</FlatButton>
+                                <Link href="/contact" passHref>
+                                    <FlatButton theme={context} href="/">Say hello</FlatButton>
+                                </Link>
                             </NavbarItem>
                         </DisappearOnMobile>
                         <NavbarItem>
