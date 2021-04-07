@@ -3,10 +3,19 @@ import styled from "styled-components";
 
 
 const LinkWithUnderlineAnimation = React.forwardRef((props, ref) => {
+    if (props.additionalOnClick){
+        console.log(props.onClick);
+    }
+
+    function onClickAndAdditionalOnClick(event){
+        props.onClick(event);
+        props.additionalOnClick();
+    }
+
     return (
         <LinkWithUnderlineAnimationStyled 
             href={props.href}
-            onClick={props.onClick}
+            onClick={props.additionalOnClick ? onClickAndAdditionalOnClick : props.onClick}
             ref={ref}
             fontSize={props.fontSize}
             initialColor={props.initialColor} 

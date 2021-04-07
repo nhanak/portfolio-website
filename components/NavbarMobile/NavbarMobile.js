@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react";
+import React  from "react";
 import styled, {keyframes,css} from "styled-components";
 import Link_ from "../LinkWithUnderlineAnimation/LinkWithUnderlineAnimation";
 import { ThemeContext } from "../Theme/Theme";
@@ -36,31 +36,33 @@ export default class NavbarMobile extends React.Component{
             <NavbarMobileWrapper mobileNavbarIsOpen={mobileNavbarIsOpen} mobileNavbarHasOpened={mobileNavbarHasOpened}>
                 <NavbarMobileDarkener mobileNavbarIsOpen={mobileNavbarIsOpen} onClick={this.handleExitClick} />
                 <NavbarMobileContent theme={this.context} mobileNavbarIsOpen={mobileNavbarIsOpen}>
-                    <Link_ initialColor={this.context.primaryAccentColor} hoverColor={this.context.primaryAccentColor} fontSize="2.5rem" href="/">Neil Hanak</Link_>
+                    <Link href="/" passHref>
+                        <Link_ initialColor={this.context.primaryAccentColor} hoverColor={this.context.primaryAccentColor} fontSize="2.5rem" additionalOnClick={this.handleExitClick}>Neil Hanak</Link_>
+                    </Link>
                     <NavbarMobileLinkWrapper>
                         <NavbarMobileItem>
                             <Link href="/" passHref>
-                                <Link_ initialColor={this.context.primaryAccentColor} hoverColor={this.context.primaryTextColor}>Home</Link_>
+                                <Link_ initialColor={this.context.primaryAccentColor} hoverColor={this.context.primaryTextColor} additionalOnClick={this.handleExitClick}>Home</Link_>
                             </Link>
                         </NavbarMobileItem>
                         <NavbarMobileItem>
                             <Link href="/projects" passHref>
-                                <Link_ initialColor={this.context.primaryAccentColor} hoverColor={this.context.primaryTextColor}>Projects</Link_>
+                                <Link_ initialColor={this.context.primaryAccentColor} hoverColor={this.context.primaryTextColor} additionalOnClick={this.handleExitClick}>Projects</Link_>
                             </Link>
                         </NavbarMobileItem>
                         <NavbarMobileItem>
                             <Link href="/blog" passHref>
-                                <Link_ initialColor={this.context.primaryAccentColor} hoverColor={this.context.primaryTextColor}>Blog</Link_>
+                                <Link_ initialColor={this.context.primaryAccentColor} hoverColor={this.context.primaryTextColor} additionalOnClick={this.handleExitClick}>Blog</Link_>
                             </Link>
                         </NavbarMobileItem>
                         <NavbarMobileItem>
                             <Link href="/about" passHref>
-                                <Link_ initialColor={this.context.primaryAccentColor} hoverColor={this.context.primaryTextColor}>About</Link_>
+                                <Link_ initialColor={this.context.primaryAccentColor} hoverColor={this.context.primaryTextColor} additionalOnClick={this.handleExitClick}>About</Link_>
                             </Link>
                         </NavbarMobileItem>
                         <NavbarMobileItem>
                             <Link href="/contact" passHref>
-                                <Link_ initialColor={this.context.primaryAccentColor} hoverColor={this.context.primaryTextColor}>Contact</Link_>
+                                <Link_ initialColor={this.context.primaryAccentColor} hoverColor={this.context.primaryTextColor} additionalOnClick={this.handleExitClick}>Contact</Link_>
                             </Link>
                         </NavbarMobileItem>
                     </NavbarMobileLinkWrapper>
