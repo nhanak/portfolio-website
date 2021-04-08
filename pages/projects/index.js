@@ -14,8 +14,8 @@ export default function Projects() {
     <PageSectionContainer roundedEdges={true} backgroundColor={context.secondaryBackgroundColor} paddingBottom="2rem">
         <ProjectSection paddingTop={"5rem"} paddingBottom={"1rem"}>
             <ProjectCardsGrid>
-                <ProjectCard title="Hyperion Website" tags="Next.js, Vercel" src="/images/Hyperion_Logo_Stars_Original.jpg" href="/projects/hyperion"/>
-                <ProjectCard title="Up and Down Game"  tags="Next.js, Vercel" src="/images/Up_and_Down_Logo_Original.png" href="/"/>
+                <ProjectCard title="Hyperion // Website" tags="Next.js, Vercel, Sanity" src="/images/Hyperion_Logo_Stars_Original.jpg" href="/projects/hyperion"/>
+                <ProjectCard title="Up and Down // Multiplayer Game"  tags="Google Cloud Platform, Agones, Go" src="/images/Up_and_Down_Logo_Original.png" href="/projects/up-and-down"/>
             </ProjectCardsGrid>
         </ProjectSection>
     </PageSectionContainer>     

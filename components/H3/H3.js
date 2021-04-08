@@ -11,5 +11,10 @@ export default function H3(props){
 
 const H3Styled = styled.h3`
     color: ${props=>props.theme.primaryTextColor};
-    font-size:2.5rem;
+    font-size:2.3rem;
+    margin-top:0px;
+    @media (min-width: 768px) { 
+
+        margin-top:1rem;
+     }
 `

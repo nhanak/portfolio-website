@@ -10,14 +10,14 @@ import ProjectPageMediaGrid from "../../../components/ProjectPageMediaGrid/Proje
 import ProjectPageDescription from "../../../components/ProjectPageDescription/ProjectPageDescription";
 import ProjectPageGrid from "../../../components/ProjectPageGrid/ProjectPageGrid";
 
-export default function Hyperion() {
+export default function UpAndDown() {
     const context = useContext(ThemeContext);
-    const primary = "/images/projects/hyperion/Hyperion_Splash_Square.png";
-    const secondary = "/images/projects/hyperion/Hyperion_Portfolio_Maximus_1_1.JPG";
-    const tertiary = "/images/projects/hyperion/Hyperion_Portfolio_Maximus_1_2.JPG";
+    const primary = "/images/Up_and_Down_Logo_Original.png";
+    const secondary = "/images/Up_and_Down_Logo_Original.png";
+    const tertiary = "/images/Up_and_Down_Logo_Original.png";
     return (
       <>
-        <PageTitleSection title="Hyperion // Website"/>
+        <PageTitleSection title="Up and Down // Multiplayer Game"/>
         <PageSectionContainer roundedEdges={true} backgroundColor={context.secondaryBackgroundColor} paddingBottom="2rem">
             <ProjectSection  paddingTop={"5rem"} paddingBottom={"1rem"}>
                 <ProjectPageGrid>
@@ -28,13 +28,12 @@ export default function Hyperion() {
                             <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="https://hyperion.sh" target="_blank">https://hyperion.sh</Link_>
                         </P>
                         <H3>About</H3>
-                        <P>Hyperion is a company that builds websites for public companies. I built their website and other websites featured on the site.</P>
+                        <P>Up and Down was a multiplayer RTS game I created.</P>
                         <H3>Technologies Used</H3>
-                        <P>+ <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="https://www.pixijs.com/" target="_blank">PixiJS</Link_> to create the water effect on the home page splash image </P>
-                        <P>+ <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="https://www.react-spring.io/" target="_blank">react-spring</Link_>  to create the parallax effect on the text on the home page</P>
-                        <P>+ <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="https://www.sanity.io/" target="_blank">Sanity</Link_> to host blog content</P>
-                        <P>+ <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="https://nextjs.org/" target="_blank">Next.js</Link_> for server side rendering</P>
-                        <P>+ <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="https://vercel.com/" target="_blank">Vercel</Link_> for hosting</P>
+                        <P>+ <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="https://reactjs.org/" target="_blank">React</Link_> for the front end user interface</P>
+                        <P>+ <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="https://golang.org/" target="_blank">Go</Link_> to handle back end logic</P>
+                        <P>+ <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="https://agones.dev/site/" target="_blank">Agones</Link_> to manage multiplayer game servers</P>
+                        <P>+ <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="https://cloud.google.com/" target="_blank">Google Cloud Platform</Link_> for hosting</P>
                     </ProjectPageDescription>
                 </ProjectPageGrid>
             </ProjectSection>
