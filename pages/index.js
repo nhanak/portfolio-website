@@ -18,7 +18,7 @@ export default function Home() {
                 <H2>Projects</H2>
                 <ProjectCardsGrid>
                     <ProjectCard title="Hyperion // Website" tags="Next.js, Vercel" src="/images/Hyperion_Logo_Stars_Original.jpg" href="/projects/hyperion"/>
-                    <ProjectCard title="Up and Down // Multiplayer Game"  tags="Next.js, Vercel" src="/images/Up_and_Down_Logo_Original.png" href="/projects/up-and-down"/>
+                    <ProjectCard title="Up and Down // Multiplayer Game"  tags="Google Cloud Platform, Agones, Go" src="/images/Up_and_Down_Logo_Original.png" href="/projects/up-and-down"/>
                 </ProjectCardsGrid>
             </ProjectSection>
         </PageSectionContainer>     
