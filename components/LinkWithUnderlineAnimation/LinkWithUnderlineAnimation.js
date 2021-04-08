@@ -15,6 +15,7 @@ const LinkWithUnderlineAnimation = React.forwardRef((props, ref) => {
     return (
         <LinkWithUnderlineAnimationStyled 
             href={props.href}
+            target={props.target ? props.target : ""}
             onClick={props.additionalOnClick ? onClickAndAdditionalOnClick : props.onClick}
             ref={ref}
             fontSize={props.fontSize}

@@ -5,48 +5,93 @@ import ProjectCard from "../../../components/ProjectCard/ProjectCard";
 import styled from "styled-components";
 import H1 from "../../../components/H1/H1";
 import H2 from "../../../components/H2/H2";
+import H3 from "../../../components/H3/H3";
 import P from "../../../components/P/P";
+import ProjectSection from "../../../components/ProjectSection/ProjectSection";
+import Link_ from "../../../components/LinkWithUnderlineAnimation/LinkWithUnderlineAnimation";
+import Link from 'next/link';
 import { ThemeContext } from "../../../components/Theme/Theme";
 
-export default function Home() {
+export default function Hyperion() {
     const context = useContext(ThemeContext);
     return (
       <>
-            <PageSectionContainer>
-                <HeroSectionStyled>
-                    <HeroSectionTextContentStyled>
-                        <H1>Projects</H1>
-                        <P>Here are some of the projects I've worked on</P>
-                    </HeroSectionTextContentStyled>
-                </HeroSectionStyled>
+        <ProjectPageContainer>
+            <PageSectionContainer roundedEdges={true} backgroundColor={context.secondaryBackgroundColor}>
+            <ProjectSection paddingTop={"3rem"} paddingBottom={"2.5rem"}>
+                <ProjectPageGrid>
+                    <ProjectPageMediaGrid>
+                        <LeadProjectMedia src="/images/Hyperion_Logo_Stars_Original.jpg"/>
+                        <SecondaryProjectMedia src="/images/Hyperion_Logo_Stars_Original.jpg"/>
+                        <TertiaryProjectMedia src="/images/Hyperion_Logo_Stars_Original.jpg"/>
+                    </ProjectPageMediaGrid>
+                    <ProjectPageDescription>
+                        <H3>Project</H3>
+                        <P>
+                            <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="https://hyperion.sh" target="_blank">https://hyperion.sh</Link_>
+                        </P>
+                        <H3>About</H3>
+                        <P>Hyperion is a company that builds websites for public companies. I built their website and other websites featured on the site.</P>
+                        <H3>Technologies Used</H3>
+                        <P>+ <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="https://www.pixijs.com/" target="_blank">PixiJS</Link_> to create the water effect on the home page splash image </P>
+                        <P>+ <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="https://www.react-spring.io/" target="_blank">react-spring</Link_>  to create the parallax effect on the text on the home page</P>
+                        <P>+ <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="https://www.sanity.io/" target="_blank">Sanity</Link_> to host blog content</P>
+                        <P>+ <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="https://nextjs.org/" target="_blank">Next.js</Link_> for server side rendering</P>
+                        <P>+ <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="https://vercel.com/" target="_blank">Vercel</Link_> for hosting</P>
+                    </ProjectPageDescription>
+                </ProjectPageGrid>
+                </ProjectSection>
             </PageSectionContainer>
-        <PageSectionContainer roundedEdges={true} backgroundColor={context.secondaryBackgroundColor} paddingBottom="30px">
-            <ProjectSectionStyled>
-                <H2>Projects</H2>
-                <ProjectCardsGrid>
-                    <ProjectCard title="Hyperion Website" tags="Next.js, Vercel" src="/images/Hyperion_Logo_Stars_Original.jpg" href="/"/>
-                    <ProjectCard title="Up and Down Game"  tags="Next.js, Vercel" src="/images/Up_and_Down_Logo_Original.png" href="/"/>
-                </ProjectCardsGrid>
-            </ProjectSectionStyled>
-        </PageSectionContainer>     
+        </ProjectPageContainer>
     </>
   )
 }
 
-const HeroSectionStyled = styled.div`
-    display:flex;
-    height:26rem;
-    align-items:flex-end;
-    margin-bottom:50px;
+const ProjectPageContainer = styled.div`
+    margin-top:15rem;
 `
 
-const HeroSectionTextContentStyled= styled.div`
-
-
+const ProjectPageDescription = styled.div`
+    grid-area:descriptionArea;
+    text-align:left;
+    padding-left:5rem;
 `
 
-const ProjectSectionStyled = styled.div`
-    padding-top:10px;
-    padding-bottom:10px;
+const ProjectPageGrid = styled.div`
+    display:grid;
+    grid-template-columns: 1fr 1fr;
+    @media (min-width: 768px) {
+        grid-template-columns: 1fr 1fr;
+        grid-template-areas:
+            "mediaArea descriptionArea";
+     }
+`
 
+const LeadProjectMedia = styled.img`
+    max-width:100%;
+    grid-area:leadProjectMedia;
+    src={props.src};
+`
+
+const SecondaryProjectMedia = styled.img`
+    max-width:100%;
+    grid-area:secondaryProjectMedia;
+    src={props.src};
+`
+
+const TertiaryProjectMedia = styled.img`
+    max-width:100%;
+    grid-area:tertiaryProjectMedia;
+    src={props.src};
+`
+
+const ProjectPageMediaGrid = styled.div`
+     display:grid;
+     grid-gap:10px;
+     grid-area:mediaArea;
+     grid-template-columns:1fr 1fr;
+     grid-template-rows: 1fr 1fr;
+     grid-template-areas:
+        "leadProjectMedia leadProjectMedia"
+        "secondaryProjectMedia tertiaryProjectMedia";
 `

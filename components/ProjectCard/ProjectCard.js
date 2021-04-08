@@ -1,20 +1,28 @@
 import React, {useContext} from "react";
 import styled from "styled-components";
 import { ThemeContext } from "../Theme/Theme";
+import Link from 'next/link';
 
 
 export default function ProjectCard(props){
+    const {href} = props;
     const context = useContext(ThemeContext);
     return(
         <ProjectCardStyled>
             <ProjectCardImageWrapper>
-                <a href="">
-                    <ProjectCardOverlay/>
-                    <ProjectCardImg src={props.src}/>
-                </a>
+                <Link href={href} passHref>
+                    <a>
+                        <ProjectCardOverlay/>
+                        <ProjectCardImg src={props.src}/>
+                    </a>
+                </Link>
             </ProjectCardImageWrapper>
-            <ProjectCardTitleTextStyled href="" theme={context}>{props.title}</ProjectCardTitleTextStyled>
-            <ProjectCardTagTextStyled href="" theme={context}>{props.tags}</ProjectCardTagTextStyled>
+            <Link href={href} passHref>
+                <ProjectCardTitleTextStyled theme={context}>{props.title}</ProjectCardTitleTextStyled>
+            </Link>
+            <Link href={href} passHref>
+                <ProjectCardTagTextStyled theme={context}>{props.tags}</ProjectCardTagTextStyled>
+            </Link>
         </ProjectCardStyled>
     )
 }
