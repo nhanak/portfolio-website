@@ -55,7 +55,7 @@ function MyApp({ Component, pageProps, router }) {
           }
           .page-transition-enter-active {
             opacity: 1;
-            animation: moveUp 300ms ease;
+            animation: bounce 300ms ease;
             transform:translateY(0%);
           }
           .page-transition-exit {
@@ -63,17 +63,28 @@ function MyApp({ Component, pageProps, router }) {
           }
           .page-transition-exit-active {
             opacity: 0;
-            transition: opacity 300ms;
+            animation: fadeDown 300ms ease;
           }
 
-          @keyframes moveUp {
-            0% {
-                opacity:0;
-                transform:translateY(30%)
-            }
-            100% {
+          @keyframes fadeDown{
+              from{
                 opacity:1;
-                transform:translateY(0%)
+                transform:translateY(0%);
+              }
+              to{
+                opacity:0;
+                transform:translateY(5rem);
+              }
+          }
+
+          @keyframes bounce {
+            from{
+                opacity:0;
+                transform:translateY(5rem);
+            }
+            to{
+                opacity:1;
+                transform:translateY(0%);
             }
         }
         `}</style>
