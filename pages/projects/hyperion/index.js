@@ -13,8 +13,8 @@ import ProjectPageGrid from "../../../components/ProjectPageGrid/ProjectPageGrid
 export default function Hyperion() {
     const context = useContext(ThemeContext);
     const primary = "/images/projects/hyperion/Hyperion_Splash_Square.png";
-    const secondary = "/images/projects/hyperion/Hyperion_Portfolio_Maximus_1_1.JPG";
-    const tertiary = "/images/projects/hyperion/Hyperion_Portfolio_Maximus_1_2.JPG";
+    const secondary = "/images/projects/hyperion/Hyperion_Portfolio_Maximus_1_1.png";
+    const tertiary = "/images/projects/hyperion/Hyperion_Portfolio_Maximus_1_2.png";
     return (
       <>
         <PageTitleSection title="Hyperion // Website"/>
