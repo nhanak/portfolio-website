@@ -1,24 +1,21 @@
 import React, {useContext} from "react";
 import PageSectionContainer from "../../../components/PageSectionContainer/PageSectionContainer";
-import ProjectCardsGrid from "../../../components/ProjectCardsGrid/ProjectCardsGrid";
-import ProjectCard from "../../../components/ProjectCard/ProjectCard";
 import styled from "styled-components";
-import H1 from "../../../components/H1/H1";
-import H2 from "../../../components/H2/H2";
 import H3 from "../../../components/H3/H3";
 import P from "../../../components/P/P";
 import ProjectSection from "../../../components/ProjectSection/ProjectSection";
 import Link_ from "../../../components/LinkWithUnderlineAnimation/LinkWithUnderlineAnimation";
-import Link from 'next/link';
 import { ThemeContext } from "../../../components/Theme/Theme";
+import PageTitleSection from "../../../components/PageTitleSection/PageTitleSection";
 
 export default function Hyperion() {
     const context = useContext(ThemeContext);
     return (
       <>
+        <PageTitleSection title="Hyperion Website"/>
         <ProjectPageContainer>
             <PageSectionContainer roundedEdges={true} backgroundColor={context.secondaryBackgroundColor}>
-            <ProjectSection paddingTop={"3rem"} paddingBottom={"2.5rem"}>
+            <ProjectSection  paddingTop={"5rem"} paddingBottom={"1rem"}>
                 <ProjectPageGrid>
                     <ProjectPageMediaGrid>
                         <LeadProjectMedia src="/images/Hyperion_Logo_Stars_Original.jpg"/>
@@ -48,7 +45,6 @@ export default function Hyperion() {
 }
 
 const ProjectPageContainer = styled.div`
-    margin-top:15rem;
 `
 
 const ProjectPageDescription = styled.div`

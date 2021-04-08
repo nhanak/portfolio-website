@@ -10,19 +10,13 @@ import { ThemeContext } from "../components/Theme/Theme";
 import Link_ from "../components/LinkWithUnderlineAnimation/LinkWithUnderlineAnimation";
 import ProjectSection from "../components/ProjectSection/ProjectSection";
 
+import PageTitleSection from "../components/PageTitleSection/PageTitleSection";
+
 export default function Home() {
     const context = useContext(ThemeContext);
     return (
       <>
-        <PageSectionContainer>
-            <HeroSectionStyled>
-                <HeroSectionTextContentStyled>
-                    <H1>Hi, I'm Neil 👋</H1>
-                    <P>I code human friendly interfaces, and I love what I do.</P>
-                    <P>For business inquiries I can be reached at <Link_ href="/" initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor}>neil@info.com</Link_></P>
-                </HeroSectionTextContentStyled>
-            </HeroSectionStyled>
-        </PageSectionContainer>
+        <PageTitleSection title="Hi, I'm Neil 👋" description="I code human friendly interfaces, and I love what I do."/>
         <PageSectionContainer roundedEdges={true} backgroundColor={context.secondaryBackgroundColor} paddingBottom="30px">
             <ProjectSection paddingTop={"10px"} paddingBottom={"10px"}>
                 <H2>Projects</H2>
@@ -44,15 +38,3 @@ export default function Home() {
     </>
   )
 }
-
-const HeroSectionStyled = styled.div`
-    display:flex;
-    height:26rem;
-    align-items:flex-end;
-    margin-bottom:50px;
-`
-
-const HeroSectionTextContentStyled= styled.div`
-
-
-`
