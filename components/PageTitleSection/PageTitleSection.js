@@ -4,16 +4,16 @@ import styled from "styled-components";
 import H1 from "../../components/H1/H1";
 import P from "../../components/P/P";
 
-export default function PageTitleSection({title, description, titleMobile, descriptionMobile}) {
+export default function PageTitleSection({title, description, titleMobile, descriptionMobile, centered}) {
     return (
       <>
         <PageSectionContainer>
-            <PageTitleSectionStyled>
-                <PageTitleSectionTextContentStyled>
+            <PageTitleSectionStyled centered={centered}>
+                <PageTitleSectionTextContentStyled centered={centered}>
                     <H1>{title}</H1>
                     <P>{description}</P>
                 </PageTitleSectionTextContentStyled>
-                <PageTitleSectionTextContentMobileStyled>
+                <PageTitleSectionTextContentMobileStyled centered={centered}>
                     <H1>{titleMobile?titleMobile:title}</H1>
                     <P>{descriptionMobile?descriptionMobile:description}</P>
                 </PageTitleSectionTextContentMobileStyled>
@@ -26,7 +26,8 @@ export default function PageTitleSection({title, description, titleMobile, descr
 const PageTitleSectionStyled = styled.div`
     margin-top:2.5rem;
     display:flex;
-    align-items:flex-end;
+    ${props=>props.centered ? "align-items:center": "align-items:flex-end"};
+    ${props=>props.centered && "justify-content:center;"}
     margin-bottom:3.5rem;
     @media (min-width: 576px) { 
         margin-top:1.5rem;
@@ -40,6 +41,7 @@ const PageTitleSectionStyled = styled.div`
 
 const PageTitleSectionTextContentStyled= styled.div`
     display:none;
+    ${props=>props.centered && "text-align:center;"}
     @media (min-width:992px){
         display:block;
     }
@@ -47,6 +49,7 @@ const PageTitleSectionTextContentStyled= styled.div`
 
 const PageTitleSectionTextContentMobileStyled= styled.div`
     display:block;
+    ${props=>props.centered && "text-align:center;"}
     @media (min-width:992px){
         display:none;
     }

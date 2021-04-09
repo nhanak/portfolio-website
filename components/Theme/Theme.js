@@ -9,6 +9,7 @@ export const themes = {
         primaryBackgroundColor:"#121212",
         primaryBorderColor:"white",
         secondaryBackgroundColor:"#2a2a2a",
+        tertiaryBackgroundColor:"#5d5d5d",
     },
     light:{
         primaryTextColor:"black",
@@ -18,6 +19,7 @@ export const themes = {
         primaryBackgroundColor:"white",
         primaryBorderColor:"white",
         secondaryBackgroundColor:"#f0f0f0",
+        tertiaryBackgroundColor:"#ffffff",
     }
 }
 
