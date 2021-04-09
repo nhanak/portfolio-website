@@ -15,8 +15,7 @@ export default function Blog() {
         <PageSectionContainer roundedEdges={true} backgroundColor={context.secondaryBackgroundColor} paddingBottom="2rem">
             <ProjectSection paddingTop={"5rem"} paddingBottom={"1rem"}>
                 <ProjectCardsGrid>
-                    <ProjectCard title="Hyperion Website" tags="Next.js, Vercel" src="/images/lighthouse.jpeg" href="/"/>
-                    <ProjectCard title="Up and Down Game"  tags="Next.js, Vercel" src="/images/lighthouse.jpeg" href="/"/>
+                    <ProjectCard title="Lorem Ipsum Est" tags="April 1st, 2021" src="/images/lighthouse.jpeg" href="/blog/lorem-ipsum-est"/>
                 </ProjectCardsGrid>
             </ProjectSection>
         </PageSectionContainer> 

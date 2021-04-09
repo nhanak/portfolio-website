@@ -26,8 +26,7 @@ export default function Home() {
             <ProjectSection paddingTop={"10px"} paddingBottom={"10px"} hasSectionHeader={true}>
                 <H2>Blog</H2>
                 <ProjectCardsGrid>
-                    <ProjectCard title="Hyperion Website" tags="Next.js, Vercel, Sanity" src="/images/lighthouse.jpeg" href="/"/>
-                    <ProjectCard title="Up and Down Game"  tags="Google Cloud Platform, Agones, Go" src="/images/lighthouse.jpeg" href="/"/>
+                    <ProjectCard title="Lorem Ipsum Est" tags="April 1st, 2021" src="/images/lighthouse.jpeg" href="/blog/lorem-ipsum-est"/>
                 </ProjectCardsGrid>
             </ProjectSection>
         </PageSectionContainer> 

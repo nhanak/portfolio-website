@@ -4,19 +4,15 @@ import styled from "styled-components";
 import H1 from "../../components/H1/H1";
 import P from "../../components/P/P";
 
-export default function PageTitleSection({title, description, titleMobile, descriptionMobile}) {
+export default function BlogTitleSection({title, date, author}) {
     return (
       <>
         <PageSectionContainer>
             <PageTitleSectionStyled>
                 <PageTitleSectionTextContentStyled>
                     <H1>{title}</H1>
-                    <P>{description}</P>
+                    <P>{date} - {author}</P>
                 </PageTitleSectionTextContentStyled>
-                <PageTitleSectionTextContentMobileStyled>
-                    <H1>{titleMobile?titleMobile:title}</H1>
-                    <P>{descriptionMobile?descriptionMobile:description}</P>
-                </PageTitleSectionTextContentMobileStyled>
             </PageTitleSectionStyled>
         </PageSectionContainer>
     </>
@@ -26,7 +22,8 @@ export default function PageTitleSection({title, description, titleMobile, descr
 const PageTitleSectionStyled = styled.div`
     margin-top:2.5rem;
     display:flex;
-    align-items:flex-end;
+    align-items:center;
+    flex-direction:column;
     margin-bottom:3.5rem;
     @media (min-width: 576px) { 
         margin-top:1.5rem;
@@ -38,16 +35,6 @@ const PageTitleSectionStyled = styled.div`
      }
 `
 
-const PageTitleSectionTextContentStyled= styled.div`
-    display:none;
-    @media (min-width:992px){
-        display:block;
-    }
-`
-
-const PageTitleSectionTextContentMobileStyled= styled.div`
-    display:block;
-    @media (min-width:992px){
-        display:none;
-    }
+const PageTitleSectionTextContentStyled = styled.div`
+     text-align:center;
 `
