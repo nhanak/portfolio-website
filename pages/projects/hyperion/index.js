@@ -17,7 +17,7 @@ export default function Hyperion() {
     const tertiary = "/images/projects/hyperion/Hyperion_Portfolio_Maximus_1_2.png";
     return (
       <>
-        <PageTitleSection title="Hyperion // Website"/>
+        <PageTitleSection title="Hyperion // Website" titleMobile="Hyperion" descriptionMobile="// Website //"/>
         <PageSectionContainer roundedEdges={true} backgroundColor={context.secondaryBackgroundColor} paddingBottom="2rem">
             <ProjectSection  paddingTop={"5rem"} paddingBottom={"1rem"}>
                 <ProjectPageGrid>

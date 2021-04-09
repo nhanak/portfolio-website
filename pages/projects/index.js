@@ -10,7 +10,7 @@ export default function Projects() {
     const context = useContext(ThemeContext);
     return (
       <>
-    <PageTitleSection title="Projects" description="Here are some of the things I've worked on"/>
+    <PageTitleSection title="Projects" description="Here are some of the things I've worked on" descriptionMobile="What I've worked on"/>
     <PageSectionContainer roundedEdges={true} backgroundColor={context.secondaryBackgroundColor} paddingBottom="2rem">
         <ProjectSection paddingTop={"5rem"} paddingBottom={"1rem"}>
             <ProjectCardsGrid>

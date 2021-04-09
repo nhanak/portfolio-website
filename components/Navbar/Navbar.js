@@ -20,7 +20,7 @@ export default function Navbar(props){
     }
 
     return(
-        <PageSectionContainer>
+        <PageSectionContainer borderBottomMobile={true}>
             <NavbarStyled>
                 <LogoDivStyled theme={context}>
                     <Link href="/" passHref>
@@ -72,7 +72,11 @@ const DisappearOnMobile = styled.div`
 
 const NavbarStyled = styled.nav`
     display:flex;
-    padding-top:3rem;
+    padding-top:1.5rem;
+    padding-bottom:1.5rem;
+     @media (min-width: 992px) {
+        padding-top:3rem;
+     }
 `
 
 const LogoDivStyled = styled.div`

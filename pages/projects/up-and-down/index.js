@@ -17,7 +17,7 @@ export default function UpAndDown() {
     const tertiary = "/images/Up_and_Down_Logo_Original.png";
     return (
       <>
-        <PageTitleSection title="Up and Down // Multiplayer Game"/>
+        <PageTitleSection title="Up and Down // Multiplayer Game" titleMobile="Up and Down" descriptionMobile="// Multiplayer Game //"/>
         <PageSectionContainer roundedEdges={true} backgroundColor={context.secondaryBackgroundColor} paddingBottom="2rem">
             <ProjectSection  paddingTop={"5rem"} paddingBottom={"1rem"}>
                 <ProjectPageGrid>

@@ -11,5 +11,8 @@ export default function H1(props){
 
 const H1Styled = styled.h1`
     color: ${props=>props.theme.primaryTextColor};
-    font-size:4.8rem;
+    font-size:4.0rem;
+    @media (min-width: 576px) { 
+        font-size:4.8rem;
+     }
 `
