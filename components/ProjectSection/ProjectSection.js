@@ -11,7 +11,7 @@ export default function ProjectSection(props){
 }
 
 const ProjectSectionStyled = styled.div`
-    padding-top:6rem;
+    padding-top:3rem;
     padding-bottom:3rem;
     ${props=>props.hasSectionHeader && `padding-top:2rem;`}
     @media (min-width: 768px) { 
