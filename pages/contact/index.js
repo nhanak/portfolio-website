@@ -14,10 +14,9 @@ export default function Contact() {
     const context = useContext(ThemeContext);
     return (
       <>
-    <PageTitleSection title="" centered={true}/>
+    <NoTitle/>
     <PageSectionContainer roundedEdges={true} backgroundColor={context.secondaryBackgroundColor} paddingBottom="2rem">
         <ProjectSection paddingTop={"2rem"} paddingBottom={"1rem"}>
-           
             <FormWrapper>
                 <FormStyled>
                     <FormTitleStyled>
@@ -46,7 +45,13 @@ export default function Contact() {
     </>
   )
 }
-
+const NoTitle = styled.div`
+    height:0rem;
+    // Large devices (desktops, 992px and up)
+    @media (min-width: 992px) { 
+        height:5rem;
+     }
+`
 const FormWrapper = styled.div`
     display:flex;
     justify-content:center;
