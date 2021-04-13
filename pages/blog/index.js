@@ -15,7 +15,7 @@ export default function Blog() {
         <PageSectionContainer roundedEdges={true} backgroundColor={context.secondaryBackgroundColor} paddingBottom="2rem">
             <ProjectSection paddingTop={"5rem"} paddingBottom={"1rem"}>
                 <ProjectCardsGrid>
-                    <ProjectCard title="Lorem Ipsum Est" tags="April 1st, 2021" src="/images/lighthouse.jpeg" href="/blog/lorem-ipsum-est"/>
+                    <ProjectCard title="Hoisting does not exist in JavaScript" tags="April 13th, 2021" src="/images/blog/hoisting-does-not-exist-in-javascript/hoisting-image.png" href="/blog/hoisting-does-not-exist-in-javascript"/>
                 </ProjectCardsGrid>
             </ProjectSection>
         </PageSectionContainer> 

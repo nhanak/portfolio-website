@@ -10,6 +10,7 @@ export default function PageSectionContainer(props){
 }
 
 const PageSectionContainerStyled = styled.div`
+
     padding-left:2.5rem;
     padding-right:2.5rem;
     ${props=>props.borderBottomMobile && `border-bottom: 1px solid grey;`}

@@ -26,7 +26,7 @@ export default function Home() {
             <ProjectSection paddingTop={"10px"} paddingBottom={"10px"} hasSectionHeader={true}>
                 <H2>Blog</H2>
                 <ProjectCardsGrid>
-                    <ProjectCard title="Lorem Ipsum Est" tags="April 1st, 2021" src="/images/lighthouse.jpeg" href="/blog/lorem-ipsum-est"/>
+                    <ProjectCard title="Hoisting does not exist in JavaScript" tags="April 13th, 2021" src="/images/blog/hoisting-does-not-exist-in-javascript/hoisting-image.png" href="/blog/hoisting-does-not-exist-in-javascript"/>
                 </ProjectCardsGrid>
             </ProjectSection>
         </PageSectionContainer> 

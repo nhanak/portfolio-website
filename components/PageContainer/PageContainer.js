@@ -33,4 +33,5 @@ const PageContainerStyled = styled.div`
     min-width:24rem;
     height:100vh;
     margin:auto;
+    font-size:1.5rem;
 `
