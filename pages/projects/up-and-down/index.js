@@ -12,9 +12,9 @@ import ProjectPageGrid from "../../../components/ProjectPageGrid/ProjectPageGrid
 
 export default function UpAndDown() {
     const context = useContext(ThemeContext);
-    const primary = "/images/Up_and_Down_Logo_Original.png";
-    const secondary = "/images/Up_and_Down_Logo_Original.png";
-    const tertiary = "/images/Up_and_Down_Logo_Original.png";
+    const primary = "/images/projects/up-and-down/homescreen-square.PNG";
+    const secondary = "/images/projects/up-and-down/gameplay-2.PNG";
+    const tertiary = "/images/projects/up-and-down/gameplay-1.PNG";
     return (
       <>
         <PageTitleSection title="Up and Down // Multiplayer Game" titleMobile="Up and Down" descriptionMobile="// Multiplayer Game //"/>
@@ -25,7 +25,7 @@ export default function UpAndDown() {
                     <ProjectPageDescription>
                         <H3>Project</H3>
                         <P>
-                            <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="https://hyperion.sh" target="_blank">https://hyperion.sh</Link_>
+                            <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="https://github.com/nhanak/up-and-down-source" target="_blank">https://github.com/nhanak/up-and-down-source</Link_>
                         </P>
                         <H3>About</H3>
                         <P>Up and Down was a multiplayer RTS game I created.</P>
