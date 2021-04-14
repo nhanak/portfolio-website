@@ -17,8 +17,8 @@ export default function Home() {
             <ProjectSection paddingTop={"10px"} paddingBottom={"10px"} hasSectionHeader={true}>
                 <H2>Projects</H2>
                 <ProjectCardsGrid>
-                    <ProjectCard title="Hyperion // Website" tags="Next.js, Vercel" src="/images/Hyperion_Logo_Stars_Original.jpg" href="/projects/hyperion"/>
-                    <ProjectCard title="Up and Down // Multiplayer Game"  tags="Google Cloud Platform, Agones, Go" src="/images/Up_and_Down_Logo_Original.png" href="/projects/up-and-down"/>
+                    <ProjectCard title="Hyperion // Website" tags="Next.js, Vercel" src="/images/projects/hyperion/hyperion_stars_cropped_huge_final_2.png" href="/projects/hyperion"/>
+                    <ProjectCard title="Up and Down // Multiplayer Game"  tags="Google Cloud Platform, Agones, Go" src="/images/projects/up-and-down/Up_and_Down_Logo_Original.png" href="/projects/up-and-down"/>
                 </ProjectCardsGrid>
             </ProjectSection>
         </PageSectionContainer>     
