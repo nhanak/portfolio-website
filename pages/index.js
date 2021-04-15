@@ -5,6 +5,7 @@ import ProjectCard from "../components/ProjectCard/ProjectCard";
 import H2 from "../components/H2/H2";
 import { ThemeContext } from "../components/Theme/Theme";
 import ProjectSection from "../components/ProjectSection/ProjectSection";
+import Head from "../components/Head/Head";
 
 import PageTitleSection from "../components/PageTitleSection/PageTitleSection";
 
@@ -12,6 +13,7 @@ export default function Home() {
     const context = useContext(ThemeContext);
     return (
       <>
+        <Head title="Neil Hanak"/>
         <PageTitleSection title="Hi, I'm Neil 👋" description="I code human friendly interfaces, and I love what I do."/>
         <PageSectionContainer roundedEdges={true} backgroundColor={context.secondaryBackgroundColor} paddingBottom="30px">
             <ProjectSection paddingTop={"10px"} paddingBottom={"10px"} hasSectionHeader={true}>

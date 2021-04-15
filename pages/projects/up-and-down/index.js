@@ -9,6 +9,7 @@ import PageTitleSection from "../../../components/PageTitleSection/PageTitleSect
 import ProjectPageMediaGrid from "../../../components/ProjectPageMediaGrid/ProjectPageMediaGrid";
 import ProjectPageDescription from "../../../components/ProjectPageDescription/ProjectPageDescription";
 import ProjectPageGrid from "../../../components/ProjectPageGrid/ProjectPageGrid";
+import Head from "../../../components/Head/Head";
 
 export default function UpAndDown() {
     const context = useContext(ThemeContext);
@@ -17,6 +18,7 @@ export default function UpAndDown() {
     const tertiary = "/images/projects/up-and-down/gameplay-1.PNG";
     return (
       <>
+        <Head title="Up and Down // Multiplayer Game - Neil Hanak"/>
         <PageTitleSection title="Up and Down // Multiplayer Game" titleMobile="Up and Down" descriptionMobile="// Multiplayer Game //"/>
         <PageSectionContainer roundedEdges={true} backgroundColor={context.secondaryBackgroundColor} paddingBottom="2rem">
             <ProjectSection  paddingTop={"5rem"} paddingBottom={"1rem"}>

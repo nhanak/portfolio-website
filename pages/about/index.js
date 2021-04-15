@@ -7,11 +7,13 @@ import ProjectSection from "../../components/ProjectSection/ProjectSection";
 import Link_ from "../../components/LinkWithUnderlineAnimation/LinkWithUnderlineAnimation"
 import LongFormTextSection from "../../components/LongFormTextSection/LongFormTextSection";
 import Link from 'next/link';
+import Head from "../../components/Head/Head";
 
 export default function About() {
     const context = useContext(ThemeContext);
     return (
       <>
+        <Head title="About - Neil Hanak"/>
         <PageTitleSection centered={true} title="Hi, I'm Neil 👋" description="Nice to meet you."/>
         <PageSectionContainer roundedEdges={true} backgroundColor={context.secondaryBackgroundColor} paddingBottom="2rem">
             <ProjectSection  paddingTop="2rem" paddingBottom="1rem">

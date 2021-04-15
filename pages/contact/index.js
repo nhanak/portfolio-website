@@ -9,11 +9,13 @@ import H3 from "../../components/H3/H3";
 import P from "../../components/P/P";
 import styled from "styled-components";
 import Link_ from "../../components/LinkWithUnderlineAnimation/LinkWithUnderlineAnimation";
+import Head from "../../components/Head/Head";
 
 export default function Contact() {
     const context = useContext(ThemeContext);
     return (
       <>
+    <Head title="Contact - Neil Hanak"/>
     <NoTitle/>
     <PageSectionContainer roundedEdges={true} backgroundColor={context.secondaryBackgroundColor} paddingBottom="2rem">
         <ProjectSection paddingTop={"2rem"} paddingBottom={"1rem"}>

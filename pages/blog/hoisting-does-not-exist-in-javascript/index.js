@@ -7,11 +7,13 @@ import { ThemeContext } from "../../../components/Theme/Theme";
 import BlogTitleSection from "../../../components/BlogTitleSection/BlogTitleSection";
 import LongFormTextSection from "../../../components/LongFormTextSection/LongFormTextSection";
 import { CodeBlock, dracula } from "react-code-blocks";
+import Head from "../../../components/Head/Head";
 
 export default function HoistingDoesNotExistInJavaScript() {
     const context = useContext(ThemeContext);
     return (
       <>
+        <Head title="Hoisting does not exist in JavaScript - Neil Hanak"/>
         <BlogTitleSection title="Hoisting does not exist in JavaScript" date="April 13th, 2021" author="Neil Hanak"/>
         <PageSectionContainer roundedEdges={true} backgroundColor={context.secondaryBackgroundColor} paddingBottom="2rem">
             <ProjectSection  paddingTop={"2rem"} paddingBottom={"1rem"}>

@@ -5,12 +5,14 @@ import ProjectCard from "../../components/ProjectCard/ProjectCard";
 import ProjectSection from "../../components/ProjectSection/ProjectSection";
 import { ThemeContext } from "../../components/Theme/Theme";
 import PageTitleSection from "../../components/PageTitleSection/PageTitleSection";
+import Head from "../../components/Head/Head";
 
 
 export default function Blog() {
     const context = useContext(ThemeContext);
     return (
       <>
+    <Head title="Blog - Neil Hanak"/>
       <PageTitleSection title="Blog" description="Here are some of my thoughts"/>
         <PageSectionContainer roundedEdges={true} backgroundColor={context.secondaryBackgroundColor} paddingBottom="2rem">
             <ProjectSection paddingTop={"5rem"} paddingBottom={"1rem"}>

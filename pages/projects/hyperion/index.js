@@ -9,6 +9,7 @@ import PageTitleSection from "../../../components/PageTitleSection/PageTitleSect
 import ProjectPageMediaGrid from "../../../components/ProjectPageMediaGrid/ProjectPageMediaGrid";
 import ProjectPageDescription from "../../../components/ProjectPageDescription/ProjectPageDescription";
 import ProjectPageGrid from "../../../components/ProjectPageGrid/ProjectPageGrid";
+import Head from "../../../components/Head/Head";
 
 export default function Hyperion() {
     const context = useContext(ThemeContext);
@@ -17,6 +18,7 @@ export default function Hyperion() {
     const tertiary = "/images/projects/hyperion/Hyperion_Portfolio_Maximus_1_2.png";
     return (
       <>
+        <Head title="Hyperion // Website - Neil Hanak"/>
         <PageTitleSection title="Hyperion // Website" titleMobile="Hyperion" descriptionMobile="// Website //"/>
         <PageSectionContainer roundedEdges={true} backgroundColor={context.secondaryBackgroundColor} paddingBottom="2rem">
             <ProjectSection  paddingTop={"5rem"} paddingBottom={"1rem"}>
