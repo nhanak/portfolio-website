@@ -12,27 +12,25 @@ export default function Footer(){
                 <FooterStyled>
                     <FooterStartStyled>
                         <FooterText theme={context}>Made with&nbsp; 
-                            <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="/">Next.js</Link_>
-                            &nbsp;and&nbsp;
-                            <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="/">Sanity</Link_>
-                             . Hosted on&nbsp;
-                             <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="/">Vercel</Link_>
+                            <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="https://nextjs.org/" target="_blank">Next.js</Link_>
+                            , hosted on&nbsp;
+                             <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="https://vercel.com/" target="_blank">Vercel</Link_>
                         </FooterText>
                         <FooterText theme={context}>MIT License © 2021–present  <Link href="/" passHref><Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor}>Neil Hanak</Link_></Link></FooterText>
                         <FooterText theme={context}>Made with ❤️ in Canada</FooterText>
                     </FooterStartStyled>
                     <FooterEndStyled>
                         <FooterLinkItem>
-                            <Link href="/blog" passHref>
+                            <Link href="/projects" passHref>
                                 <Link_ initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor}>
-                                    Blog
+                                    Projects
                                 </Link_>
                             </Link>
                         </FooterLinkItem>
                         <FooterLinkItem>
-                            <Link href="/projects" passHref>
+                            <Link href="/blog" passHref>
                                 <Link_ initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor}>
-                                    Projects
+                                    Blog
                                 </Link_>
                             </Link>
                         </FooterLinkItem>

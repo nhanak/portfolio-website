@@ -28,7 +28,7 @@ export default function UpAndDown() {
                             <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="https://github.com/nhanak/up-and-down-source" target="_blank">https://github.com/nhanak/up-and-down-source</Link_>
                         </P>
                         <H3>About</H3>
-                        <P>Up and Down was a multiplayer RTS game I created.</P>
+                        <P>Up and Down was a multiplayer real-time strategy game I created. The goal of the game is to destroy your opponents base by spending your resources on units that would counter what your opponent was building.</P>
                         <H3>Technologies Used</H3>
                         <P>+ <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="https://reactjs.org/" target="_blank">React</Link_> for the front end user interface</P>
                         <P>+ <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="https://golang.org/" target="_blank">Go</Link_> to handle back end logic</P>

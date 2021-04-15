@@ -12,6 +12,7 @@ export default function P(props){
 
 const PStyled = styled.p`
     color: ${props=>props.theme.primaryTextColor};
-    font-size:1.8rem;
+    font-size:2rem;
+    line-height:3.5rem;
     ${props=>props.paddingLeft&&`padding-left:${props.paddingLeft}`};
 `

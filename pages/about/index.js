@@ -5,18 +5,24 @@ import { ThemeContext } from "../../components/Theme/Theme";
 import PageTitleSection from "../../components/PageTitleSection/PageTitleSection";
 import ProjectSection from "../../components/ProjectSection/ProjectSection";
 import Link_ from "../../components/LinkWithUnderlineAnimation/LinkWithUnderlineAnimation"
+import LongFormTextSection from "../../components/LongFormTextSection/LongFormTextSection";
+import Link from 'next/link';
 
 export default function About() {
     const context = useContext(ThemeContext);
     return (
       <>
-        <PageTitleSection title="About"/>
+        <PageTitleSection centered={true} title="Hi, I'm Neil 👋" description="Nice to meet you."/>
         <PageSectionContainer roundedEdges={true} backgroundColor={context.secondaryBackgroundColor} paddingBottom="2rem">
             <ProjectSection  paddingTop="2rem" paddingBottom="1rem">
-                <P>Hi, my name is Neil, nice to meet you.</P>
-                <P>I really enjoy implementing front-end user interfaces. Sometimes I do back-end stuff.</P>
-                <P>You can even find <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} target="_blank" href="https://github.com/nhanak/portfolio-website">the source for this site</Link_> on my GitHub account.</P>
-                <P>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Quisque interdum urna id semper ultrices. Nullam diam eros, tempus ut sapien nec, fermentum aliquet nisl. Fusce a augue nec turpis faucibus tempus vel sed lorem. Donec pellentesque ante vitae faucibus lobortis. Nulla facilisi. Nullam in arcu sit amet justo dictum ornare ac at justo. Nunc hendrerit euismod sem, et volutpat nulla porta nec. Nam elementum congue cursus. In egestas consequat mi, eget lobortis est accumsan eget. Nam elit nisi, faucibus vel mauris a, hendrerit tincidunt tortor. Etiam tempus ante justo, non porttitor mauris laoreet eu. Nam malesuada elit nec dolor tempor convallis. Morbi congue aliquet ipsum id efficitur. Donec non pharetra neque, vel volutpat purus. Nunc finibus sollicitudin sapien sed facilisis.</P>
+                <LongFormTextSection>
+                    <P>I'm a Software Developer with around 4 years of experience creating solutions for employers and clients. This is my portfolio website containing some of the projects I've worked on. There's also a blog where I talk about some of the things I've learned or have been thinking about.</P>
+                    <P>I really enjoy implementing front-end user interfaces with React. Sometimes I do back-end stuff, like when I <Link href="/projects/up-and-down" passHref><Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor}> created a multiplayer game</Link_></Link> using Go. My favorite languages are JavaScript, Python and Go.</P>
+                    <P></P>
+                    <P>My GitHub account is <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} target="_blank" href="https://github.com/nhanak/">nhanak</Link_> and you can find <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} target="_blank" href="https://github.com/nhanak/portfolio-website">the source for this site</Link_> there.</P>
+                    <P>You can reach me at <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="mailto:neilhanak@info.com">neilhanak@info.com</Link_> or by filling out <Link href="/contact" passHref><Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor}>my contact form</Link_></Link>.</P>
+                    <P>- Neil</P>
+                </LongFormTextSection>
             </ProjectSection>
         </PageSectionContainer>     
     </>

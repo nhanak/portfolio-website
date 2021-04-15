@@ -30,14 +30,15 @@ export default function Navbar(props){
                 <LinkDivStyled  theme={context}>
                     <LinkInnerDivStyled>
                         <DisappearOnMobile>
-                            <NavbarItem>
-                                <Link href="/blog" passHref>
-                                    <Link_ initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor}>Blog</Link_>
-                                </Link>
-                            </NavbarItem>
+
                             <NavbarItem>
                                 <Link href="/projects" passHref>
                                     <Link_ initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor}>Projects</Link_>
+                                </Link>
+                            </NavbarItem>
+                            <NavbarItem>
+                                <Link href="/blog" passHref>
+                                    <Link_ initialColor={context.primaryTextColor} hoverColor={context.primaryAccentColor}>Blog</Link_>
                                 </Link>
                             </NavbarItem>
                             <NavbarItem>
