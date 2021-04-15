@@ -24,7 +24,7 @@ console.log(x);
 var x;`}/>      
                 <P>Notice how we are able to access x on line 1 and 2, even though x was not declared until line 3. The common explanation is that the declaration of x was hoisted (moved to the top of the current scope), and that is why we are able to use it.</P>
                 <H3 centered={true}>2. Why doesn't hoisting exist?</H3>
-                <P>Hoisting is actually just a metaphor for what is going on behind the scenes in the JavaScript Engine. Rightly or wrongly, it was decided by the community that a simple explanation would be more easily understandable. However, 
+                <P>Hoisting is actually just a metaphor for what is going on behind the scenes in the JavaScript Engine. Rightly or wrongly, it was decided by the community that a simple explanation would be more easily understandable than getting into the nitty gritty details of what JavaScript is actually doing. However, 
 this handwaving can cause bugs and confusion if you don't know what JavaScript is actually doing.</P>
                 <P>For example, consider the following code and try to guess what is logged to the console:</P>
                 <CodeBlock theme={dracula} text ={`var person = "Neil"
@@ -41,8 +41,7 @@ namePerson();`}/>
             <P>Understanding the inner workings of hoisting requires you to be aware of two things:</P>
             <P paddingLeft="2.5rem;">1. JavaScript is a two pass system. It has a compilation phase followed by an execution phase.</P>
             <P paddingLeft="2.5rem;">2. Scope and identifiers are defined in the compilation phase and then used in the execution phase.</P>
-            <P>To understand what is going on in the compilation and execution phases, I am going to use a metaphor. In this metaphor, scopes are colored buckets, and identifiers are colored marbles. The compilation phase sets up the buckets and marbles, and the execution phase uses those buckets and marbles.</P> 
-            <P> Using this metaphor, we are going to walk through the compilation and execution phase of the code above as if it were a dialogue.</P>
+            <P>To understand what is going on in the compilation and execution phases, I am going to use a metaphor. In this metaphor, scopes are colored buckets, and identifiers are colored marbles. The compilation phase sets up the buckets and marbles, and the execution phase uses those buckets and marbles. Using this metaphor, we are going to walk through the compilation and execution phase of the code above as if it were a dialogue.</P>
             <H3 centered={true}>4. Compilation Phase Dialogue</H3>
             <CodeBlock theme={dracula} highlight="1" text ={`var person = "Neil"
 
@@ -120,10 +119,9 @@ namePerson();`}/>
             <P><b>namePerson Scope (Blue Bucket)</b>: Hey JavaScript Engine, I have blue marble called person, here you go</P>
             <P><b>JavaScript Engine</b>: Thank you, I will put "Jimmy" into this blue marble</P>
             <H3 centered={true}>5. Putting it all together</H3>
-            <P>The reason the code we went through step by step logs undefined to the console is because, while the blue bucket had a blue marble called person at line 4 in the execution phase, the blue marbles contents were not initialized at that point and so it contained the value undefined.</P>
-            <P>At no point did JavaScript move code around like is suggested in hoisting.</P>
+            <P>The reason the code we went through step by step logs undefined to the console is because, while the blue bucket had a blue marble called person at line 4 in the execution phase, the blue marbles contents were not initialized at that point and so it contained the value undefined. At no point did JavaScript move code around like is suggested in hoisting.</P>
             <H3 centered={true}>6. Conclusion</H3>
-            <P>What is termed hoisting is actually a consequence of JavaScript being far more like a compiled language than an interpreted language. Like other compiled languages, JavaScript is a two pass system with a compilation and execution phase. Stepping through these phases with the colored buckets and marbles metaphor shows that hoisting does not actually exist in JavaScript - JavaScript never moves your code around. The term hoisting is not bad however. It is a nice mental shorthand to explain why you can use identifiers before they are declared. Understanding what is actually going on behind the scenes in hoisting will save a lot of time solving bugs related to it.</P>
+            <P>What is termed hoisting is actually a consequence of JavaScript being far more like a compiled language than an interpreted language. Like other compiled languages, JavaScript is a two pass system with a compilation and execution phase. Stepping through these phases with the colored buckets and marbles metaphor shows that hoisting does not actually exist in JavaScript - JavaScript never moves your code around. Instead, JavaScript sets up the scopes and identifiers in the compilation phase, and then these scopes and identifiers are available for use in the execution phase. While hoisting does not exist in JavaScript, it is a nice mental shorthand to explain why you can use identifiers before they are declared, as long as you understand what is actually going on. Now that you are armed with a clearer mental representation of what hoisting actually entails, you will create less bugs and be a more effective programmer.</P>
             </LongFormTextSection>
             </ProjectSection>
         </PageSectionContainer>

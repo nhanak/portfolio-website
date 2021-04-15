@@ -16,7 +16,7 @@ export default function About() {
         <PageSectionContainer roundedEdges={true} backgroundColor={context.secondaryBackgroundColor} paddingBottom="2rem">
             <ProjectSection  paddingTop="2rem" paddingBottom="1rem">
                 <LongFormTextSection>
-                    <P>I'm a Software Developer with around 4 years of experience creating solutions for employers and clients. This is my portfolio website containing some of the projects I've worked on. There's also a blog where I talk about some of the things I've learned or have been thinking about.</P>
+                    <P>I'm a Software Developer with around 4 years of experience creating solutions for employers and clients. This is my portfolio website containing some of the projects I've worked on, as well as a blog where I talk about some of the things I've learned/have been thinking about.</P>
                     <P>I really enjoy implementing front-end user interfaces with React. Sometimes I do back-end stuff, like when I <Link href="/projects/up-and-down" passHref><Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor}> created a multiplayer game</Link_></Link> using Go. My favorite languages are JavaScript, Python and Go.</P>
                     <P></P>
                     <P>My GitHub account is <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} target="_blank" href="https://github.com/nhanak/">nhanak</Link_> and you can find <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} target="_blank" href="https://github.com/nhanak/portfolio-website">the source for this site</Link_> there.</P>
