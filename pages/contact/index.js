@@ -58,8 +58,8 @@ export default function Contact(props) {
         // Validate message field
         setMessageError(message.length < 1);
 
-        // Return true if there is an error in any of the fields
-        return (nameError || messageError || emailAddressError || !captchaCompleted);
+        // Return true if there are no errors in any of the fields
+        return (!nameError && !messageError && !emailAddressError && captchaCompleted);
     }
 
     function handleSubmit(event){
