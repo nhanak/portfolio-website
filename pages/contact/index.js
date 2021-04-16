@@ -162,6 +162,7 @@ const PErr = styled.p`
  font-size:1.4rem;
  color:red;
 `
+
 const FormTitleStyled = styled.div`
     text-align:center;
 `;
