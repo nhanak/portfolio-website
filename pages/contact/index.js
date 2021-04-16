@@ -23,9 +23,9 @@ export default function Contact(props) {
     const [captchaCompleted, setCaptchaCompleted] = useState(false);
 
     // Form error values
-    const [nameError, setNameError] = useState(false);
-    const [emailAddressError, setEmailAddressError] = useState(false);
-    const [messageError, setMessageError] = useState(false);
+    const [nameError, setNameError] = useState(true);
+    const [emailAddressError, setEmailAddressError] = useState(true);
+    const [messageError, setMessageError] = useState(true);
 
     // Form submission response values
     const [numFormSubmissions, setNumFormSubmissions] = useState(0);
@@ -102,17 +102,17 @@ export default function Contact(props) {
                                 <FormItemStyled>
                                     <FormLabel theme={context} for="email">Email<RedSpan>*</RedSpan></FormLabel>
                                     <InputStyled theme={context} type="email" id="email" name="email" maxlength="64" onChange={handleEmailAddressChange} value={emailAddress}/>
-                                    {emailAddressError && <PErr>Please fill out the email field with a valid email address</PErr>}
+                                    {(emailAddressError && (numFormSubmissions > 0)) && <PErr>Please fill out the email field with a valid email address</PErr>}
                                 </FormItemStyled>
                                 <FormItemStyled>
                                     <FormLabel theme={context} for="name">Name<RedSpan>*</RedSpan></FormLabel>
                                     <InputStyled theme={context} type="text" id="name" name="name" maxlength="64" onChange={handleNameChange} value={name}/>
-                                    {nameError && <PErr>Please fill out the name field</PErr>}
+                                    {(nameError && (numFormSubmissions > 0)) && <PErr>Please fill out the name field</PErr>}
                                 </FormItemStyled>
                                 <FormItemStyled>
                                     <FormLabel theme={context} for="message">Message<RedSpan>*</RedSpan></FormLabel>
                                     <TextAreaStyled theme={context} rows="10" cols="30"  id="message" name="message"  onChange={handleMessageChange} value={message}/>
-                                    {messageError && <PErr>Please fill out the message field</PErr>}
+                                    {(messageError && (numFormSubmissions > 0)) && <PErr>Please fill out the message field</PErr>}
                                 </FormItemStyled>
                                 <FormItemStyled>
                                     <ReCAPTCHA
@@ -121,7 +121,7 @@ export default function Contact(props) {
                                         onChange={captchaCompletedAction}
                                         theme={isDarkMode ? "dark":"light"}
                                         />
-                                    {(!captchaCompleted && (numFormSubmissions>0)) && <PErr>Please complete the ReCAPTCHA</PErr>}
+                                    {(!captchaCompleted && (numFormSubmissions > 0)) && <PErr>Please complete the ReCAPTCHA</PErr>}
                                     </FormItemStyled>
                             </FormStyled>
                             <FlatButton onClick={handleSubmit} theme={context}>Submit</FlatButton>
