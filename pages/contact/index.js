@@ -1,4 +1,4 @@
-import React, {useContext, useState} from "react";
+import React, {useContext, useState, useRef} from "react";
 import PageSectionContainer from "../../components/PageSectionContainer/PageSectionContainer";
 import { ThemeContext } from "../../components/Theme/Theme";
 import ProjectSection from "../../components/ProjectSection/ProjectSection";
@@ -10,9 +10,10 @@ import Link_ from "../../components/LinkWithUnderlineAnimation/LinkWithUnderline
 import Head from "../../components/Head/Head";
 import ReCAPTCHA from "react-google-recaptcha";
 const axios = require('axios');
-const recaptchaRef = React.createRef();
+
 
 export default function Contact(props) {
+    const recaptchaRef = useRef(null);
     const context = useContext(ThemeContext);
     const {isDarkMode} = props;
     // Form values
@@ -43,7 +44,7 @@ export default function Contact(props) {
         setMessage(event.target.value);
     }
 
-    function captchaCompletedAction(){
+    function captchaCompletedAction(value){
         setCaptchaCompleted(true);
     }
 
@@ -129,7 +130,9 @@ export default function Contact(props) {
                     }
                     {formAccepted &&
                         <FormWrapper>
-                            <h1>Your message has been sent, talk to you soon!</h1>
+                            <SuccessWrapper>
+                                <H1>Your message has been sent, talk to you soon!</H1>
+                            </SuccessWrapper>
                         </FormWrapper> 
                     }
                 </ProjectSection>
@@ -144,6 +147,9 @@ const NoTitle = styled.div`
         height:5rem;
      }
 `
+const SuccessWrapper = styled.div`
+    text-align:center;
+`;
 const FormWrapper = styled.div`
     display:flex;
     justify-content:center;
