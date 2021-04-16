@@ -22,7 +22,7 @@ export default function About() {
                     <P>I really enjoy implementing front-end user interfaces with React. Sometimes I do back-end stuff, like when I <Link href="/projects/up-and-down" passHref><Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor}> created a multiplayer game</Link_></Link> using Go. My favorite languages are JavaScript, Python and Go.</P>
                     <P></P>
                     <P>My GitHub account is <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} target="_blank" href="https://github.com/nhanak/">nhanak</Link_> and you can find <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} target="_blank" href="https://github.com/nhanak/portfolio-website">the source for this site</Link_> there.</P>
-                    <P>You can reach me at <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="mailto:neilhanak@info.com">neilhanak@info.com</Link_> or by filling out <Link href="/contact" passHref><Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor}>my contact form</Link_></Link>.</P>
+                    <P>You can reach me at <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="mailto:nhanak.contact@gmail.com">nhanak.contact@gmail.com</Link_> or by filling out <Link href="/contact" passHref><Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor}>my contact form</Link_></Link>.</P>
                     <P>- Neil</P>
                 </LongFormTextSection>
             </ProjectSection>

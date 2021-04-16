@@ -3,7 +3,8 @@ import styled from "styled-components";
 import {ThemeContext} from "../Theme/Theme";
 
 const FlatButton = React.forwardRef((props, ref) => {
-    const context = useContext(ThemeContext)
+    const context = useContext(ThemeContext);
+    console.log(props.type);
     return(
         <FlatButtonStyled
             href={props.href}
@@ -28,7 +29,7 @@ const FlatButtonStyled = styled.a`
     padding-top:0.75rem;
     padding-bottom:0.75rem;
     transition:background-color 0.2s ease;
-
+    cursor: pointer;
     :hover{
         color:${props=> props.theme.primaryBackgroundColor};
         background-color:${props=> props.theme.primaryAccentColor};
