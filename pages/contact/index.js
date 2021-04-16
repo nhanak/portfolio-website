@@ -81,59 +81,59 @@ export default function Contact(props) {
                 // Server failed sending the email
                 setFormRejected(true);
                 setFormAccepted(false);
-        });
+            });
         }
     }
     return (
-      <>
-    <Head title="Contact - Neil Hanak"/>
-    <NoTitle/>
-    <PageSectionContainer roundedEdges={true} backgroundColor={context.secondaryBackgroundColor} paddingBottom="2rem">
-        <ProjectSection paddingTop={"2rem"} paddingBottom={"1rem"}>
-            {!formAccepted && 
-                <FormWrapper>
-                    <FormStyled>
-                        <FormTitleStyled>
-                            <H1>Want to talk?</H1>
-                            <P>You can reach me at <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="mailto:nhanak.contact@gmail.com">nhanak.contact@gmail.com</Link_></P>
-                            <P>... or fill out the form below 😎</P>
-                        </FormTitleStyled>
-                        <FormItemStyled>
-                            <FormLabel theme={context} for="email">Email<RedSpan>*</RedSpan></FormLabel>
-                            <InputStyled theme={context} type="email" id="email" name="email" maxlength="64" onChange={handleEmailAddressChange} value={emailAddress}/>
-                            {emailAddressError && <PErr>Please fill out the email field with a valid email address</PErr>}
-                        </FormItemStyled>
-                        <FormItemStyled>
-                            <FormLabel theme={context} for="name">Name<RedSpan>*</RedSpan></FormLabel>
-                            <InputStyled theme={context} type="text" id="name" name="name" maxlength="64" onChange={handleNameChange} value={name}/>
-                            {nameError && <PErr>Please fill out the name field</PErr>}
-                        </FormItemStyled>
-                        <FormItemStyled>
-                            <FormLabel theme={context} for="message">Message<RedSpan>*</RedSpan></FormLabel>
-                            <TextAreaStyled theme={context} rows="10" cols="30"  id="message" name="message"  onChange={handleMessageChange} value={message}/>
-                            {messageError && <PErr>Please fill out the message field</PErr>}
-                        </FormItemStyled>
-                        <FormItemStyled>
-                            <ReCAPTCHA
-                                ref={recaptchaRef}
-                                sitekey="6LcQ96waAAAAAKbP_c0n15Cir47s5tel2m7gBzSq"
-                                onChange={captchaCompletedAction}
-                                theme={isDarkMode ? "dark":"light"}
-                                />
-                            {(!captchaCompleted && (numFormSubmissions>0)) && <PErr>Please complete the ReCAPTCHA</PErr>}
-                            </FormItemStyled>
-                    </FormStyled>
-                    <FlatButton onClick={handleSubmit} theme={context}>Submit</FlatButton>
-                    {formRejected && <PErr>Server failed to send message. Please email nhanak.contact@gmail.com directly or try again later</PErr>}
-                </FormWrapper>
-            }
-            {formAccepted &&
-                <FormWrapper>
-                    <h1>Your message has been sent, talk to you soon!</h1>
-                </FormWrapper> 
-            }
-        </ProjectSection>
-    </PageSectionContainer>     
+        <>
+            <Head title="Contact - Neil Hanak"/>
+            <NoTitle/>
+            <PageSectionContainer roundedEdges={true} backgroundColor={context.secondaryBackgroundColor} paddingBottom="2rem">
+                <ProjectSection paddingTop={"2rem"} paddingBottom={"1rem"}>
+                    {!formAccepted && 
+                        <FormWrapper>
+                            <FormStyled>
+                                <FormTitleStyled>
+                                    <H1>Want to talk?</H1>
+                                    <P>You can reach me at <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="mailto:nhanak.contact@gmail.com">nhanak.contact@gmail.com</Link_></P>
+                                    <P>... or fill out the form below 😎</P>
+                                </FormTitleStyled>
+                                <FormItemStyled>
+                                    <FormLabel theme={context} for="email">Email<RedSpan>*</RedSpan></FormLabel>
+                                    <InputStyled theme={context} type="email" id="email" name="email" maxlength="64" onChange={handleEmailAddressChange} value={emailAddress}/>
+                                    {emailAddressError && <PErr>Please fill out the email field with a valid email address</PErr>}
+                                </FormItemStyled>
+                                <FormItemStyled>
+                                    <FormLabel theme={context} for="name">Name<RedSpan>*</RedSpan></FormLabel>
+                                    <InputStyled theme={context} type="text" id="name" name="name" maxlength="64" onChange={handleNameChange} value={name}/>
+                                    {nameError && <PErr>Please fill out the name field</PErr>}
+                                </FormItemStyled>
+                                <FormItemStyled>
+                                    <FormLabel theme={context} for="message">Message<RedSpan>*</RedSpan></FormLabel>
+                                    <TextAreaStyled theme={context} rows="10" cols="30"  id="message" name="message"  onChange={handleMessageChange} value={message}/>
+                                    {messageError && <PErr>Please fill out the message field</PErr>}
+                                </FormItemStyled>
+                                <FormItemStyled>
+                                    <ReCAPTCHA
+                                        ref={recaptchaRef}
+                                        sitekey="6LcQ96waAAAAAKbP_c0n15Cir47s5tel2m7gBzSq"
+                                        onChange={captchaCompletedAction}
+                                        theme={isDarkMode ? "dark":"light"}
+                                        />
+                                    {(!captchaCompleted && (numFormSubmissions>0)) && <PErr>Please complete the ReCAPTCHA</PErr>}
+                                    </FormItemStyled>
+                            </FormStyled>
+                            <FlatButton onClick={handleSubmit} theme={context}>Submit</FlatButton>
+                            {formRejected && <PErr>Server failed to send message. Please email nhanak.contact@gmail.com directly or try again later</PErr>}
+                        </FormWrapper>
+                    }
+                    {formAccepted &&
+                        <FormWrapper>
+                            <h1>Your message has been sent, talk to you soon!</h1>
+                        </FormWrapper> 
+                    }
+                </ProjectSection>
+            </PageSectionContainer>     
     </>
   )
 }
