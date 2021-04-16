@@ -153,7 +153,7 @@ const FormWrapper = styled.div`
 `
 
 const PErr = styled.p`
- font-size:1.5rem;
+ font-size:1.4rem;
  color:red;
 `
 const FormTitleStyled = styled.div`
