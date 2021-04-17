@@ -29,6 +29,7 @@ export default function Contact(props) {
 
     // Form submission response values
     const [numFormSubmissions, setNumFormSubmissions] = useState(0);
+    const [formIsSubmitting, setFormIsSubmitting] = useState(false);
     const [formAccepted, setFormAccepted] = useState(false);
     const [formRejected, setFormRejected] = useState(false);
 
@@ -64,25 +65,33 @@ export default function Contact(props) {
 
     function handleSubmit(event){
         event.preventDefault();
-        setNumFormSubmissions(numFormSubmissions+1);
-        const validForm = validateForm();
-        if (validForm){
-            axios.post('/api/email', {
-                name: name,
-                emailAddress: emailAddress, 
-                message:message,
-            })
-            .then((response)=>{
-                // Server was able to send the email
-                console.log(response);
-                setFormRejected(false);
-                setFormAccepted(true);
-            })
-            .catch((error)=>{
-                // Server failed sending the email
-                setFormRejected(true);
-                setFormAccepted(false);
-            });
+        if (!formIsSubmitting){
+            setFormIsSubmitting(true);
+            setNumFormSubmissions(numFormSubmissions+1);
+            const validForm = validateForm();
+            if (validForm){
+                axios.post('/api/email', {
+                    name: name,
+                    emailAddress: emailAddress, 
+                    message:message,
+                })
+                .then((response)=>{
+                    // Server was able to send the email
+                    console.log(response);
+                    setFormRejected(false);
+                    setFormAccepted(true);
+                    setFormIsSubmitting(false);
+                })
+                .catch((error)=>{
+                    // Server failed sending the email
+                    setFormRejected(true);
+                    setFormAccepted(false);
+                    setFormIsSubmitting(false);
+                });
+            }
+            else {
+                setFormIsSubmitting(false);
+            }
         }
     }
     return (
