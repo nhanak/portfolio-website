@@ -13,8 +13,8 @@ import Head from "../../../components/Head/Head";
 
 export default function UpAndDown() {
     const context = useContext(ThemeContext);
-    const primary = "/images/projects/up-and-down/homescreen-square.PNG";
-    const secondary = "/images/projects/up-and-down/gameplay-2.PNG";
+    const primary = "/images/projects/up-and-down/homescreen-square.png";
+    const secondary = "/images/projects/up-and-down/gameplay-2.png";
     const tertiary = "/images/projects/up-and-down/gameplay-1.PNG";
     return (
       <>
