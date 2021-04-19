@@ -77,7 +77,6 @@ export default function Contact(props) {
                 })
                 .then((response)=>{
                     // Server was able to send the email
-                    console.log(response);
                     setFormRejected(false);
                     setFormAccepted(true);
                     setFormIsSubmitting(false);
