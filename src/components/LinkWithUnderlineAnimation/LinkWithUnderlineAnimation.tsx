@@ -49,7 +49,7 @@ export default function LinkWithUnderlineAnimation(props) {
   return (
     <Link
       href="/about"
-      className="text-blue-600 hover:text-blue-800 underline font-medium transition-colors"
+      className="text-blue-600 hover:text-text-accent text-text-primary underline font-medium transition-colors"
     >
       About Us
     </Link>

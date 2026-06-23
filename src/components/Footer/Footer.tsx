@@ -5,70 +5,34 @@ import PageSectionContainer from "../pageSectionContainer/PageSectionContainer";
 import Link_ from "../linkWithUnderlineAnimation/LinkWithUnderlineAnimation";
 
 export default function Footer() {
-  const context = useContext(ThemeContext);
   return (
     <PageSectionContainer marginTop="50px" borderTop="1px solid grey">
       <FooterStyled>
         <FooterStartStyled>
-          <FooterText theme={context}>
+          <FooterText>
             Made with&nbsp;
-            <Link_
-              initialColor={context.primaryAccentColor}
-              hoverColor={context.primaryAccentColor}
-              href="https://nextjs.org/"
-              target="_blank"
-            >
+            <Link_ href="https://nextjs.org/" target="_blank">
               Next.js
             </Link_>
             , hosted on&nbsp;
-            <Link_
-              initialColor={context.primaryAccentColor}
-              hoverColor={context.primaryAccentColor}
-              href="https://vercel.com/"
-              target="_blank"
-            >
+            <Link_ href="https://vercel.com/" target="_blank">
               Vercel
             </Link_>
           </FooterText>
-          <FooterText theme={context}>
-            MIT License © 2021–present{" "}
-            <Link_
-              href="/"
-              initialColor={context.primaryAccentColor}
-              hoverColor={context.primaryAccentColor}
-            >
-              Neil Hanak
-            </Link_>
+          <FooterText>
+            MIT License © 2021–present <Link_ href="/">Neil Hanak</Link_>
           </FooterText>
-          <FooterText theme={context}>Made with ❤️ in Canada</FooterText>
+          <FooterText>Made with ❤️ in Canada</FooterText>
         </FooterStartStyled>
         <FooterEndStyled>
           <FooterLinkItem>
-            <Link_
-              initialColor={context.primaryTextColor}
-              hoverColor={context.primaryAccentColor}
-              href="/projects"
-            >
-              Projects
-            </Link_>
+            <Link_ href="/projects">Projects</Link_>
           </FooterLinkItem>
           <FooterLinkItem>
-            <Link_
-              initialColor={context.primaryTextColor}
-              hoverColor={context.primaryAccentColor}
-              href="/blog"
-            >
-              Blog
-            </Link_>
+            <Link_ href="/blog">Blog</Link_>
           </FooterLinkItem>
           <FooterLinkItem>
-            <Link_
-              href="/about"
-              initialColor={context.primaryTextColor}
-              hoverColor={context.primaryAccentColor}
-            >
-              About
-            </Link_>
+            <Link_ href="/about">About</Link_>
           </FooterLinkItem>
         </FooterEndStyled>
       </FooterStyled>
@@ -107,7 +71,6 @@ const FooterEndStyled = styled.div`
 `;
 
 const FooterText = styled.p`
-  color: ${(props) => props.theme.primaryTextColor};
   margin: 0px;
   margin-bottom: 20px;
 `;
