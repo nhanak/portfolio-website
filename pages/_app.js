@@ -1,8 +1,9 @@
-//import '../styles/globals.css';
-import React, {useState} from "react";
-import { ThemeContext, themes} from "../components/Theme/Theme";
-import { createGlobalStyle } from 'styled-components';
-import { PageTransition } from 'next-page-transitions'
+"use client";
+
+import React, { useState } from "react";
+import { ThemeContext, themes } from "../components/Theme/Theme";
+import { createGlobalStyle } from "styled-components";
+//import { PageTransition } from "next-page-transitions";
 
 import PageContainer from "../components/PageContainer/PageContainer";
 
@@ -28,35 +29,45 @@ const GlobalStyle = createGlobalStyle`
     box-sizing: border-box;
     }
     body {
-        background-color: ${props => (props.isDarkMode ? themes.dark.primaryBackgroundColor : themes.light.primaryBackgroundColor)};
+        background-color: ${(props) =>
+          props.isDarkMode
+            ? themes.dark.primaryBackgroundColor
+            : themes.light.primaryBackgroundColor};
         transition:background-color 0.5s ease;
     }
-`
+`;
 
 function MyApp({ Component, pageProps, router }) {
-    const [isDarkMode, setDarkMode] = useState(false);
-    const [mobileNavbarIsOpen, setMobileNavbarOpen] = useState(false);
+  const [isDarkMode, setDarkMode] = useState(false);
+  const [mobileNavbarIsOpen, setMobileNavbarOpen] = useState(false);
 
-    function toggleTheme(){
-        setDarkMode(!isDarkMode);
-    }
+  function toggleTheme() {
+    setDarkMode(!isDarkMode);
+  }
 
-  return( 
+  return (
     <ThemeContext.Provider value={isDarkMode ? themes.dark : themes.light}>
-        <GlobalStyle isDarkMode={isDarkMode} themes={themes} mobileNavbarIsOpen={mobileNavbarIsOpen}/>
-        <PageContainer toggleTheme={toggleTheme} isDarkMode={isDarkMode} mobileNavbarIsOpen={mobileNavbarIsOpen} setMobileNavbarOpen={setMobileNavbarOpen}>
-        <PageTransition timeout={300} classNames="page-transition">
-            <Component {...pageProps} key={router.route} />
-        </PageTransition>
+      <GlobalStyle
+        isDarkMode={isDarkMode}
+        themes={themes}
+        mobileNavbarIsOpen={mobileNavbarIsOpen}
+      />
+      <PageContainer
+        toggleTheme={toggleTheme}
+        isDarkMode={isDarkMode}
+        mobileNavbarIsOpen={mobileNavbarIsOpen}
+        setMobileNavbarOpen={setMobileNavbarOpen}
+      >
+        <Component {...pageProps} key={router.route} />
+
         <style jsx global>{`
           .page-transition-enter {
             opacity: 0;
-          
           }
           .page-transition-enter-active {
             opacity: 1;
             animation: bounce 300ms ease;
-            transform:translateY(0%);
+            transform: translateY(0%);
           }
           .page-transition-exit {
             opacity: 1;
@@ -66,31 +77,31 @@ function MyApp({ Component, pageProps, router }) {
             animation: fadeDown 300ms ease;
           }
 
-          @keyframes fadeDown{
-              from{
-                opacity:1;
-                transform:translateY(0%);
-              }
-              to{
-                opacity:0;
-                transform:translateY(5rem);
-              }
+          @keyframes fadeDown {
+            from {
+              opacity: 1;
+              transform: translateY(0%);
+            }
+            to {
+              opacity: 0;
+              transform: translateY(5rem);
+            }
           }
 
           @keyframes bounce {
-            from{
-                opacity:0;
-                transform:translateY(5rem);
+            from {
+              opacity: 0;
+              transform: translateY(5rem);
             }
-            to{
-                opacity:1;
-                transform:translateY(0%);
+            to {
+              opacity: 1;
+              transform: translateY(0%);
             }
-        }
+          }
         `}</style>
-        </PageContainer>
+      </PageContainer>
     </ThemeContext.Provider>
-  )
+  );
 }
 
 export default MyApp;
