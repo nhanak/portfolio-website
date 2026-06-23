@@ -2,7 +2,7 @@
 // import styled from "styled-components";
 
 export default function PageSectionContainer(props) {
-  return <div>{props.children}</div>;
+  return <div className="pb-12">{props.children}</div>;
 }
 
 // const PageSectionContainerStyled = styled.div`

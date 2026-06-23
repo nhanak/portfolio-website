@@ -1,11 +1,10 @@
-import { useContext, useRef } from "react";
-import styled from "styled-components";
-import Navbar from "../navbar/Navbar";
-import NavbarMobile from "../navbarMobile/NavbarMobile";
 import NavButtonMobile from "../navButtonMobile/NavButtonMobile";
+import NavbarMobile from "../navbarMobile/NavbarMobile";
+import { ThemeContext } from "../theme/Theme";
+import { useContext, useRef } from "react";
+import Navbar from "../navbar/Navbar";
 import Footer from "../footer/Footer";
 import Head from "next/head";
-import { ThemeContext } from "../theme/Theme";
 
 export default function PageContainer(props) {
   const context = useContext(ThemeContext);

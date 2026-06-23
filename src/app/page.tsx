@@ -1,15 +1,14 @@
 "use client";
 
-import { useContext } from "react";
 import PageSectionContainer from "../components/pageSectionContainer/PageSectionContainer";
 import ProjectCardsGrid from "../components/projectCardsGrid/ProjectCardsGrid";
-import ProjectCard from "../components/projectCard/ProjectCard";
-import H2 from "../components/h2/H2";
-import { ThemeContext } from "../components/theme/Theme";
-import ProjectSection from "../components/projectSection/ProjectSection";
-import Head from "../components/head/Head";
-
 import PageTitleSection from "../components/pageTitleSection/PageTitleSection";
+import ProjectSection from "../components/projectSection/ProjectSection";
+import ProjectCard from "../components/projectCard/ProjectCard";
+import { ThemeContext } from "../components/theme/Theme";
+import Head from "../components/head/Head";
+import H2 from "../components/h2/H2";
+import { useContext } from "react";
 
 export default function Home() {
   const context = useContext(ThemeContext);
@@ -20,16 +19,8 @@ export default function Home() {
         title="Hi, I'm Neil 👋"
         description="I code human friendly interfaces, and I love what I do."
       />
-      <PageSectionContainer
-        roundedEdges={true}
-        backgroundColor={context.secondaryBackgroundColor}
-        paddingBottom="30px"
-      >
-        <ProjectSection
-          paddingTop={"10px"}
-          paddingBottom={"10px"}
-          hasSectionHeader={true}
-        >
+      <PageSectionContainer>
+        <ProjectSection>
           <H2>Projects</H2>
           <ProjectCardsGrid>
             <ProjectCard
@@ -47,17 +38,8 @@ export default function Home() {
           </ProjectCardsGrid>
         </ProjectSection>
       </PageSectionContainer>
-      <PageSectionContainer
-        roundedEdges={true}
-        marginTop="40px"
-        backgroundColor={context.secondaryBackgroundColor}
-        paddingBottom="30px"
-      >
-        <ProjectSection
-          paddingTop={"10px"}
-          paddingBottom={"10px"}
-          hasSectionHeader={true}
-        >
+      <PageSectionContainer>
+        <ProjectSection>
           <H2>Blog</H2>
           <ProjectCardsGrid>
             <ProjectCard
