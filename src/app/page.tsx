@@ -1,6 +1,6 @@
 "use client";
 
-import React, { useContext } from "react";
+import { useContext } from "react";
 import PageSectionContainer from "../components/PageSectionContainer/PageSectionContainer";
 import ProjectCardsGrid from "../components/ProjectCardsGrid/ProjectCardsGrid";
 import ProjectCard from "../components/ProjectCard/ProjectCard";

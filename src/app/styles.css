@@ -1,8 +1,27 @@
-"use client";
+@import "tailwindcss";
 
-import React from "react";
+@custom-variant dark (&:where(.dark, .dark *));
 
-export const themes = {
+@theme {
+  --color-canvas: var(--canvas);
+  --color-text-primary: var(--text-primary);
+  --color-text-secondary: var(--text-secondary);
+}
+
+:root {
+  --canvas: #ffffff;
+  --text-primary: black;
+  --text-secondary: grey;
+}
+
+.dark {
+  --canvas: white;
+  --text-primary: white;
+  --text-secondary: grey;
+}
+
+/*
+
   dark: {
     primaryTextColor: "white",
     secondaryTextColor: "grey",
@@ -23,6 +42,6 @@ export const themes = {
     secondaryBackgroundColor: "#f0f0f0",
     tertiaryBackgroundColor: "#ffffff",
   },
-};
 
-export const ThemeContext = React.createContext(themes.dark);
+
+*/

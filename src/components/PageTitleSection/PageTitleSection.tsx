@@ -9,6 +9,12 @@ export default function PageTitleSection({
   titleMobile,
   descriptionMobile,
   centered,
+}: {
+  title: string;
+  description: string;
+  titleMobile?: string;
+  descriptionMobile?: string;
+  centered: boolean;
 }) {
   return (
     <>
