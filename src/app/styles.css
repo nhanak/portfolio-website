@@ -6,18 +6,30 @@
   --color-canvas: var(--canvas);
   --color-text-primary: var(--text-primary);
   --color-text-secondary: var(--text-secondary);
+  --color-text-primary-inverted: var(--text-inverted-primary);
+  --color-accent-primary: var(--accent-primary);
 }
 
 :root {
   --canvas: #ffffff;
   --text-primary: black;
   --text-secondary: grey;
+  --text-inverted-primary: white;
+  --accent-primary: #742aff;
 }
 
 .dark {
   --canvas: white;
   --text-primary: white;
   --text-secondary: grey;
+  --text-inverted-primary: black;
+  --accent-primary: #00ffde;
+}
+
+html,
+body {
+  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
+    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
 /*
