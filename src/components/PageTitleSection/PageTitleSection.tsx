@@ -8,26 +8,25 @@ export default function PageTitleSection({
   description,
   titleMobile,
   descriptionMobile,
-  centered,
+  centered = false,
 }: {
   title: string;
   description: string;
   titleMobile?: string;
   descriptionMobile?: string;
-  centered: boolean;
+  centered?: boolean;
 }) {
   return (
-    
-      <div className="pl-4 mt-2 flex mb-3 justify-items-start text-text-primary w-full">
-        <div>
-          <H1>{title}</H1>
-          <P>{description}</P>
-        </div>
-        <PageTitleSectionTextContentMobileStyled centered={centered}>
-          <H1>{titleMobile ? titleMobile : title}</H1>
-          <P>{descriptionMobile ? descriptionMobile : description}</P>
-        </PageTitleSectionTextContentMobileStyled>
+    <div className="pl-4 mt-2 flex mb-3 justify-items-start text-text-primary w-full">
+      <div>
+        <H1>{title}</H1>
+        <P>{description}</P>
       </div>
+      <PageTitleSectionTextContentMobileStyled>
+        <H1>{titleMobile ? titleMobile : title}</H1>
+        <P>{descriptionMobile ? descriptionMobile : description}</P>
+      </PageTitleSectionTextContentMobileStyled>
+    </div>
   );
 }
 
@@ -58,8 +57,7 @@ export default function PageTitleSection({
 
 const PageTitleSectionTextContentMobileStyled = styled.div`
   display: block;
-  ${(props) => props.centered && "text-align:center;"}
-  @media (min-width:992px) {
+  @media (min-width: 992px) {
     display: none;
   }
 `;

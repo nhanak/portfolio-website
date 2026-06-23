@@ -1,9 +1,9 @@
-import React from "react";
-import styled from "styled-components";
+import { PropsWithChildren } from "react";
 
-export default function ProjectSection(props) {
-  //const { paddingBottom, paddingTop, hasSectionHeader } = props;
-  return <div>{props.children}</div>;
+export default function ProjectSection(props: PropsWithChildren) {
+  return (
+    <div className="bg-gray-100 py-6 px-8 rounded-lg">{props.children}</div>
+  );
 }
 
 // const ProjectSectionStyled = styled.div`
