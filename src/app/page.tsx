@@ -1,15 +1,15 @@
 "use client";
 
 import { useContext } from "react";
-import PageSectionContainer from "../components/PageSectionContainer/PageSectionContainer";
-import ProjectCardsGrid from "../components/ProjectCardsGrid/ProjectCardsGrid";
-import ProjectCard from "../components/ProjectCard/ProjectCard";
-import H2 from "../components/H2/H2";
-import { ThemeContext } from "../components/Theme/Theme";
-import ProjectSection from "../components/ProjectSection/ProjectSection";
-import Head from "../components/Head/Head";
+import PageSectionContainer from "../components/pageSectionContainer/PageSectionContainer";
+import ProjectCardsGrid from "../components/projectCardsGrid/ProjectCardsGrid";
+import ProjectCard from "../components/projectCard/ProjectCard";
+import H2 from "../components/h2/H2";
+import { ThemeContext } from "../components/theme/Theme";
+import ProjectSection from "../components/projectSection/ProjectSection";
+import Head from "../components/head/Head";
 
-import PageTitleSection from "../components/PageTitleSection/PageTitleSection";
+import PageTitleSection from "../components/pageTitleSection/PageTitleSection";
 
 export default function Home() {
   const context = useContext(ThemeContext);

@@ -14,7 +14,9 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           `}
         </script>
       </head>
-      <body>{children}</body>
+      <body className="max-w-7xl flex-col justify-items-center m-auto">
+        {children}
+      </body>
     </html>
   );
 }

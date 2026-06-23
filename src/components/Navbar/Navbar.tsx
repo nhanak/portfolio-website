@@ -1,11 +1,11 @@
 import React, { useContext, useState } from "react";
 import styled from "styled-components";
-import { ThemeContext } from "../Theme/Theme";
-import PageSectionContainer from "../PageSectionContainer/PageSectionContainer";
-import FlatButton from "../FlatButton/FlatButton";
+import { ThemeContext } from "../theme/Theme";
+import PageSectionContainer from "../pageSectionContainer/PageSectionContainer";
+import FlatButton from "../flatButton/FlatButton";
 import NavbarItem from "./NavbarItem";
 //import DarkModeToggle from "react-dark-mode-toggle";
-import Link_ from "../LinkWithUnderlineAnimation/LinkWithUnderlineAnimation";
+import Link_ from "../linkWithUnderlineAnimation/LinkWithUnderlineAnimation";
 import ReactOutlineManager from "react-outline-manager";
 import Link from "next/link";
 

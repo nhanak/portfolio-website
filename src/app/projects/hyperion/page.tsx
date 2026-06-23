@@ -1,15 +1,15 @@
 import React, {useContext} from "react";
-import PageSectionContainer from "../../../components/PageSectionContainer/PageSectionContainer";
-import H3 from "../../../components/H3/H3";
-import P from "../../../components/P/P";
-import ProjectSection from "../../../components/ProjectSection/ProjectSection";
-import Link_ from "../../../components/LinkWithUnderlineAnimation/LinkWithUnderlineAnimation";
-import { ThemeContext } from "../../../components/Theme/Theme";
-import PageTitleSection from "../../../components/PageTitleSection/PageTitleSection";
-import ProjectPageMediaGrid from "../../../components/ProjectPageMediaGrid/ProjectPageMediaGrid";
-import ProjectPageDescription from "../../../components/ProjectPageDescription/ProjectPageDescription";
-import ProjectPageGrid from "../../../components/ProjectPageGrid/ProjectPageGrid";
-import Head from "../../../components/Head/Head";
+import PageSectionContainer from "../../../components/pageSectionContainer/PageSectionContainer";
+import H3 from "../../../components/h3/H3";
+import P from "../../../components/p/P";
+import ProjectSection from "../../../components/projectSection/ProjectSection";
+import Link_ from "../../../components/linkWithUnderlineAnimation/LinkWithUnderlineAnimation";
+import { ThemeContext } from "../../../components/theme/Theme";
+import PageTitleSection from "../../../components/pageTitleSection/PageTitleSection";
+import ProjectPageMediaGrid from "../../../components/projectPageMediaGrid/ProjectPageMediaGrid";
+import ProjectPageDescription from "../../../components/projectPageDescription/ProjectPageDescription";
+import ProjectPageGrid from "../../../components/projectPageGrid/ProjectPageGrid";
+import Head from "../../../components/head/Head";
 
 export default function Hyperion() {
     const context = useContext(ThemeContext);

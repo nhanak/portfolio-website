@@ -1,13 +1,13 @@
-import React, {useContext} from "react";
-import PageSectionContainer from "../../../components/PageSectionContainer/PageSectionContainer";
-import P from "../../../components/P/P";
-import H3 from "../../../components/H3/H3";
-import ProjectSection from "../../../components/ProjectSection/ProjectSection";
-import { ThemeContext } from "../../../components/Theme/Theme";
-import BlogTitleSection from "../../../components/BlogTitleSection/BlogTitleSection";
-import LongFormTextSection from "../../../components/LongFormTextSection/LongFormTextSection";
+import PageSectionContainer from "../../../components/pageSectionContainer/PageSectionContainer";
+import LongFormTextSection from "../../../components/longFormTextSection/LongFormTextSection";
+import BlogTitleSection from "../../../components/blogTitleSection/BlogTitleSection";
+import ProjectSection from "../../../components/projectSection/ProjectSection";
+import { ThemeContext } from "../../../components/theme/Theme";
 import { CodeBlock, dracula } from "react-code-blocks";
-import Head from "../../../components/Head/Head";
+import Head from "../../../components/head/Head";
+import H3 from "../../../components/h3/H3";
+import P from "../../../components/p/P";
+import { useContext } from "react";
 
 export default function HoistingDoesNotExistInJavaScript() {
     const context = useContext(ThemeContext);

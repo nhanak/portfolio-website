@@ -1,6 +1,6 @@
 import React, {useContext} from "react";
 import styled from "styled-components";
-import { ThemeContext } from "../Theme/Theme";
+import { ThemeContext } from "../theme/Theme";
 
 export default function H3(props){
     const {centered} = props;

@@ -1,7 +1,7 @@
 import React from "react";
 import styled, { keyframes, css } from "styled-components";
-import Link_ from "../LinkWithUnderlineAnimation/LinkWithUnderlineAnimation";
-import { ThemeContext } from "../Theme/Theme";
+import Link_ from "../linkWithUnderlineAnimation/LinkWithUnderlineAnimation";
+import { ThemeContext } from "../theme/Theme";
 import { enableBodyScroll } from "body-scroll-lock";
 import Link from "next/link";
 

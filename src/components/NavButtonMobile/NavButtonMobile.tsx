@@ -1,7 +1,7 @@
 import React, {useContext} from "react";
 import styled from "styled-components";
 import { Squash as Hamburger} from 'hamburger-react'
-import { ThemeContext } from "../Theme/Theme";
+import { ThemeContext } from "../theme/Theme";
 import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
 //https://github.com/luukdv/hamburger-react
 

@@ -1,8 +1,7 @@
-import React from "react";
-import PageSectionContainer from "../../components/PageSectionContainer/PageSectionContainer";
+import PageSectionContainer from "../pageSectionContainer/PageSectionContainer";
 import styled from "styled-components";
-import H1 from "../../components/H1/H1";
-import P from "../../components/P/P";
+import H1 from "../h1/H1";
+import P from "../p/P";
 
 export default function BlogTitleSection({title, date, author}) {
     return (

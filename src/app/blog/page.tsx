@@ -1,11 +1,11 @@
 import React, {useContext} from "react";
-import PageSectionContainer from "../../components/PageSectionContainer/PageSectionContainer";
-import ProjectCardsGrid from "../../components/ProjectCardsGrid/ProjectCardsGrid";
-import ProjectCard from "../../components/ProjectCard/ProjectCard";
-import ProjectSection from "../../components/ProjectSection/ProjectSection";
-import { ThemeContext } from "../../components/Theme/Theme";
-import PageTitleSection from "../../components/PageTitleSection/PageTitleSection";
-import Head from "../../components/Head/Head";
+import PageSectionContainer from "../../components/pageSectionContainer/PageSectionContainer";
+import ProjectCardsGrid from "../../components/projectCardsGrid/ProjectCardsGrid";
+import ProjectCard from "../../components/projectCard/ProjectCard";
+import ProjectSection from "../../components/projectSection/ProjectSection";
+import { ThemeContext } from "../../components/theme/Theme";
+import PageTitleSection from "../../components/pageTitleSection/PageTitleSection";
+import Head from "../../components/head/Head";
 
 
 export default function Blog() {

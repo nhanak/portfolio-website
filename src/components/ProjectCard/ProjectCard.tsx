@@ -1,6 +1,6 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
-import { ThemeContext } from "../Theme/Theme";
+import { ThemeContext } from "../theme/Theme";
 import Link from "next/link";
 
 export default function ProjectCard(props) {

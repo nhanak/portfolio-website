@@ -1,7 +1,7 @@
-import PageSectionContainer from "../PageSectionContainer/PageSectionContainer";
+import PageSectionContainer from "../pageSectionContainer/PageSectionContainer";
 import styled from "styled-components";
-import H1 from "../H1/H1";
-import P from "../P/P";
+import H1 from "../h1/H1";
+import P from "../p/P";
 
 export default function PageTitleSection({
   title,
@@ -17,20 +17,18 @@ export default function PageTitleSection({
   centered: boolean;
 }) {
   return (
-    <>
-      <PageSectionContainer>
-        <div className="mt-2 flex mb-3 justify-center text-black">
-          <div>
-            <H1>{title}</H1>
-            <P>{description}</P>
-          </div>
-          <PageTitleSectionTextContentMobileStyled centered={centered}>
-            <H1>{titleMobile ? titleMobile : title}</H1>
-            <P>{descriptionMobile ? descriptionMobile : description}</P>
-          </PageTitleSectionTextContentMobileStyled>
+    <PageSectionContainer>
+      <div className="mt-2 flex mb-3 justify-items-start text-text-primary">
+        <div>
+          <H1>{title}</H1>
+          <P>{description}</P>
         </div>
-      </PageSectionContainer>
-    </>
+        <PageTitleSectionTextContentMobileStyled centered={centered}>
+          <H1>{titleMobile ? titleMobile : title}</H1>
+          <P>{descriptionMobile ? descriptionMobile : description}</P>
+        </PageTitleSectionTextContentMobileStyled>
+      </div>
+    </PageSectionContainer>
   );
 }
 

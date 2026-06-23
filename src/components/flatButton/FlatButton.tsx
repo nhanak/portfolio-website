@@ -1,6 +1,7 @@
+import { ThemeContext } from "../theme/Theme";
+
 import React, { useContext } from "react";
 import styled from "styled-components";
-import { ThemeContext } from "../Theme/Theme";
 
 const FlatButton = React.forwardRef((props, ref) => {
   const context = useContext(ThemeContext);

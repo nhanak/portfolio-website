@@ -1,13 +1,13 @@
 import { useContext } from "react";
-import PageSectionContainer from "../../components/PageSectionContainer/PageSectionContainer";
-import P from "../../components/P/P";
-import { ThemeContext } from "../../components/Theme/Theme";
-import PageTitleSection from "../../components/PageTitleSection/PageTitleSection";
-import ProjectSection from "../../components/ProjectSection/ProjectSection";
-import Link_ from "../../components/LinkWithUnderlineAnimation/LinkWithUnderlineAnimation";
-import LongFormTextSection from "../../components/LongFormTextSection/LongFormTextSection";
+import PageSectionContainer from "../../components/pageSectionContainer/PageSectionContainer";
+import P from "../../components/p/P";
+import { ThemeContext } from "../../components/theme/Theme";
+import PageTitleSection from "../../components/pageTitleSection/PageTitleSection";
+import ProjectSection from "../../components/projectSection/ProjectSection";
+import Link_ from "../../components/linkWithUnderlineAnimation/LinkWithUnderlineAnimation";
+import LongFormTextSection from "../../components/longFormTextSection/LongFormTextSection";
 import Link from "next/link";
-import Head from "../../components/Head/Head";
+import Head from "../../components/head/Head";
 
 export default function About() {
   const context = useContext(ThemeContext);

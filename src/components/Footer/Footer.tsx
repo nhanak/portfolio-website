@@ -1,8 +1,8 @@
 import React, { useContext } from "react";
 import styled from "styled-components";
-import { ThemeContext } from "../Theme/Theme";
-import PageSectionContainer from "../PageSectionContainer/PageSectionContainer";
-import Link_ from "../LinkWithUnderlineAnimation/LinkWithUnderlineAnimation";
+import { ThemeContext } from "../theme/Theme";
+import PageSectionContainer from "../pageSectionContainer/PageSectionContainer";
+import Link_ from "../linkWithUnderlineAnimation/LinkWithUnderlineAnimation";
 
 export default function Footer() {
   const context = useContext(ThemeContext);
