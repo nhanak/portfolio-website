@@ -1,15 +1,11 @@
-import React, {useContext} from "react";
-import styled from "styled-components";
-import { ThemeContext } from "../theme/Theme";
-
-export default function H2(props){
-    const context = useContext(ThemeContext);
-    return(
-        <H2Styled theme={context}>{props.children}</H2Styled>
-    )
-}
-
-const H2Styled = styled.h2`
-    color: ${props=>props.theme.primaryTextColor};
-    font-size:3.5rem;
-`
+export default function H2(props: React.ComponentPropsWithoutRef<"h2">) {
+    return (
+      <h2
+        {...props}
+        className="text-text-primary text-4xl font-bold"
+      >
+        {props.children}
+      </h2>
+    );
+  }
+  
