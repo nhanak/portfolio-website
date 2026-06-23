@@ -1,15 +1,12 @@
-import React from "react";
-import styled from "styled-components";
-
 export default function LongFormTextSection(props){
     return(
-        <LongFormTextSectionStyled>
+        <div className="m-auto">
             {props.children}
-        </LongFormTextSectionStyled>
+        </div>
     )
 }
 
-const LongFormTextSectionStyled = styled.div`
-    max-width:90rem;
-    margin:auto;
-`
+// const LongFormTextSectionStyled = styled.div`
+//     max-width:90rem;
+//     margin:auto;
+// `

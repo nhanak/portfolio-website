@@ -17,8 +17,8 @@ export default function PageTitleSection({
   centered: boolean;
 }) {
   return (
-    <PageSectionContainer>
-      <div className="mt-2 flex mb-3 justify-items-start text-text-primary">
+    
+      <div className="pl-4 mt-2 flex mb-3 justify-items-start text-text-primary w-full">
         <div>
           <H1>{title}</H1>
           <P>{description}</P>
@@ -28,7 +28,6 @@ export default function PageTitleSection({
           <P>{descriptionMobile ? descriptionMobile : description}</P>
         </PageTitleSectionTextContentMobileStyled>
       </div>
-    </PageSectionContainer>
   );
 }
 

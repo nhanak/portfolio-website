@@ -1,13 +1,21 @@
-import React, { useContext, useState } from "react";
-import styled from "styled-components";
-import { ThemeContext } from "../theme/Theme";
 import PageSectionContainer from "../pageSectionContainer/PageSectionContainer";
-import FlatButton from "../flatButton/FlatButton";
-import NavbarItem from "./NavbarItem";
-//import DarkModeToggle from "react-dark-mode-toggle";
 import Link_ from "../linkWithUnderlineAnimation/LinkWithUnderlineAnimation";
 import ReactOutlineManager from "react-outline-manager";
+import FlatButton from "../flatButton/FlatButton";
+import { ThemeContext } from "../theme/Theme";
+import styled from "styled-components";
+import NavbarItem from "./NavbarItem";
+import { useContext,  } from "react";
 import Link from "next/link";
+
+
+
+
+
+
+//import DarkModeToggle from "react-dark-mode-toggle";
+
+
 
 export default function Navbar(props) {
   const context = useContext(ThemeContext);
