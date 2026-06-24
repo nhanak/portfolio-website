@@ -4,10 +4,10 @@
 
 @theme {
   --color-canvas: var(--canvas);
-  --color-text-primary: var(--text-primary);
+  --color-primary: var(--text-primary);
+  --color-primary-inverted: var(--text-inverted-primary);
   --color-text-secondary: var(--text-secondary);
-  --color-text-primary-inverted: var(--text-inverted-primary);
-  --color-accent-primary: var(--accent-primary);
+  --color-accent: var(--accent-primary);
 }
 
 :root {
@@ -28,8 +28,9 @@
 
 html,
 body {
-  font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen,
-    Ubuntu, Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
 }
 
 /*

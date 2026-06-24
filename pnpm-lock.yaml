@@ -38,9 +38,6 @@ dependencies:
   react-code-blocks:
     specifier: ^0.1.6
     version: 0.1.6(react-dom@19.2.7)(react@19.2.7)
-  react-dark-mode-toggle:
-    specifier: ^0.2.0
-    version: 0.2.0(react@19.2.7)
   react-dom:
     specifier: 19.2.7
     version: 19.2.7(react@19.2.7)
@@ -50,6 +47,9 @@ dependencies:
   react-outline-manager:
     specifier: ^1.2.2
     version: 1.2.2(react@19.2.7)
+  react-toggle-dark-mode:
+    specifier: ^2.0.0
+    version: 2.0.0(react-dom@19.2.7)(react@19.2.7)
   styled-components:
     specifier: 6.4.2
     version: 6.4.2(react-dom@19.2.7)(react@19.2.7)
@@ -552,6 +552,60 @@ packages:
     requiresBuild: true
     dev: false
     optional: true
+
+  /@react-spring/animated@10.1.2(react@19.2.7):
+    resolution: {integrity: sha512-yAsQ/bbp6+vko7WNCI1M00c6KLE9XKTGCrgRhQqS4JcK3oF5qBV4rHYrQEprvEvYXxt+1H5FsLS2eVValEPfFw==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+    dependencies:
+      '@react-spring/shared': 10.1.2(react@19.2.7)
+      '@react-spring/types': 10.1.2
+      react: 19.2.7
+    dev: false
+
+  /@react-spring/core@10.1.2(react@19.2.7):
+    resolution: {integrity: sha512-lPGOAg0V+PV3ucopOajD+YCxoe8twALqAeG4c/+sqVjBsyUNNdx8qfz/DcNSPKA8PV3+AyQELlCxlDfap9cmBQ==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+    dependencies:
+      '@react-spring/animated': 10.1.2(react@19.2.7)
+      '@react-spring/shared': 10.1.2(react@19.2.7)
+      '@react-spring/types': 10.1.2
+      react: 19.2.7
+    dev: false
+
+  /@react-spring/rafz@10.1.2:
+    resolution: {integrity: sha512-KC6vSFZyPnRJ2rXqipV9QqR4SaYbYXjvKfdYKWipNK2mWuV79gr20WmpVUOsTiEHGRY3WSOdWCHN+P9Pdaqb7Q==}
+    dev: false
+
+  /@react-spring/shared@10.1.2(react@19.2.7):
+    resolution: {integrity: sha512-47/8bNQ/o0uEmxEnPBuERlC29VSqiTn5P9ln9tUMSVkYKYxBtouYE686F5kAGj+eHRPoNCw7drxWE9nv2d1LMw==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+    dependencies:
+      '@react-spring/rafz': 10.1.2
+      '@react-spring/types': 10.1.2
+      react: 19.2.7
+    dev: false
+
+  /@react-spring/types@10.1.2:
+    resolution: {integrity: sha512-G4CWowmVPz+rDG1y9QRVq/prZNxiNwQaHC0kgT/MgY6jAGgdRgTV4VThpvJDwWvUitk3xZB4soP4d36fjeQ09g==}
+    dev: false
+
+  /@react-spring/web@10.1.2(react-dom@19.2.7)(react@19.2.7):
+    resolution: {integrity: sha512-KxDB3zaDqy9qFsu7fdxjyraAxweHH4k5TW5WGT/OuMK6hKaxSDfhrQfRBzfFaSVvMBf+NghbJFanllV4ia6i7A==}
+    peerDependencies:
+      react: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+      react-dom: ^16.8.0 || ^17.0.0 || ^18.0.0 || ^19.0.0
+    dependencies:
+      '@react-spring/animated': 10.1.2(react@19.2.7)
+      '@react-spring/core': 10.1.2(react@19.2.7)
+      '@react-spring/shared': 10.1.2(react@19.2.7)
+      '@react-spring/types': 10.1.2
+      csstype: 3.2.3
+      react: 19.2.7
+      react-dom: 19.2.7(react@19.2.7)
+    dev: false
 
   /@swc/helpers@0.5.15:
     resolution: {integrity: sha512-JQ5TuMi45Owi4/BIMAJBoSQoOJu12oOk/gADqlcUL9JEdHB8vyjUSsxqeNXnmXHjYKMi2WcYtezGEEhqUI/E2g==}
@@ -1394,6 +1448,7 @@ packages:
 
   /fast-deep-equal@3.1.3:
     resolution: {integrity: sha512-f3qQ9oQy9j2AhBe/H9VC91wLmKBCCU/gDOnKNAYG5hswO7BLKj09Hc5HYNz9cGI++xlpDCIgDaitVs03ATR84Q==}
+    dev: true
 
   /fast-json-stable-stringify@2.1.0:
     resolution: {integrity: sha512-lhd/wF+Lk98HZoTCtlVraHtfh5XYijIjalXck7saUtuanSDyLMxnHhSXEDJqHxD7msR8D0uCmqlkwjCV8xvwHw==}
@@ -2187,10 +2242,6 @@ packages:
     dependencies:
       js-tokens: 4.0.0
 
-  /lottie-web@5.13.0:
-    resolution: {integrity: sha512-+gfBXl6sxXMPe8tKQm7qzLnUy5DUPJPKIyRHwtpCpyUEYjHYRJC/5gjUvdkuO2c3JllrPtHXH5UJJK8LRYl5yQ==}
-    dev: false
-
   /lowlight@1.20.0:
     resolution: {integrity: sha512-8Ktj+prEb1RoCPkEOrPMYUN/nCggB7qAWe3a7OpMjWQkh3l2RD5wKRQ+o8Q8YuI9RG/xs95waaI/E6ym/7NsTw==}
     dependencies:
@@ -2430,10 +2481,6 @@ packages:
       is-hexadecimal: 1.0.4
     dev: false
 
-  /parse-unit@1.0.1:
-    resolution: {integrity: sha512-hrqldJHokR3Qj88EIlV/kAyAi/G5R2+R56TBANxNMy0uPlYcttx0jnMW6Yx5KsKPSbC3KddM/7qQm3+0wEXKxg==}
-    dev: false
-
   /path-exists@4.0.0:
     resolution: {integrity: sha512-ak9Qy5Q7jYb2Wwcey5Fpvg2KoAc/ZIhLSLOSBmRmygPsGwkVVt0fZa0qrtMz+m6tJTAHfZQ8FnmB4MG4LWy7/w==}
     engines: {node: '>=8'}
@@ -2548,15 +2595,6 @@ packages:
       - react-native
     dev: false
 
-  /react-dark-mode-toggle@0.2.0(react@19.2.7):
-    resolution: {integrity: sha512-YGN6EKU54TaEIQ2G5veB+XVRXSsbyrW9+rop/1Ap06A0z1j6QBVuMIZjhQpwYLKVhSPIxoe7zsWj0cZaEf7cQA==}
-    dependencies:
-      parse-unit: 1.0.1
-      react-lottie-player: 1.5.6(react@19.2.7)
-    transitivePeerDependencies:
-      - react
-    dev: false
-
   /react-dom@19.2.7(react@19.2.7):
     resolution: {integrity: sha512-t0BRVXvbiE/o20Hfw669rLbMCDWtYZLvmJigy2f0MxsXF+71pxhR3xOkspmsO8h3ZlNzyibAmtCa3l4lYKk6gQ==}
     peerDependencies:
@@ -2583,18 +2621,6 @@ packages:
     resolution: {integrity: sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==}
     dev: false
 
-  /react-lottie-player@1.5.6(react@19.2.7):
-    resolution: {integrity: sha512-t0GdTYbml0Ihski8ZPx+1WjpjM/EQlTqTcuGm5yeZGJAgFXTmoqrHbSX8bcREIxrHjibWAyIWnLVUK/iHLcqAQ==}
-    engines: {node: '>=10'}
-    peerDependencies:
-      react: ^16.0.0 || ^17.0.0 || ^18.0.0
-    dependencies:
-      fast-deep-equal: 3.1.3
-      lottie-web: 5.13.0
-      react: 19.2.7
-      rfdc: 1.4.1
-    dev: false
-
   /react-outline-manager@1.2.2(react@19.2.7):
     resolution: {integrity: sha512-xgoyqIDE88odLISa6uPsh+OftbFYRGZzzP4Ub8kiDJJqn5HfFuJhRdX40IMIzD0GC9WrhxuEzD6w5eTchGjYCg==}
     peerDependencies:
@@ -2615,6 +2641,18 @@ packages:
       prismjs: 1.30.0
       react: 19.2.7
       refractor: 3.6.0
+    dev: false
+
+  /react-toggle-dark-mode@2.0.0(react-dom@19.2.7)(react@19.2.7):
+    resolution: {integrity: sha512-La5GHLVv9NScgpLJzVFRtphHWBKpH11qmoAtzpxkoKau2RXWhpHrN4IGTGuiNkhGWT2mTmtHt7VEhWHME2CkcA==}
+    engines: {node: '>=20'}
+    peerDependencies:
+      react: '>=16'
+    dependencies:
+      '@react-spring/web': 10.1.2(react-dom@19.2.7)(react@19.2.7)
+      react: 19.2.7
+    transitivePeerDependencies:
+      - react-dom
     dev: false
 
   /react-transition-group@2.9.0(react-dom@19.2.7)(react@19.2.7):
@@ -2687,10 +2725,6 @@ packages:
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
     dev: true
-
-  /rfdc@1.4.1:
-    resolution: {integrity: sha512-q1b3N5QkRUWUl7iyylaaj3kOpIT0N2i9MqIEQXP73GVsN9cw3fdx8X63cEmWhJGi2PPCF23Ijp7ktmd39rawIA==}
-    dev: false
 
   /safe-array-concat@1.1.4:
     resolution: {integrity: sha512-wtZlHyOje6OZTGqAoaDKxFkgRtkF9CnHAVnCHKfuj200wAgL+bSJhdsCD2l0Qx/2ekEXjPWcyKkfGb5CPboslg==}

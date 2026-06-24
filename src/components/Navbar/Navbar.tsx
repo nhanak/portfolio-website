@@ -1,8 +1,10 @@
+"use client";
+
 import PageSectionContainer from "../pageSectionContainer/PageSectionContainer";
 import Link_ from "../linkWithUnderlineAnimation/LinkWithUnderlineAnimation";
 //import ReactOutlineManager from "react-outline-manager";
+import { DarkModeSwitch } from "react-toggle-dark-mode";
 import FlatButton from "../flatButton/FlatButton";
-import { ThemeContext } from "../theme/Theme";
 import styled from "styled-components";
 import NavbarItem from "./NavbarItem";
 import Link from "next/link";
@@ -18,40 +20,39 @@ export default function Navbar(props) {
 
   return (
     <PageSectionContainer borderBottomMobile={true}>
-      <NavbarStyled>
-        <LogoDivStyled>
-          <Link_ href="/">Neil Hanak</Link_>
-        </LogoDivStyled>
-        <LinkDivStyled>
-          <LinkInnerDivStyled>
-            <DisappearOnMobile>
-              <NavbarItem>
-                <Link_ href="/projects">Projects</Link_>
-              </NavbarItem>
-              <NavbarItem>
-                <Link_ href="/blog">Blog</Link_>
-              </NavbarItem>
-              <NavbarItem>
-                <Link_ href="/about">About</Link_>
-              </NavbarItem>
-              <NavbarItem>
-                <Link href="/contact">
-                  <FlatButton href="/">Say hello</FlatButton>
-                </Link>
-              </NavbarItem>
-            </DisappearOnMobile>
-            <NavbarItem>
-              {/* <ReactOutlineManager toggle={true}>
+      <div className="flex pb-3 pt-8 px-10 items-center">
+        <Link_ href="/">Neil Hanak</Link_>
+        <div className="flex justify-end grow-1 gap-x-20 items-center">
+          <NavbarItem>
+            <Link_ href="/projects">Projects</Link_>
+          </NavbarItem>
+          <NavbarItem>
+            <Link_ href="/blog">Blog</Link_>
+          </NavbarItem>
+          <NavbarItem>
+            <Link_ href="/about">About</Link_>
+          </NavbarItem>
+          <NavbarItem>
+            <Link href="/contact">
+              <FlatButton href="/">Say hello</FlatButton>
+            </Link>
+          </NavbarItem>
+
+          <DarkModeSwitch
+            checked={false}
+            onChange={() => {}}
+            size={50}
+            sunColor="#ffc800"
+          />
+          {/* <ReactOutlineManager toggle={true}>
                 {/* <DarkModeToggle
                   onChange={changeTheme}
                   checked={isDarkMode}
                   size={"6rem"}
                 /> }
               </ReactOutlineManager> */}
-            </NavbarItem>
-          </LinkInnerDivStyled>
-        </LinkDivStyled>
-      </NavbarStyled>
+        </div>
+      </div>
     </PageSectionContainer>
   );
 }

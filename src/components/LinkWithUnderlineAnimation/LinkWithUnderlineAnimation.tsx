@@ -1,3 +1,4 @@
+import { PropsWithChildren } from "react";
 import Link from "next/link";
 // import styled from "styled-components";
 
@@ -44,14 +45,15 @@ import Link from "next/link";
 //     }
 // `
 
-export default function LinkWithUnderlineAnimation(props) {
-  console.log("props for Link", props);
+export default function LinkWithUnderlineAnimation(
+  props: PropsWithChildren & { href: string },
+) {
   return (
     <Link
-      href="/about"
-      className="text-blue-600 hover:text-text-accent text-text-primary underline font-medium transition-colors"
+      href={props.href}
+      className="hover:text-accent text-primary underline font-medium transition-colors"
     >
-      About Us
+      {props.children}
     </Link>
   );
 }

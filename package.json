@@ -19,10 +19,10 @@
     "postcss": "^8.5.15",
     "react": "19.2.7",
     "react-code-blocks": "^0.1.6",
-    "react-dark-mode-toggle": "^0.2.0",
     "react-dom": "19.2.7",
     "react-google-recaptcha": "^2.1.0",
     "react-outline-manager": "^1.2.2",
+    "react-toggle-dark-mode": "^2.0.0",
     "styled-components": "6.4.2",
     "tailwindcss": "^4.3.1"
   },
