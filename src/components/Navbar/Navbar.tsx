@@ -12,7 +12,9 @@ export default function Navbar() {
   return (
     <PageSectionContainer borderBottomMobile={true}>
       <div className="flex pb-3 pt-8 px-10 items-center">
-        <Link_ href="/">Neil Hanak</Link_>
+        <Link_ initialAccent={true} href="/">
+          Neil Hanak
+        </Link_>
         <div className="flex justify-end grow-1 gap-x-20 items-center">
           <NavbarItem>
             <Link_ href="/projects">Projects</Link_>

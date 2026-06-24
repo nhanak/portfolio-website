@@ -46,12 +46,16 @@ import Link from "next/link";
 // `
 
 export default function LinkWithUnderlineAnimation(
-  props: PropsWithChildren & { href: string; target?: string },
+  props: PropsWithChildren & {
+    href: string;
+    target?: string;
+    initialAccent?: boolean;
+  },
 ) {
   return (
     <Link
       href={props.href}
-      className="hover:text-accent hover:bg-size-[100%_1px] bg-size-[0%_1px] bg-no-repeat bg-position-[0%_100%] bg-[linear-gradient(var(--accent-primary),var(--accent-primary))] text-primary font-medium transitions duration-300"
+      className={`${props.initialAccent ? "text-accent" : "text-primary"} hover:text-accent hover:bg-size-[100%_1px] bg-size-[0%_1px] bg-no-repeat bg-position-[0%_100%] bg-[linear-gradient(var(--accent-primary),var(--accent-primary))] font-medium transitions duration-300`}
       target={props.target}
     >
       {props.children}

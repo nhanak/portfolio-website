@@ -9,16 +9,27 @@ export default function Footer() {
         <FooterStartStyled>
           <FooterText className="text-primary">
             Made with&nbsp;
-            <Link_ href="https://nextjs.org/" target="_blank">
+            <Link_
+              href="https://nextjs.org/"
+              initialAccent={true}
+              target="_blank"
+            >
               Next.js
             </Link_>
             , hosted on&nbsp;
-            <Link_ href="https://vercel.com/" target="_blank">
+            <Link_
+              href="https://vercel.com/"
+              target="_blank"
+              initialAccent={true}
+            >
               Vercel
             </Link_>
           </FooterText>
           <FooterText className="text-primary">
-            MIT License © 2021–present <Link_ href="/">Neil Hanak</Link_>
+            MIT License © 2021–present{" "}
+            <Link_ href="/" initialAccent={true}>
+              Neil Hanak
+            </Link_>
           </FooterText>
           <FooterText className="text-primary">
             Made with ❤️ in Canada
