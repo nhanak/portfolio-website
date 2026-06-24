@@ -2,40 +2,14 @@
 
 import PageSectionContainer from "../pageSectionContainer/PageSectionContainer";
 import Link_ from "../linkWithUnderlineAnimation/LinkWithUnderlineAnimation";
-import { useMutationObserver } from "../../app/hooks/useMutationObserver";
-import { Props as DarkModeSwitchProps } from "react-toggle-dark-mode";
-import {
-  classListHasDarkMode,
-  getIsDarkMode,
-  toggleTheme,
-} from "../../app/utils";
+import ThemeToggle from "../themeToggle/ThemeToggle";
 import FlatButton from "../flatButton/FlatButton";
+
 import styled from "styled-components";
 import NavbarItem from "./NavbarItem";
-import { useState } from "react";
 import Link from "next/link";
-import dynamic from "next/dynamic";
-import { useEffect } from "react";
 
-//Prevent SSR of DarkModeSwitch
-const DarkModeSwitch: React.ComponentType<DarkModeSwitchProps> = dynamic(
-  () => import("react-toggle-dark-mode").then((mod) => mod.DarkModeSwitch),
-  { ssr: false },
-);
-
-export default function Navbar(props: { toggleTheme: () => void }) {
-  const [isDarkMode, setIsDarkMode] = useState(false);
-
-  useEffect(() => {
-    setIsDarkMode(getIsDarkMode());
-  }, []);
-
-  const onMutationObserved = (currentClassList) => {
-    setIsDarkMode(classListHasDarkMode(currentClassList));
-  };
-
-  useMutationObserver(onMutationObserved);
-
+export default function Navbar() {
   return (
     <PageSectionContainer borderBottomMobile={true}>
       <div className="flex pb-3 pt-8 px-10 items-center">
@@ -55,14 +29,8 @@ export default function Navbar(props: { toggleTheme: () => void }) {
               <FlatButton href="/">Say hello</FlatButton>
             </Link>
           </NavbarItem>
+          <ThemeToggle />
 
-          <DarkModeSwitch
-            checked={isDarkMode}
-            onChange={toggleTheme}
-            size={50}
-            sunColor="#ffc800"
-            moonColor="#ffc800"
-          />
           {/* <ReactOutlineManager toggle={true}>
                 {/* <DarkModeToggle
                   onChange={changeTheme}

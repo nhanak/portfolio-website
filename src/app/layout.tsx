@@ -2,7 +2,6 @@
 
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
-import { toggleTheme } from "./utils";
 import "./styles.css";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
@@ -31,8 +30,8 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         />
       </head>
 
-      <body className="max-w-7xl flex-col justify-items-center m-auto bg-canvas transition-colors ease-in-out duration-400">
-        <Navbar toggleTheme={toggleTheme} />
+      <body className="max-w-6xl flex-col justify-items-center m-auto bg-canvas transition-colors ease-in-out duration-400">
+        <Navbar />
         {/*todo NavButtonMobile and NavbarMobile */}
         {children}
         <Footer />
