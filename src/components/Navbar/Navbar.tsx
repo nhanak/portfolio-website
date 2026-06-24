@@ -27,7 +27,7 @@ export default function Navbar() {
           </NavbarItem>
           <NavbarItem>
             <Link href="/contact">
-              <FlatButton href="/">Say hello</FlatButton>
+              <FlatButton>Say hello</FlatButton>
             </Link>
           </NavbarItem>
           <ThemeToggle />

@@ -1,6 +1,6 @@
 import { PropsWithChildren } from "react";
 
-const FlatButton = (props: PropsWithChildren & { href: string }) => {
+const FlatButton = (props: PropsWithChildren) => {
   return (
     <div className="border border-accent text-accent px-8 py-2 rounded-full hover:bg-accent hover:text-canvas trasition-colors duration-200 ease">
       {props.children}
