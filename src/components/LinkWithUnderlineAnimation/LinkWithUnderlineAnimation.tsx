@@ -51,7 +51,7 @@ export default function LinkWithUnderlineAnimation(
   return (
     <Link
       href={props.href}
-      className="hover:text-accent text-primary underline font-medium transition-colors"
+      className="hover:text-accent hover:bg-size-[100%_1px] bg-size-[0%_1px] bg-no-repeat bg-position-[0%_100%] bg-[linear-gradient(var(--accent-primary),var(--accent-primary))] text-primary font-medium transitions duration-300"
       target={props.target}
     >
       {props.children}

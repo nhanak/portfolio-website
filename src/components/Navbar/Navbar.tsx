@@ -4,7 +4,6 @@ import PageSectionContainer from "../pageSectionContainer/PageSectionContainer";
 import Link_ from "../linkWithUnderlineAnimation/LinkWithUnderlineAnimation";
 import ThemeToggle from "../themeToggle/ThemeToggle";
 import FlatButton from "../flatButton/FlatButton";
-
 import styled from "styled-components";
 import NavbarItem from "./NavbarItem";
 import Link from "next/link";
