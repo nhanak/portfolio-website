@@ -46,12 +46,13 @@ import Link from "next/link";
 // `
 
 export default function LinkWithUnderlineAnimation(
-  props: PropsWithChildren & { href: string },
+  props: PropsWithChildren & { href: string; target?: string },
 ) {
   return (
     <Link
       href={props.href}
       className="hover:text-accent text-primary underline font-medium transition-colors"
+      target={props.target}
     >
       {props.children}
     </Link>

@@ -2,7 +2,9 @@ import { PropsWithChildren } from "react";
 
 export default function ProjectSection(props: PropsWithChildren) {
   return (
-    <div className="bg-gray-100 py-6 px-10 rounded-lg">{props.children}</div>
+    <div className="bg-canvas-secondary py-6 px-10 rounded-lg">
+      {props.children}
+    </div>
   );
 }
 

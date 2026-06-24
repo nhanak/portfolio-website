@@ -1,15 +1,13 @@
-import React, { useContext } from "react";
-import styled from "styled-components";
-import { ThemeContext } from "../theme/Theme";
 import PageSectionContainer from "../pageSectionContainer/PageSectionContainer";
 import Link_ from "../linkWithUnderlineAnimation/LinkWithUnderlineAnimation";
+import styled from "styled-components";
 
 export default function Footer() {
   return (
     <PageSectionContainer marginTop="50px" borderTop="1px solid grey">
       <FooterStyled>
         <FooterStartStyled>
-          <FooterText>
+          <FooterText className="text-primary">
             Made with&nbsp;
             <Link_ href="https://nextjs.org/" target="_blank">
               Next.js
@@ -19,10 +17,12 @@ export default function Footer() {
               Vercel
             </Link_>
           </FooterText>
-          <FooterText>
+          <FooterText className="text-primary">
             MIT License © 2021–present <Link_ href="/">Neil Hanak</Link_>
           </FooterText>
-          <FooterText>Made with ❤️ in Canada</FooterText>
+          <FooterText className="text-primary">
+            Made with ❤️ in Canada
+          </FooterText>
         </FooterStartStyled>
         <FooterEndStyled>
           <FooterLinkItem>

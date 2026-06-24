@@ -3,31 +3,35 @@
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
 import { toggleTheme } from "./utils";
-import { useEffect } from "react";
 import "./styles.css";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
-  // Apply the initial theme
-  useEffect(() => {
-    if (
-      localStorage.getItem("theme") === "dark" ||
-      (!("theme" in localStorage) &&
-        window.matchMedia("(prefers-color-scheme: dark)").matches)
-    ) {
-      document.documentElement.classList.add("dark");
+  const themeScript = `
+  (function() {
+    const savedTheme = localStorage.getItem('theme');
+    const systemPrefersDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
+    
+    if (savedTheme === 'dark' || (!savedTheme && systemPrefersDark)) {
+      document.documentElement.classList.add('dark');
     } else {
-      document.documentElement.classList.remove("dark");
+      document.documentElement.classList.remove('dark');
     }
-  }, []);
+  })();
+`;
 
   return (
-    <html>
+    <html suppressHydrationWarning>
       <head>
         <title>Neil Hanak</title>
         <link rel="icon" href="/favicon.ico" />
+        <script
+          dangerouslySetInnerHTML={{
+            __html: themeScript,
+          }}
+        />
       </head>
 
-      <body className="max-w-7xl flex-col justify-items-center m-auto bg-canvas transition-colors ease duration-400">
+      <body className="max-w-7xl flex-col justify-items-center m-auto bg-canvas transition-colors ease-in-out duration-400">
         <Navbar toggleTheme={toggleTheme} />
         {/*todo NavButtonMobile and NavbarMobile */}
         {children}
