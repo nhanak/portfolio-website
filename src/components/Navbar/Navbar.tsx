@@ -31,14 +31,6 @@ export default function Navbar() {
             </Link>
           </NavbarItem>
           <ThemeToggle />
-
-          {/* <ReactOutlineManager toggle={true}>
-                {/* <DarkModeToggle
-                  onChange={changeTheme}
-                  checked={isDarkMode}
-                  size={"6rem"}
-                /> }
-              </ReactOutlineManager> */}
         </div>
       </div>
     </PageSectionContainer>

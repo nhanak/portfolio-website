@@ -44,9 +44,6 @@ dependencies:
   react-google-recaptcha:
     specifier: ^2.1.0
     version: 2.1.0(react@19.2.7)
-  react-outline-manager:
-    specifier: ^1.2.2
-    version: 1.2.2(react@19.2.7)
   react-toggle-dark-mode:
     specifier: ^2.0.0
     version: 2.0.0(react-dom@19.2.7)(react@19.2.7)
@@ -2619,14 +2616,6 @@ packages:
 
   /react-lifecycles-compat@3.0.4:
     resolution: {integrity: sha512-fBASbA6LnOU9dOU2eW7aQ8xmYBSXUIWr+UmF9b1efZBazGNO+rcXT/icdKnYm2pTwcRylVUYwW7H1PHfLekVzA==}
-    dev: false
-
-  /react-outline-manager@1.2.2(react@19.2.7):
-    resolution: {integrity: sha512-xgoyqIDE88odLISa6uPsh+OftbFYRGZzzP4Ub8kiDJJqn5HfFuJhRdX40IMIzD0GC9WrhxuEzD6w5eTchGjYCg==}
-    peerDependencies:
-      react: '>=16.2.0'
-    dependencies:
-      react: 19.2.7
     dev: false
 
   /react-syntax-highlighter@15.6.6(react@19.2.7):
