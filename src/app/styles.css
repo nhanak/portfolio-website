@@ -6,12 +6,12 @@
   --color-canvas: var(--canvas);
   --color-primary: var(--text-primary);
   --color-primary-inverted: var(--text-inverted-primary);
-  --color-text-secondary: var(--text-secondary);
+  --color-secondary: var(--text-secondary);
   --color-accent: var(--accent-primary);
 }
 
 :root {
-  --canvas: #ffffff;
+  --canvas: white;
   --text-primary: black;
   --text-secondary: grey;
   --text-inverted-primary: white;
@@ -19,7 +19,7 @@
 }
 
 .dark {
-  --canvas: white;
+  --canvas: #121212;
   --text-primary: white;
   --text-secondary: grey;
   --text-inverted-primary: black;

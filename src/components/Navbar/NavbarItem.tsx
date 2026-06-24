@@ -1,3 +1,5 @@
+"use client";
+
 export default function NavbarItem(props) {
   return <div>{props.children}</div>;
 }

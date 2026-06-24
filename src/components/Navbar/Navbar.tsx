@@ -2,21 +2,39 @@
 
 import PageSectionContainer from "../pageSectionContainer/PageSectionContainer";
 import Link_ from "../linkWithUnderlineAnimation/LinkWithUnderlineAnimation";
-//import ReactOutlineManager from "react-outline-manager";
-import { DarkModeSwitch } from "react-toggle-dark-mode";
+import { useMutationObserver } from "../../app/hooks/useMutationObserver";
+import { Props as DarkModeSwitchProps } from "react-toggle-dark-mode";
+import {
+  classListHasDarkMode,
+  getIsDarkMode,
+  toggleTheme,
+} from "../../app/utils";
 import FlatButton from "../flatButton/FlatButton";
 import styled from "styled-components";
 import NavbarItem from "./NavbarItem";
+import { useState } from "react";
 import Link from "next/link";
+import dynamic from "next/dynamic";
+import { useEffect } from "react";
 
-//import DarkModeToggle from "react-dark-mode-toggle";
+//Prevent SSR of DarkModeSwitch
+const DarkModeSwitch: React.ComponentType<DarkModeSwitchProps> = dynamic(
+  () => import("react-toggle-dark-mode").then((mod) => mod.DarkModeSwitch),
+  { ssr: false },
+);
 
-export default function Navbar(props) {
-  const { isDarkMode } = props;
+export default function Navbar(props: { toggleTheme: () => void }) {
+  const [isDarkMode, setIsDarkMode] = useState(false);
 
-  function changeTheme() {
-    props.toggleTheme();
-  }
+  useEffect(() => {
+    setIsDarkMode(getIsDarkMode());
+  }, []);
+
+  const onMutationObserved = (currentClassList) => {
+    setIsDarkMode(classListHasDarkMode(currentClassList));
+  };
+
+  useMutationObserver(onMutationObserved);
 
   return (
     <PageSectionContainer borderBottomMobile={true}>
@@ -39,10 +57,11 @@ export default function Navbar(props) {
           </NavbarItem>
 
           <DarkModeSwitch
-            checked={false}
-            onChange={() => {}}
+            checked={isDarkMode}
+            onChange={toggleTheme}
             size={50}
             sunColor="#ffc800"
+            moonColor="#ffc800"
           />
           {/* <ReactOutlineManager toggle={true}>
                 {/* <DarkModeToggle
