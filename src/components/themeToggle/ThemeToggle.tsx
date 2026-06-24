@@ -31,7 +31,7 @@ export default function ThemeToggle() {
     <DarkModeSwitch
       checked={isDarkMode}
       onChange={toggleTheme}
-      size={50}
+      size={35}
       sunColor="#ffc800"
       moonColor="#ffc800"
     />
