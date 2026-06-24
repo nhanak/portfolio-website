@@ -7,7 +7,7 @@ export default function Footer() {
     <PageSectionContainer marginTop="50px" borderTop="1px solid grey">
       <FooterStyled>
         <FooterStartStyled>
-          <FooterText className="text-primary">
+          <FooterText className="text-primary text-base">
             Made with&nbsp;
             <Link_
               href="https://nextjs.org/"
@@ -25,13 +25,13 @@ export default function Footer() {
               Vercel
             </Link_>
           </FooterText>
-          <FooterText className="text-primary">
+          <FooterText className="text-primary text-base">
             MIT License © 2021–present{" "}
             <Link_ href="/" initialAccent={true}>
               Neil Hanak
             </Link_>
           </FooterText>
-          <FooterText className="text-primary">
+          <FooterText className="text-primary text-base">
             Made with ❤️ in Canada
           </FooterText>
         </FooterStartStyled>
