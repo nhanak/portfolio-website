@@ -1,6 +1,6 @@
-import React, { useContext } from "react";
-import styled from "styled-components";
 import { ThemeContext } from "../theme/Theme";
+import styled from "styled-components";
+import { useContext } from "react";
 import Link from "next/link";
 
 export default function ProjectCard(props) {
@@ -10,8 +10,8 @@ export default function ProjectCard(props) {
     <ProjectCardStyled>
       <ProjectCardImageWrapper>
         <Link href={href}>
-          <ProjectCardOverlay />
-          <ProjectCardImg src={props.src} />
+          <NewProjectCardOverlay />
+          <img src={props.src} className="rounded-lg" />
         </Link>
       </ProjectCardImageWrapper>
       <Link href={href}>
@@ -34,22 +34,11 @@ const ProjectCardImageWrapper = styled.div`
   position: relative;
 `;
 
-const ProjectCardOverlay = styled.div`
-  border-radius: 10px;
-  position: absolute;
-  top: 0;
-  bottom: 0;
-  left: 0;
-  right: 0;
-  height: 100%;
-  width: 100%;
-  opacity: 0;
-  transition: 0.5s ease;
-  background-color: white;
-  :hover {
-    opacity: 0.2;
-  }
-`;
+const NewProjectCardOverlay = () => {
+  return (
+    <div className="w-full h-full absolute rounded-lg hover:opacity-20 bg-white opacity-0 ease duration-500" />
+  );
+};
 
 const ProjectCardImg = styled.img`
   width: 100%;
