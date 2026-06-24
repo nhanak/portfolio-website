@@ -1,4 +1,3 @@
-import PageSectionContainer from "../pageSectionContainer/PageSectionContainer";
 import styled from "styled-components";
 import H1 from "../h1/H1";
 import P from "../p/P";
@@ -17,7 +16,7 @@ export default function PageTitleSection({
   centered?: boolean;
 }) {
   return (
-    <div className="pl-10 mt-2 flex mb-3 justify-items-start text-text-primary w-full text-primary">
+    <div className="pl-10 mt-2 flex mb-20 justify-items-start text-text-primary w-full text-primary">
       <div>
         <H1>{title}</H1>
         <P>{description}</P>

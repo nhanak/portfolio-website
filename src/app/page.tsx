@@ -17,7 +17,7 @@ export default function Home() {
       <Head title="Neil Hanak" />
       <PageTitleSection
         title="Hi, I'm Neil 👋"
-        description="I code human friendly interfaces, and I love what I do."
+        description="Senior Frontend Developer with nine years of experience developing human friendly user interfaces"
       />
       <PageSectionContainer>
         <ProjectSection>
