@@ -1,18 +1,17 @@
 import { PropsWithChildren } from "react";
-import styled from "styled-components";
 import Link from "next/link";
 
 export default function ProjectCard(props) {
   const { href } = props;
 
   return (
-    <ProjectCardStyled>
-      <ProjectCardImageWrapper>
+    <div>
+      <div className="relative">
         <Link href={href}>
           <NewProjectCardOverlay />
           <img src={props.src} className="rounded-lg" />
         </Link>
-      </ProjectCardImageWrapper>
+      </div>
       <Link href={href}>
         <NewProjectCardTitleTextStyled>
           {props.title}
@@ -21,16 +20,9 @@ export default function ProjectCard(props) {
       <Link href={href}>
         <NewProjectCardTagTextStyled>{props.tags}</NewProjectCardTagTextStyled>
       </Link>
-    </ProjectCardStyled>
+    </div>
   );
 }
-
-const ProjectCardStyled = styled.div``;
-
-const ProjectCardImageWrapper = styled.div`
-  position: relative;
-`;
-
 const NewProjectCardOverlay = () => {
   return (
     <div className="w-full h-full absolute rounded-lg hover:opacity-20 bg-white opacity-0 ease duration-500" />
