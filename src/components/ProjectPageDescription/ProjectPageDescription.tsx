@@ -1,14 +1,7 @@
-import React from "react";
-import styled from "styled-components";
+import { PropsWithChildren } from "react";
 
-const ProjectPageDescription = styled.div`
-    grid-area:descriptionArea;
-    text-align:left;
-    padding-left:0rem;
-
-    @media (min-width: 768px) {
-        padding-left:6.2rem;
-     }
-`
-
-export default ProjectPageDescription;
+export default function ProjectPageDescription(props: PropsWithChildren) {
+  return (
+    <div className="mt-12 flex flex-col gap-y-10 pl-12">{props.children}</div>
+  );
+}

@@ -1,26 +1,11 @@
-// import React from "react";
-// import styled from "styled-components";
+import { PropsWithChildren } from "react";
 
-export default function PageSectionContainer(props) {
-  return <div className="pb-12 w-full">{props.children}</div>;
+export default function PageSectionContainer(
+  props: PropsWithChildren & { className?: string },
+) {
+  return (
+    <div className={`pb-12 w-full ${props.className ?? ""}`}>
+      {props.children}
+    </div>
+  );
 }
-
-// const PageSectionContainerStyled = styled.div`
-//   padding-left: 2.5rem;
-//   padding-right: 2.5rem;
-//   ${(props) => props.borderBottomMobile && `border-bottom: 1px solid grey;`}
-//   ${(props) => props.paddingBottom && `padding-bottom:${props.paddingBottom};`}
-//     ${(props) => props.borderTop && `border-top:${props.borderTop};`}
-//     ${(props) => props.marginTop && `margin-top:${props.marginTop};`}
-//     ${(props) =>
-//     props.backgroundColor && `background-color:${props.backgroundColor};`}
-//     border-radius:0;
-//   @media (min-width: 992px) {
-//     border-bottom: 0px;
-//   }
-//   @media (min-width: 992px) {
-//     ${(props) => props.roundedEdges && `border-radius:10px;`}
-//     padding-left:40px;
-//     padding-right: 40px;
-//   }
-// `;

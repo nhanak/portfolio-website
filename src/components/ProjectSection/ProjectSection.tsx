@@ -1,8 +1,12 @@
 import { PropsWithChildren } from "react";
 
-export default function ProjectSection(props: PropsWithChildren) {
+export default function ProjectSection(
+  props: PropsWithChildren & { className?: string },
+) {
   return (
-    <div className="bg-canvas-secondary py-6 px-10 rounded-lg">
+    <div
+      className={`bg-canvas-secondary py-6 px-10 rounded-lg ${props.className ?? ""}`}
+    >
       {props.children}
     </div>
   );
