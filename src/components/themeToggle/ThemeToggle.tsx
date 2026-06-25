@@ -11,7 +11,10 @@ import {
 //Prevent SSR of DarkModeSwitch
 const DarkModeSwitch: React.ComponentType<DarkModeSwitchProps> = dynamic(
   () => import("react-toggle-dark-mode").then((mod) => mod.DarkModeSwitch),
-  { ssr: false },
+  {
+    loading: () => <img src="images/cloud.svg" className="w-[35px] h-[35px]" />,
+    ssr: false,
+  },
 );
 
 export default function ThemeToggle() {
