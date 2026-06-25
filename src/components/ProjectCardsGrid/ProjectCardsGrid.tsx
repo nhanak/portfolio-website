@@ -1,15 +1,11 @@
-import styled from "styled-components";
+import { PropsWithChildren } from "react";
 
- const ProjectCardsGrid = styled.div`
-    display:grid;
-    grid-gap: 50px;
-    grid-auto-rows:1fr;
-
-
-    @media (min-width: 768px) { 
-        grid-template-columns: repeat(2, 1fr);
-    }
-
-`
+const ProjectCardsGrid = (props: PropsWithChildren) => {
+  return (
+    <div className="grid gap-[50px] grid-cols-1 lg:grid-cols-2">
+      {props.children}
+    </div>
+  );
+};
 
 export default ProjectCardsGrid;
