@@ -1,5 +1,6 @@
 "use client";
 
+import { ViewTransition } from "react";
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
 import "./styles.css";
@@ -32,8 +33,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
       <body className="max-w-6xl flex-col justify-items-center m-auto bg-canvas transition-colors ease-in-out duration-400 overflow-y-scroll">
         <Navbar />
-        {/*todo NavButtonMobile and NavbarMobile */}
-        {children}
+        <ViewTransition exit="slide-down" enter="slide-up">
+          {/*todo NavButtonMobile and NavbarMobile */}
+          {children}
+        </ViewTransition>
         <Footer />
       </body>
     </html>

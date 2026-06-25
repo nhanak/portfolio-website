@@ -1,4 +1,4 @@
-import React, {useContext} from "react";
+import React, { useContext } from "react";
 import PageSectionContainer from "../../../components/pageSectionContainer/PageSectionContainer";
 import H3 from "../../../components/h3/H3";
 import P from "../../../components/p/P";
@@ -12,15 +12,19 @@ import ProjectPageGrid from "../../../components/projectPageGrid/ProjectPageGrid
 import Head from "../../../components/head/Head";
 
 export default function UpAndDown() {
-    const context = useContext(ThemeContext);
-    const primary = "/images/projects/up-and-down/homescreen-square.png";
-    const secondary = "/images/projects/up-and-down/gameplay-2.png";
-    const tertiary = "/images/projects/up-and-down/gameplay-1.PNG";
-    return (
-      <>
-        <Head title="Up and Down // Multiplayer Game - Neil Hanak"/>
-        <PageTitleSection title="Up and Down // Multiplayer Game" titleMobile="Up and Down" descriptionMobile="// Multiplayer Game //"/>
-        <PageSectionContainer roundedEdges={true} backgroundColor={context.secondaryBackgroundColor} paddingBottom="2rem">
+  //   const context = useContext(ThemeContext);
+  //   const primary = "/images/projects/up-and-down/homescreen-square.png";
+  //   const secondary = "/images/projects/up-and-down/gameplay-2.png";
+  //   const tertiary = "/images/projects/up-and-down/gameplay-1.PNG";
+  return (
+    <>
+      <Head title="Up and Down // Multiplayer Game - Neil Hanak" />
+      <PageTitleSection
+        title="Up and Down // Multiplayer Game"
+        titleMobile="Up and Down"
+        descriptionMobile="// Multiplayer Game //"
+      />
+      {/* <PageSectionContainer roundedEdges={true} backgroundColor={context.secondaryBackgroundColor} paddingBottom="2rem">
             <ProjectSection  paddingTop={"5rem"} paddingBottom={"1rem"}>
                 <ProjectPageGrid>
                     <ProjectPageMediaGrid primary={primary} secondary={secondary} tertiary={tertiary}/>
@@ -39,7 +43,7 @@ export default function UpAndDown() {
                     </ProjectPageDescription>
                 </ProjectPageGrid>
             </ProjectSection>
-        </PageSectionContainer>
+        </PageSectionContainer> */}
     </>
-  )
+  );
 }

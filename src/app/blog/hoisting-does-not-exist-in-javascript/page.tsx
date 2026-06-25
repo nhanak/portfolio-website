@@ -2,20 +2,24 @@ import PageSectionContainer from "../../../components/pageSectionContainer/PageS
 import LongFormTextSection from "../../../components/longFormTextSection/LongFormTextSection";
 import BlogTitleSection from "../../../components/blogTitleSection/BlogTitleSection";
 import ProjectSection from "../../../components/projectSection/ProjectSection";
-import { ThemeContext } from "../../../components/theme/Theme";
+//import { ThemeContext } from "../../../components/theme/Theme";
 import { CodeBlock, dracula } from "react-code-blocks";
 import Head from "../../../components/head/Head";
 import H3 from "../../../components/h3/H3";
 import P from "../../../components/p/P";
-import { useContext } from "react";
+//import { useContext } from "react";
 
 export default function HoistingDoesNotExistInJavaScript() {
-    const context = useContext(ThemeContext);
-    return (
-      <>
-        <Head title="Hoisting does not exist in JavaScript - Neil Hanak"/>
-        <BlogTitleSection title="Hoisting does not exist in JavaScript" date="April 13th, 2021" author="Neil Hanak"/>
-        <PageSectionContainer roundedEdges={true} backgroundColor={context.secondaryBackgroundColor} paddingBottom="2rem">
+  //const context = useContext(ThemeContext);
+  return (
+    <>
+      <Head title="Hoisting does not exist in JavaScript - Neil Hanak" />
+      <BlogTitleSection
+        title="Hoisting does not exist in JavaScript"
+        date="April 13th, 2021"
+        author="Neil Hanak"
+      />
+      {/* <PageSectionContainer roundedEdges={true} backgroundColor={context.secondaryBackgroundColor} paddingBottom="2rem">
             <ProjectSection  paddingTop={"2rem"} paddingBottom={"1rem"}>
                 <LongFormTextSection>
                 <H3 centered={true}>1. What is hoisting?</H3>
@@ -126,7 +130,7 @@ namePerson();`}/>
             <P>What is termed hoisting is actually a consequence of JavaScript being far more like a compiled language than an interpreted language. Like other compiled languages, JavaScript is a two pass system with a compilation and execution phase. Stepping through these phases with the colored buckets and marbles metaphor shows that hoisting does not actually exist in JavaScript - JavaScript never moves your code around. Instead, JavaScript sets up the scopes and identifiers in the compilation phase, and then these scopes and identifiers are available for use in the execution phase. While hoisting does not exist in JavaScript, it is a nice mental shorthand to explain why you can use identifiers before they are declared, as long as you understand what is actually going on. Now that you are armed with a clearer mental representation of what hoisting actually entails, you will create less bugs and be a more effective programmer.</P>
             </LongFormTextSection>
             </ProjectSection>
-        </PageSectionContainer>
+        </PageSectionContainer> */}
     </>
-  )
+  );
 }
