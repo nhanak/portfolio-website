@@ -1,10 +1,7 @@
-"use client";
-
 import PageSectionContainer from "../pageSectionContainer/PageSectionContainer";
 import Link_ from "../linkWithUnderlineAnimation/LinkWithUnderlineAnimation";
 import ThemeToggle from "../themeToggle/ThemeToggle";
 import FlatButton from "../flatButton/FlatButton";
-import styled from "styled-components";
 import Link from "next/link";
 
 export default function Navbar() {
@@ -27,46 +24,3 @@ export default function Navbar() {
     </PageSectionContainer>
   );
 }
-
-const DisappearOnMobile = styled.div`
-  display: inherit;
-  @media (max-width: 991px) {
-    display: none;
-  }
-`;
-
-const NavbarStyled = styled.nav`
-  display: flex;
-  padding-top: 1.5rem;
-  padding-bottom: 1.5rem;
-  @media (min-width: 992px) {
-    padding-top: 3rem;
-  }
-`;
-
-const LogoDivStyled = styled.div`
-  display: flex;
-  justify-content: flex-start;
-  align-items: center;
-  width: 25%;
-  font-size: 1.8rem;
-  margin: 0px;
-  font-weight: bold;
-  @media (max-width: 950px) {
-    width: 50%;
-  }
-`;
-
-const LinkDivStyled = styled.div`
-  display: flex;
-  justify-content: flex-end;
-  width: 75%;
-  @media (max-width: 950px) {
-    width: 50%;
-  }
-`;
-
-const LinkInnerDivStyled = styled.div`
-  display: flex;
-  align-items: center;
-`;
