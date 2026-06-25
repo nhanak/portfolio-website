@@ -1,5 +1,3 @@
-"use client";
-
 import PageSectionContainer from "../components/pageSectionContainer/PageSectionContainer";
 import ProjectCardsGrid from "../components/projectCardsGrid/ProjectCardsGrid";
 import PageTitleSection from "../components/pageTitleSection/PageTitleSection";
