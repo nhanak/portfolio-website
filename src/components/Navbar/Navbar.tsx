@@ -5,7 +5,6 @@ import Link_ from "../linkWithUnderlineAnimation/LinkWithUnderlineAnimation";
 import ThemeToggle from "../themeToggle/ThemeToggle";
 import FlatButton from "../flatButton/FlatButton";
 import styled from "styled-components";
-import NavbarItem from "./NavbarItem";
 import Link from "next/link";
 
 export default function Navbar() {
@@ -16,20 +15,12 @@ export default function Navbar() {
           Neil Hanak
         </Link_>
         <div className="flex justify-end grow-1 gap-x-19 items-center">
-          <NavbarItem>
-            <Link_ href="/projects">Projects</Link_>
-          </NavbarItem>
-          <NavbarItem>
-            <Link_ href="/blog">Blog</Link_>
-          </NavbarItem>
-          <NavbarItem>
-            <Link_ href="/about">About</Link_>
-          </NavbarItem>
-          <NavbarItem>
-            <Link href="/contact">
-              <FlatButton>Say hello</FlatButton>
-            </Link>
-          </NavbarItem>
+          <Link_ href="/projects">Projects</Link_>
+          <Link_ href="/blog">Blog</Link_>
+          <Link_ href="/about">About</Link_>
+          <Link href="/contact">
+            <FlatButton>Say hello</FlatButton>
+          </Link>
           <ThemeToggle />
         </div>
       </div>
