@@ -1,16 +1,13 @@
-import { useContext } from "react";
 import PageSectionContainer from "../../components/pageSectionContainer/PageSectionContainer";
-import P from "../../components/p/P";
-import { ThemeContext } from "../../components/theme/Theme";
-import PageTitleSection from "../../components/pageTitleSection/PageTitleSection";
-import ProjectSection from "../../components/projectSection/ProjectSection";
 import Link_ from "../../components/linkWithUnderlineAnimation/LinkWithUnderlineAnimation";
 import LongFormTextSection from "../../components/longFormTextSection/LongFormTextSection";
-import Link from "next/link";
+import PageTitleSection from "../../components/pageTitleSection/PageTitleSection";
+import ProjectSection from "../../components/projectSection/ProjectSection";
 import Head from "../../components/head/Head";
+import P from "../../components/p/P";
+import Link from "next/link";
 
 export default function About() {
-  const context = useContext(ThemeContext);
   return (
     <>
       <Head title="About - Neil Hanak" />
@@ -19,40 +16,30 @@ export default function About() {
         title="Hi, I'm Neil 👋"
         description="Nice to meet you."
       />
-      <PageSectionContainer
-        roundedEdges={true}
-        backgroundColor={context.secondaryBackgroundColor}
-        paddingBottom="2rem"
-      >
-        <ProjectSection paddingTop="2rem" paddingBottom="1rem">
+      <PageSectionContainer className="pb-2 bg-canvas-secondary rounded-lg">
+        <ProjectSection className="mt-5 mb-1">
           <LongFormTextSection>
             <P>
-              I'm a Software Developer with around 4 years of experience
-              creating solutions for employers and clients. This is my portfolio
-              website containing some of the projects I've worked on, as well as
-              a blog where I talk about some of the things I've learned/have
-              been thinking about.
+              I'm a Senior Frontend Developer with around 9 years of experience
+              creating performant and maintainable solutions for employers and
+              clients. This is my portfolio website containing some of the
+              projects I've worked on, as well as a blog where I talk about some
+              of the things I've learned/have been thinking about.
             </P>
             <P>
               I really enjoy implementing front-end user interfaces with React.
               Sometimes I do back-end stuff, like when I{" "}
-              <Link href="/projects/up-and-down" passHref>
-                <Link_
-                  initialColor={context.primaryAccentColor}
-                  hoverColor={context.primaryAccentColor}
-                >
-                  {" "}
-                  created a multiplayer game
-                </Link_>
-              </Link>{" "}
+              <Link_ href="/projects/up-and-down" initialAccent={true}>
+                {" "}
+                created a multiplayer game
+              </Link_>
               using Go. My favorite languages are JavaScript, Python and Go.
             </P>
             <P></P>
             <P>
               My GitHub account is{" "}
               <Link_
-                initialColor={context.primaryAccentColor}
-                hoverColor={context.primaryAccentColor}
+                initialAccent={true}
                 target="_blank"
                 href="https://github.com/nhanak/"
               >
@@ -60,8 +47,7 @@ export default function About() {
               </Link_>{" "}
               and you can find{" "}
               <Link_
-                initialColor={context.primaryAccentColor}
-                hoverColor={context.primaryAccentColor}
+                initialAccent={true}
                 target="_blank"
                 href="https://github.com/nhanak/portfolio-website"
               >
@@ -72,21 +58,15 @@ export default function About() {
             <P>
               You can reach me at{" "}
               <Link_
-                initialColor={context.primaryAccentColor}
-                hoverColor={context.primaryAccentColor}
+                initialAccent={true}
                 href="mailto:nhanak.contact@gmail.com"
               >
                 nhanak.contact@gmail.com
               </Link_>{" "}
               or by filling out{" "}
-              <Link href="/contact" passHref>
-                <Link_
-                  initialColor={context.primaryAccentColor}
-                  hoverColor={context.primaryAccentColor}
-                >
-                  my contact form
-                </Link_>
-              </Link>
+              <Link_ href="/contact" initialAccent={true}>
+                my contact form
+              </Link_>
               .
             </P>
             <P>- Neil</P>
