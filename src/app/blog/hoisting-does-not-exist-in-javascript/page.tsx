@@ -28,7 +28,7 @@ export default function HoistingDoesNotExistInJavaScript() {
         date="April 13th, 2021"
         author="Neil Hanak"
       />
-      <PageSectionContainer className="pb-2 bg-canvas-secondary rounded-lg">
+      <PageSectionContainer className="pb-2 bg-canvas-secondary rounded-lg px-20">
         <ProjectSection className="mt-5 mb-1">
           <LongFormTextSection>
             <BlogSubSectionTitle>1. What is hoisting?</BlogSubSectionTitle>

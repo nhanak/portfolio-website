@@ -17,7 +17,7 @@ export default function PageTitleSection({
 }) {
   return (
     <div
-      className={`pl-10 mt-2 flex mb-20 text-primary w-full ${centered ? "text-center justify-items-center flex-col" : "justify-items-start"}`}
+      className={`pl-10 mt-2 flex mb-10 text-primary w-full ${centered ? "text-center justify-items-center flex-col" : "justify-items-start"}`}
     >
       <div>
         <H1>{title}</H1>

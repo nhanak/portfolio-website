@@ -5,7 +5,6 @@ import PageTitleSection from "../../components/pageTitleSection/PageTitleSection
 import ProjectSection from "../../components/projectSection/ProjectSection";
 import Head from "../../components/head/Head";
 import P from "../../components/p/P";
-import Link from "next/link";
 
 export default function About() {
   return (
