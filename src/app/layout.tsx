@@ -30,7 +30,7 @@ export default function Layout({ children }: { children: React.ReactNode }) {
         />
       </head>
 
-      <body className="max-w-6xl flex-col justify-items-center m-auto bg-canvas transition-colors ease-in-out duration-400">
+      <body className="max-w-6xl flex-col justify-items-center m-auto bg-canvas transition-colors ease-in-out duration-400 overflow-y-scroll">
         <Navbar />
         {/*todo NavButtonMobile and NavbarMobile */}
         {children}

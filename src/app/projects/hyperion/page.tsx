@@ -1,10 +1,10 @@
-import React, {useContext} from "react";
+//import React, {useContext} from "react";
 import PageSectionContainer from "../../../components/pageSectionContainer/PageSectionContainer";
 import H3 from "../../../components/h3/H3";
 import P from "../../../components/p/P";
 import ProjectSection from "../../../components/projectSection/ProjectSection";
 import Link_ from "../../../components/linkWithUnderlineAnimation/LinkWithUnderlineAnimation";
-import { ThemeContext } from "../../../components/theme/Theme";
+//import { ThemeContext } from "../../../components/theme/Theme";
 import PageTitleSection from "../../../components/pageTitleSection/PageTitleSection";
 import ProjectPageMediaGrid from "../../../components/projectPageMediaGrid/ProjectPageMediaGrid";
 import ProjectPageDescription from "../../../components/projectPageDescription/ProjectPageDescription";
@@ -12,15 +12,21 @@ import ProjectPageGrid from "../../../components/projectPageGrid/ProjectPageGrid
 import Head from "../../../components/head/Head";
 
 export default function Hyperion() {
-    const context = useContext(ThemeContext);
-    const primary = "/images/projects/hyperion/Hyperion_Splash_Square.png";
-    const secondary = "/images/projects/hyperion/Hyperion_Portfolio_Maximus_1_1.png";
-    const tertiary = "/images/projects/hyperion/Hyperion_Portfolio_Maximus_1_2.png";
-    return (
-      <>
-        <Head title="Hyperion // Website - Neil Hanak"/>
-        <PageTitleSection title="Hyperion // Website" titleMobile="Hyperion" descriptionMobile="// Website //"/>
-        <PageSectionContainer roundedEdges={true} backgroundColor={context.secondaryBackgroundColor} paddingBottom="2rem">
+  //  const context = useContext(ThemeContext);
+  const primary = "/images/projects/hyperion/Hyperion_Splash_Square.png";
+  const secondary =
+    "/images/projects/hyperion/Hyperion_Portfolio_Maximus_1_1.png";
+  const tertiary =
+    "/images/projects/hyperion/Hyperion_Portfolio_Maximus_1_2.png";
+  return (
+    <>
+      <Head title="Hyperion // Website - Neil Hanak" />
+      <PageTitleSection
+        title="Hyperion // Website"
+        titleMobile="Hyperion"
+        descriptionMobile="// Website //"
+      />
+      {/* <PageSectionContainer roundedEdges={true} backgroundColor={context.secondaryBackgroundColor} paddingBottom="2rem">
             <ProjectSection  paddingTop={"5rem"} paddingBottom={"1rem"}>
                 <ProjectPageGrid>
                     <ProjectPageMediaGrid primary={primary} secondary={secondary} tertiary={tertiary}/>
@@ -39,8 +45,8 @@ export default function Hyperion() {
                         <P>+ <Link_ initialColor={context.primaryAccentColor} hoverColor={context.primaryAccentColor} href="https://vercel.com/" target="_blank">Vercel</Link_> for hosting</P>
                     </ProjectPageDescription>
                 </ProjectPageGrid>
-            </ProjectSection>
-        </PageSectionContainer>
+            </ProjectSection> */}
+      {/* </PageSectionContainer> */}
     </>
-  )
+  );
 }

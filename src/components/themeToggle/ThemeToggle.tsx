@@ -8,11 +8,15 @@ import {
   toggleTheme,
 } from "../../app/utils";
 
+const CloudSVG = () => {
+  return <img src="/images/cloud.svg" className="w-[35px] h-[35px]" />;
+};
+
 //Prevent SSR of DarkModeSwitch
 const DarkModeSwitch: React.ComponentType<DarkModeSwitchProps> = dynamic(
   () => import("react-toggle-dark-mode").then((mod) => mod.DarkModeSwitch),
   {
-    loading: () => <img src="images/cloud.svg" className="w-[35px] h-[35px]" />,
+    loading: () => <CloudSVG />,
     ssr: false,
   },
 );

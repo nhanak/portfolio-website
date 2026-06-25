@@ -10,7 +10,7 @@ export default function PageTitleSection({
   centered = false,
 }: {
   title: string;
-  description: string;
+  description?: string;
   titleMobile?: string;
   descriptionMobile?: string;
   centered?: boolean;
