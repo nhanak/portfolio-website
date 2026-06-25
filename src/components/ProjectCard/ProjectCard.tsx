@@ -1,11 +1,7 @@
+import { ProjectCardProps } from "./types";
 import Link from "next/link";
 
-export default function ProjectCard(props: {
-  href: string;
-  src: string;
-  title: string;
-  tags: string;
-}) {
+export default function ProjectCard(props: ProjectCardProps) {
   const { href } = props;
 
   return (
