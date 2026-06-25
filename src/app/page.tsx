@@ -5,13 +5,10 @@ import ProjectCardsGrid from "../components/projectCardsGrid/ProjectCardsGrid";
 import PageTitleSection from "../components/pageTitleSection/PageTitleSection";
 import ProjectSection from "../components/projectSection/ProjectSection";
 import ProjectCard from "../components/projectCard/ProjectCard";
-import { ThemeContext } from "../components/theme/Theme";
 import Head from "../components/head/Head";
 import H2 from "../components/h2/H2";
-import { useContext } from "react";
 
 export default function Home() {
-  const context = useContext(ThemeContext);
   return (
     <>
       <Head title="Neil Hanak" />
