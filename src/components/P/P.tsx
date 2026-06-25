@@ -1,6 +1,6 @@
 export default function P(props: React.ComponentPropsWithoutRef<"p">) {
   return (
-    <p {...props} className="text-primary text-xl">
+    <p {...props} className="text-primary text-xl leading-[2.5rem]">
       {props.children}
     </p>
   );
