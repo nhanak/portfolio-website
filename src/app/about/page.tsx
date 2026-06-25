@@ -15,7 +15,7 @@ export default function About() {
         title="Hi, I'm Neil 👋"
         description="Nice to meet you."
       />
-      <PageSectionContainer className="pb-2 bg-canvas-secondary rounded-lg">
+      <PageSectionContainer className="pb-2 bg-canvas-secondary rounded-lg px-20 pt-4">
         <ProjectSection className="mt-5 mb-1">
           <LongFormTextSection>
             <P>
@@ -26,19 +26,25 @@ export default function About() {
               of the things I've learned/have been thinking about.
             </P>
             <P>
-              I really enjoy implementing front-end user interfaces with React.
-              Sometimes I do back-end stuff, like when I{" "}
-              <Link_ href="/projects/up-and-down" initialAccent={true}>
-                {" "}
+              I really enjoy implementing user interfaces with React. Sometimes
+              I do back-end stuff, like when I{" "}
+              <Link_
+                className="text-xl mr-2"
+                href="/projects/up-and-down"
+                initialAccent={true}
+              >
                 created a multiplayer game
               </Link_>
-              using Go. My favorite languages are JavaScript, Python and Go.
+              using Go. I'm also a big fan of functional programming, so when
+              I'm not using TypeScript you can probably catch me using Gleam and
+              Haskell.
             </P>
             <P></P>
             <P>
               My GitHub account is{" "}
               <Link_
                 initialAccent={true}
+                className="text-xl mr-0"
                 target="_blank"
                 href="https://github.com/nhanak/"
               >
@@ -47,6 +53,7 @@ export default function About() {
               and you can find{" "}
               <Link_
                 initialAccent={true}
+                className="text-xl mr-0"
                 target="_blank"
                 href="https://github.com/nhanak/portfolio-website"
               >
@@ -58,12 +65,13 @@ export default function About() {
               You can reach me at{" "}
               <Link_
                 initialAccent={true}
+                className="text-xl mr-0"
                 href="mailto:nhanak.contact@gmail.com"
               >
                 nhanak.contact@gmail.com
               </Link_>{" "}
               or by filling out{" "}
-              <Link_ href="/contact" initialAccent={true}>
+              <Link_ href="/contact" initialAccent={true} className="text-xl">
                 my contact form
               </Link_>
               .
