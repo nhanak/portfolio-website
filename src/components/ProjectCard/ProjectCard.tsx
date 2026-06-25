@@ -1,11 +1,10 @@
-import { ThemeContext } from "../theme/Theme";
+import { PropsWithChildren } from "react";
 import styled from "styled-components";
-import { useContext } from "react";
 import Link from "next/link";
 
 export default function ProjectCard(props) {
   const { href } = props;
-  const context = useContext(ThemeContext);
+
   return (
     <ProjectCardStyled>
       <ProjectCardImageWrapper>
@@ -15,14 +14,12 @@ export default function ProjectCard(props) {
         </Link>
       </ProjectCardImageWrapper>
       <Link href={href}>
-        <ProjectCardTitleTextStyled theme={context}>
+        <NewProjectCardTitleTextStyled>
           {props.title}
-        </ProjectCardTitleTextStyled>
+        </NewProjectCardTitleTextStyled>
       </Link>
       <Link href={href}>
-        <ProjectCardTagTextStyled theme={context}>
-          {props.tags}
-        </ProjectCardTagTextStyled>
+        <NewProjectCardTagTextStyled>{props.tags}</NewProjectCardTagTextStyled>
       </Link>
     </ProjectCardStyled>
   );
@@ -40,31 +37,10 @@ const NewProjectCardOverlay = () => {
   );
 };
 
-const ProjectCardImg = styled.img`
-  width: 100%;
-  height: 25rem;
-  object-fit: cover;
-  border-radius: 10px;
-  display: block;
+const NewProjectCardTitleTextStyled = (props: PropsWithChildren) => {
+  return <div className="text-primary pt-2">{props.children}</div>;
+};
 
-  @media (min-width: 576px) {
-    height: 30rem;
-  }
-`;
-
-const ProjectCardTitleTextStyled = styled.div`
-  color: ${(props) => props.theme.primaryTextColor};
-  font-size: 1.6rem;
-  margin-top: 0.6rem;
-  margin-bottom: 0px;
-  display: block;
-  width: 100%;
-`;
-
-const ProjectCardTagTextStyled = styled.div`
-  color: ${(props) => props.theme.secondaryTextColor};
-  font-size: 1.6rem;
-  margin-top: 0.6rem;
-  display: block;
-  margin-bottom: 0.6rem;
-`;
+const NewProjectCardTagTextStyled = (props: PropsWithChildren) => {
+  return <div className="text-secondary">{props.children}</div>;
+};
