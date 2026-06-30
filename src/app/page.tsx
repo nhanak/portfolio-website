@@ -40,7 +40,7 @@ export default function Home() {
             <ProjectCard
               title="Picking a programming language"
               tags="June 29th, 2026"
-              src="/images/blog/hoisting-does-not-exist-in-javascript/hoisting-image.png"
+              src="/images/blog/languages.png"
               href="/blog/picking-a-programming-language"
             />
             <ProjectCard
