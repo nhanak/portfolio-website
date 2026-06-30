@@ -12,12 +12,14 @@ export default function Navbar() {
           Neil Hanak
         </Link_>
         <div className="flex justify-end grow-1 gap-x-19 items-center">
-          <Link_ href="/projects">Projects</Link_>
-          <Link_ href="/blog">Blog</Link_>
-          <Link_ href="/about">About</Link_>
-          <Link href="/contact">
-            <FlatButton>Say hello</FlatButton>
-          </Link>
+          <div className="hidden lg:flex justify-end grow-1 gap-x-19 items-center">
+            <Link_ href="/projects">Projects</Link_>
+            <Link_ href="/blog">Blog</Link_>
+            <Link_ href="/about">About</Link_>
+            <Link href="/contact">
+              <FlatButton>Say hello</FlatButton>
+            </Link>
+          </div>
           <ThemeToggle />
         </div>
       </div>

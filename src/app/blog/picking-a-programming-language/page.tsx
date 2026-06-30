@@ -68,7 +68,7 @@ export default function PickingAProgrammingLanguage() {
             <P>
               As far as I can tell there are three main metrics when judging
               what language to use: ecosystem, developer experience, and
-              performance,
+              performance.
             </P>
             <BlogSubSectionTitle className="text-center">
               Ecosystem
@@ -206,8 +206,9 @@ export default function PickingAProgrammingLanguage() {
               most important are military, finance, and microchips. Standard
               Chartered (bank), Palantir (military software contractor), MatX
               (microchip startup) all use Haskell. The drawback of Haskell is
-              its smaller ecosystem, and increased difficulty in optimizing
-              performance compared to other languages.
+              its smaller ecosystem, comparitively unfamiliar syntax, and
+              increased difficulty in optimizing performance compared to other
+              languages.
             </P>
             <P>
               If you are worried about scalability, and fault tolerance, any
@@ -253,9 +254,10 @@ export default function PickingAProgrammingLanguage() {
               There is no one perfect language for all situations. Even for
               languages that excel in a certain domain, there may be valid
               reasons to choose an alternative that better matches the problem
-              you are trying to solve. By thinking about what your program
-              places the most importance on, and what tradeoffs you are willing
-              to make will result in the best outcome
+              you are trying to solve. Thinking about what your program places
+              the most importance on and what tradeoffs you are willing to make,
+              can make your development experience much easier than it would
+              otherwise be.
             </P>
           </LongFormTextSection>
         </ProjectSection>
