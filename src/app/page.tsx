@@ -38,6 +38,12 @@ export default function Home() {
           <H2>Blog</H2>
           <ProjectCardsGrid>
             <ProjectCard
+              title="Picking a programming language"
+              tags="June 29th, 2026"
+              src="/images/blog/hoisting-does-not-exist-in-javascript/hoisting-image.png"
+              href="/blog/picking-a-programming-language"
+            />
+            <ProjectCard
               title="Hoisting does not exist in JavaScript"
               tags="April 13th, 2021"
               src="/images/blog/hoisting-does-not-exist-in-javascript/hoisting-image.png"
