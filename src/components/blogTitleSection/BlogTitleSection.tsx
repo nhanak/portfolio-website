@@ -13,6 +13,9 @@ export default function BlogTitleSection({ title, date, author }) {
             <P>
               {date} - {author}
             </P>
+            <P className="text-sm italic pt-0">
+              No A.I. was used in the production of this blog post
+            </P>
           </PageTitleSectionTextContentStyled>
         </PageTitleSectionStyled>
       </PageSectionContainer>
