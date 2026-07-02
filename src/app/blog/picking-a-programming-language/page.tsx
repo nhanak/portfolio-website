@@ -30,7 +30,7 @@ export default function PickingAProgrammingLanguage() {
         date="June 29th, 2026"
         author="Neil Hanak"
       />
-      <PageSectionContainer className="pb-2 bg-canvas-secondary rounded-lg px-20">
+      <PageSectionContainer className="pb-2 bg-canvas-secondary rounded-lg lg:px-20">
         <ProjectSection className="mt-5 mb-1">
           <LongFormTextSection>
             <BlogSubSectionTitle>1. Hammer or wrench</BlogSubSectionTitle>

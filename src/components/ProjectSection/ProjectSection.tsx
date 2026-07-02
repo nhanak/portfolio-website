@@ -5,7 +5,7 @@ export default function ProjectSection(
 ) {
   return (
     <div
-      className={`bg-canvas-secondary py-6 px-10 rounded-lg ${props.className ?? ""}`}
+      className={`bg-canvas-secondary py-6 px-7 lg:px-10 rounded-lg ${props.className ?? ""}`}
     >
       {props.children}
     </div>

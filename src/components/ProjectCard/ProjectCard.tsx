@@ -9,7 +9,7 @@ export default function ProjectCard(props: ProjectCardProps) {
       <div className="relative">
         <Link href={href}>
           <div className="w-full h-full absolute rounded-lg hover:opacity-20 bg-white opacity-0 ease duration-500" />
-          <img src={props.src} className="rounded-lg" />
+          <img src={props.src} className="rounded-lg w-full" />
         </Link>
       </div>
       <Link href={href}>
