@@ -52,7 +52,7 @@ export default function PickingAProgrammingLanguage() {
             </P>
             <P>
               While you can use a wrench as a hammer (or a hammer as a wrench),
-              thats not where either of them shine. Using a hammer in a
+              that is not where either of them shine. Using a hammer in a
               situation that requires a hammer and a wrench in a situation that
               requires a wrench works best. The right tool for the right job
               makes your life easy. It's the same thing with programming
@@ -160,11 +160,11 @@ export default function PickingAProgrammingLanguage() {
               If you are most worried about having the best possible run time
               performance, systems programming languages like C++ or Rust are
               your best bet. These languages are like razors, very easy to make
-              mistakes and cut yourself resulting in a difficult and slow
-              development experience, but also the most performant when it comes
-              to memory usage and processing power. Video games, high frequency
-              trading, and operating systems are all domains where these
-              languages shine as they place the most importance on raw
+              mistakes and cut yourself resulting in a comparatively difficult
+              and slow development experience, but also the most performant when
+              it comes to memory usage and processing power. Video games, high
+              frequency trading, and operating systems are all domains where
+              these languages shine as they place the most importance on raw
               performance.
             </P>
             <P>
@@ -175,8 +175,8 @@ export default function PickingAProgrammingLanguage() {
               performant enough to handle a wide variety of use cases.
               Starbucks, Walmart, Intel, and Cisco all use C#. Amazon, Netflix,
               Meta all use Java. The drawbacks of these languages is that they
-              are not as performant as the systems programming languages like
-              C++, and since they are so mature they can be bloated and verbose.
+              are not as performant as systems programming languages like C++,
+              and since they are so mature they can be bloated and verbose.
             </P>
             <P>
               If you want to do anything natively in web browsers, JavaScript
@@ -185,7 +185,7 @@ export default function PickingAProgrammingLanguage() {
               interactions, its very likely that JavaScript was used to make it.
               The main drawback is performance, JavaScript was designed to be
               used in the browser, and is not as performant outside of that
-              domain (i.e. on the server).
+              domain (i.e. on the server) compared to other options.
             </P>
             <P>
               If you are doing AI and Data Science tasks, Python is a great
@@ -197,8 +197,8 @@ export default function PickingAProgrammingLanguage() {
             <P>
               If you are worried about performance and ease of development in a
               cloud environment, Go is a great choice. It was specifically made
-              by Google to be easy to learn and fast to run. The main drawback
-              is because of its simplicity, it can feel too verbose at times.
+              by Google to be easy to learn and fast to run. A drawback is
+              because of its simplicity, Go can feel too verbose at times.
             </P>
             <P>
               If you are most worried about correctness of your program, you
@@ -229,12 +229,12 @@ export default function PickingAProgrammingLanguage() {
             </P>
             <P>
               Figma, a web application for designing user interfaces, has its
-              user interface written in C++ which is compiled into webassembly.
+              user interface written in C++ which is compiled into WebAssembly.
               This was done because for their use case they wanted the best raw
               performance that JavaScript could not match.
             </P>
             <P>
-              The videogame Minecraft was originally written in Java because
+              The video game Minecraft was originally written in Java because
               thats what the creator was most familiar with and it allowed him
               to rapidly prototype and "chase the fun", something that would
               have been more difficult in a language he was unfamiliar with. It
@@ -255,7 +255,7 @@ export default function PickingAProgrammingLanguage() {
               languages that excel in a certain domain, there may be valid
               reasons to choose an alternative that better matches the problem
               you are trying to solve. Thinking about what your program places
-              the most importance on and what tradeoffs you are willing to make,
+              the most importance on and what tradeoffs you are willing to make
               can make your development experience much easier than it would
               otherwise be.
             </P>
