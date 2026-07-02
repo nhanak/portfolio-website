@@ -3,7 +3,6 @@ import PageTitleSection from "../../components/pageTitleSection/PageTitleSection
 import ProjectCardsGrid from "../../components/projectCardsGrid/ProjectCardsGrid";
 import ProjectSection from "../../components/projectSection/ProjectSection";
 import ProjectCard from "../../components/projectCard/ProjectCard";
-
 import Head from "../../components/head/Head";
 
 export default function Blog() {
@@ -17,6 +16,12 @@ export default function Blog() {
       <PageSectionContainer>
         <ProjectSection>
           <ProjectCardsGrid>
+            <ProjectCard
+              title="Picking a programming language"
+              tags="June 29th, 2026"
+              src="/images/blog/languages.png"
+              href="/blog/picking-a-programming-language"
+            />
             <ProjectCard
               title="Hoisting does not exist in JavaScript"
               tags="April 13th, 2021"
