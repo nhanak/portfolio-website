@@ -7,7 +7,7 @@ import Link from "next/link";
 export default function Navbar() {
   return (
     <PageSectionContainer borderBottomMobile={true}>
-      <div className="flex pb-3 pt-4 sm:pt-8 px-10 items-center">
+      <div className="flex pb-3 pt-4 lg:pt-8 px-10 items-center">
         <Link_ initialAccent={true} className="font-bold text-lg" href="/">
           Neil Hanak
         </Link_>
