@@ -1,8 +1,14 @@
-import { PropsWithChildren } from "react";
-
-const FlatButton = (props: PropsWithChildren) => {
+const FlatButton = (
+  props: {
+    onClick?: (event: any) => void;
+    className?: string;
+  } & React.PropsWithChildren,
+) => {
   return (
-    <div className="border border-accent text-accent px-8 py-2 rounded-full hover:bg-accent hover:text-canvas trasition-colors duration-200 ease">
+    <div
+      onClick={props.onClick}
+      className={`cursor-pointer select-none border border-accent text-accent px-8 py-2 rounded-full hover:bg-accent hover:text-canvas trasition-colors duration-200 ease ${props.className ? props.className : ""}`}
+    >
       {props.children}
     </div>
   );

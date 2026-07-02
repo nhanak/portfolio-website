@@ -102,12 +102,8 @@ export default function Contact(props) {
     <>
       <Head title="Contact - Neil Hanak" />
       <NoTitle />
-      <PageSectionContainer
-        roundedEdges={true}
-        backgroundColor={context.secondaryBackgroundColor}
-        paddingBottom="2rem"
-      >
-        <ProjectSection paddingTop={"2rem"} paddingBottom={"1rem"}>
+      <PageSectionContainer>
+        <ProjectSection className="pt-20 pb-1">
           {!formAccepted && (
             <FormWrapper>
               <FormStyled>
@@ -116,8 +112,8 @@ export default function Contact(props) {
                   <P>
                     You can reach me at{" "}
                     <Link_
-                      initialColor={context.primaryAccentColor}
-                      hoverColor={context.primaryAccentColor}
+                      initialAccent={true}
+                      className="text-lg"
                       href="mailto:nhanak.contact@gmail.com"
                     >
                       nhanak.contact@gmail.com
@@ -126,56 +122,53 @@ export default function Contact(props) {
                   <P>... or fill out the form below 😎</P>
                 </FormTitleStyled>
                 <FormItemStyled>
-                  <FormLabel theme={context} for="email">
+                  <NewFormLabel htmlFor="email">
                     Email<RedSpan>*</RedSpan>
-                  </FormLabel>
-                  <InputStyled
-                    theme={context}
+                  </NewFormLabel>
+                  <NewInputStyled
                     type="email"
                     id="email"
                     name="email"
-                    maxlength="64"
+                    maxLength={64}
                     onChange={handleEmailAddressChange}
                     value={emailAddress}
                   />
                   {emailAddressError && numFormSubmissions > 0 && (
-                    <PErr>
+                    <NewPErr>
                       Please fill out the email field with a valid email address
-                    </PErr>
+                    </NewPErr>
                   )}
                 </FormItemStyled>
                 <FormItemStyled>
-                  <FormLabel theme={context} for="name">
+                  <NewFormLabel htmlFor="name">
                     Name<RedSpan>*</RedSpan>
-                  </FormLabel>
-                  <InputStyled
-                    theme={context}
+                  </NewFormLabel>
+                  <NewInputStyled
                     type="text"
                     id="name"
                     name="name"
-                    maxlength="64"
+                    maxLength={64}
                     onChange={handleNameChange}
                     value={name}
                   />
                   {nameError && numFormSubmissions > 0 && (
-                    <PErr>Please fill out the name field</PErr>
+                    <NewPErr>Please fill out the name field</NewPErr>
                   )}
                 </FormItemStyled>
                 <FormItemStyled>
-                  <FormLabel theme={context} for="message">
+                  <NewFormLabel htmlFor="message">
                     Message<RedSpan>*</RedSpan>
-                  </FormLabel>
-                  <TextAreaStyled
-                    theme={context}
-                    rows="10"
-                    cols="30"
+                  </NewFormLabel>
+                  <NewTextAreaStyled
+                    rows={10}
+                    cols={30}
                     id="message"
                     name="message"
                     onChange={handleMessageChange}
                     value={message}
                   />
                   {messageError && numFormSubmissions > 0 && (
-                    <PErr>Please fill out the message field</PErr>
+                    <NewPErr>Please fill out the message field</NewPErr>
                   )}
                 </FormItemStyled>
                 <FormItemStyled>
@@ -186,18 +179,18 @@ export default function Contact(props) {
                     theme={isDarkMode ? "dark" : "light"}
                   />
                   {!captchaCompleted && numFormSubmissions > 0 && (
-                    <PErr>Please complete the ReCAPTCHA</PErr>
+                    <NewPErr>Please complete the ReCAPTCHA</NewPErr>
                   )}
                 </FormItemStyled>
               </FormStyled>
-              <FlatButton onClick={handleSubmit} theme={context}>
+              <FlatButton onClick={handleSubmit} className="mb-8">
                 Submit
               </FlatButton>
               {formRejected && (
-                <PErr>
+                <NewPErr>
                   Server failed to send message. Please email
                   nhanak.contact@gmail.com directly or try again later
-                </PErr>
+                </NewPErr>
               )}
             </FormWrapper>
           )}
@@ -231,10 +224,9 @@ const FormWrapper = styled.div`
   min-height: 50vh;
 `;
 
-const PErr = styled.p`
-  font-size: 1.4rem;
-  color: red;
-`;
+const NewPErr = (props: React.PropsWithChildren) => {
+  return <p className="text-red-500 pt-2 text-sm">{props.children}</p>;
+};
 
 const FormTitleStyled = styled.div`
   text-align: center;
@@ -247,28 +239,33 @@ const FormItemStyled = styled.div`
   flex-direction: column;
 `;
 
-const InputStyled = styled.input`
-  background: ${(props) => props.theme.tertiaryBackgroundColor};
-  border: 1px solid ${(props) => props.theme.tertiaryBackgroundColor};
-  font-size: 2rem;
-  color: ${(props) => props.theme.primaryTextColor};
-  :focus {
-    border: 1px solid ${(props) => props.theme.primaryAccentColor};
-  }
-  padding-top: 0.5rem;
-  padding-bottom: 0.5rem;
-`;
+const NewInputStyled = (props: React.ComponentPropsWithoutRef<"input">) => {
+  return (
+    <input
+      {...props}
+      className="pl-2 text-primary bg-tertiary border border-solid border-tertiary py-1 focus:border-accent active:border-accent"
+    />
+  );
+};
 
-const TextAreaStyled = styled.textarea`
-  resize: none;
-  background: ${(props) => props.theme.tertiaryBackgroundColor};
-  border: 1px solid ${(props) => props.theme.tertiaryBackgroundColor};
-  font-size: 2rem;
-  color: ${(props) => props.theme.primaryTextColor};
-  :focus {
-    border: 1px solid ${(props) => props.theme.primaryAccentColor};
-  }
-`;
+const NewFormLabel = (props: React.ComponentPropsWithoutRef<"label">) => {
+  return (
+    <label className="text-xl pb-2 text-primary font-bold" {...props}>
+      {props.children}
+    </label>
+  );
+};
+
+const NewTextAreaStyled = (
+  props: React.ComponentPropsWithoutRef<"textarea">,
+) => {
+  return (
+    <textarea
+      className="bg-tertiary border border-solid border-tertiary font-base text-primary focus:border-accent p-2"
+      {...props}
+    ></textarea>
+  );
+};
 
 const FormStyled = styled.div`
   display: flex;
@@ -282,13 +279,6 @@ const FormStyled = styled.div`
   @media (min-width: 992px) {
     width: 50%;
   }
-`;
-
-const FormLabel = styled.label`
-  color: ${(props) => props.theme.primaryTextColor};
-  font-size: 1.6rem;
-  padding-bottom: 1rem;
-  font-weight: bold;
 `;
 
 const RedSpan = styled.span`
