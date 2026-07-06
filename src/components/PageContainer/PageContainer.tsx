@@ -16,7 +16,7 @@ export default function PageContainer(props) {
         <title>Neil Hanak</title>
         <link rel="icon" href="/favicon.ico" />
       </Head>
-      <Navbar isDarkMode={props.isDarkMode} toggleTheme={props.toggleTheme} />
+      <Navbar />
       {props.children}
       <NavButtonMobile
         navRef={mobileRef}
