@@ -176,7 +176,7 @@ const NewNavbarMobileDarkener = (
   return (
     <div
       onClick={props.additionalOnClick}
-      className={`h-full w-[50%] opacity-50  ${props.mobileNavbarIsOpen ? "bg-black opacity-50" : "hidden"}`}
+      className={`h-full w-[50%]  ${props.mobileNavbarIsOpen ? "bg-black opacity-50" : "hidden"}`}
     >
       {props.children}
     </div>

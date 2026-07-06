@@ -211,7 +211,7 @@ export default function PickingAProgrammingLanguage() {
               languages.
             </P>
             <P>
-              If you are worried about scalability, and fault tolerance, any
+              If you are worried about scalability and fault tolerance, any
               language that runs on the BEAM (Elixir/Erlang/Gleam) is a great
               choice. Discord and Slack both use Elixir to handle the massive
               amount of messages between users each day. The drawback of these

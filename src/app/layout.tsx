@@ -50,7 +50,6 @@ export default function Layout({ children }: { children: React.ReactNode }) {
           setMobileNavbarOpen={setMobileNavbarOpen}
         />
         <ViewTransition exit="slide-down" enter="slide-up">
-          {/*todo NavButtonMobile and NavbarMobile */}
           {children}
         </ViewTransition>
         <Footer />
