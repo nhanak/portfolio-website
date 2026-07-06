@@ -1,0 +1,101 @@
+@import "tailwindcss";
+
+@custom-variant dark (&:where(.dark, .dark *));
+
+@theme {
+  --color-canvas: var(--canvas);
+  --color-canvas-secondary: var(--canvas-secondary);
+  --color-primary: var(--text-primary);
+  --color-primary-inverted: var(--text-inverted-primary);
+  --color-secondary: var(--text-secondary);
+  --color-accent: var(--accent-primary);
+  --color-tertiary: var(--text-tertiary);
+}
+
+:root {
+  --canvas: white;
+  --canvas-secondary: #f0f0f0;
+  --text-primary: black;
+  --text-secondary: grey;
+  --text-tertiary: #ffffff;
+  --text-inverted-primary: white;
+  --accent-primary: #742aff;
+}
+
+.dark {
+  --canvas: #121212;
+  --canvas-secondary: #2a2a2a;
+  --text-primary: white;
+  --text-secondary: grey;
+  --text-tertiary: "#5d5d5d";
+  --text-inverted-primary: black;
+  --accent-primary: #00ffde;
+}
+
+html,
+body {
+  font-family:
+    -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, Oxygen, Ubuntu,
+    Cantarell, "Fira Sans", "Droid Sans", "Helvetica Neue", sans-serif;
+}
+
+:root {
+  --duration-exit: 150ms;
+  --duration-enter: 210ms;
+}
+
+::view-transition-old(.slide-down) {
+  animation:
+    var(--duration-exit) ease-out both fade reverse,
+    var(--duration-exit) ease-out both slide-y reverse;
+}
+::view-transition-new(.slide-up) {
+  animation:
+    var(--duration-enter) ease-in var(--duration-exit) both fade,
+    400ms ease-in both slide-y;
+}
+
+@keyframes fade {
+  from {
+    filter: blur(3px);
+    opacity: 0;
+  }
+  to {
+    filter: blur(0);
+    opacity: 1;
+  }
+}
+@keyframes slide-y {
+  from {
+    transform: translateY(100px);
+  }
+  to {
+    transform: translateY(0);
+  }
+}
+
+/*
+
+  dark: {
+    primaryTextColor: "white",
+    secondaryTextColor: "grey",
+    invertedPrimaryTextColor: "black",
+    primaryAccentColor: "#00ffde",
+    primaryBackgroundColor: "#121212",
+    primaryBorderColor: "white",
+    secondaryBackgroundColor: "#2a2a2a",
+    tertiaryBackgroundColor: "#5d5d5d",
+  },
+  light: {
+    primaryTextColor: "black",
+    secondaryTextColor: "grey",
+    invertedPrimaryTextColor: "white",
+    primaryAccentColor: "#742aff",
+    primaryBackgroundColor: "white",
+    primaryBorderColor: "white",
+    secondaryBackgroundColor: "#f0f0f0",
+    tertiaryBackgroundColor: "#ffffff",
+  },
+
+
+*/
