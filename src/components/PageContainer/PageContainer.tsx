@@ -1,9 +1,9 @@
-import NavButtonMobile from "../navButtonMobile/NavButtonMobile";
-import NavbarMobile from "../navbarMobile/NavbarMobile";
-import { ThemeContext } from "../theme/Theme";
+import NavButtonMobile from "../NavButtonMobile/NavButtonMobile";
+import NavbarMobile from "../NavbarMobile/NavbarMobile";
+import { ThemeContext } from "../Theme/Theme";
 import { useContext, useRef } from "react";
-import Navbar from "../navbar/Navbar";
-import Footer from "../footer/Footer";
+import Navbar from "../Navbar/Navbar";
+import Footer from "../Footer/Footer";
 import Head from "next/head";
 
 export default function PageContainer(props) {

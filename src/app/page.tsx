@@ -1,8 +1,8 @@
-import PageSectionContainer from "../components/pageSectionContainer/PageSectionContainer";
-import ProjectCardsGrid from "../components/projectCardsGrid/ProjectCardsGrid";
-import PageTitleSection from "../components/pageTitleSection/PageTitleSection";
-import ProjectSection from "../components/projectSection/ProjectSection";
-import ProjectCard from "../components/projectCard/ProjectCard";
+import PageSectionContainer from "../components/PageSectionContainer/PageSectionContainer";
+import ProjectCardsGrid from "../components/ProjectCardsGrid/ProjectCardsGrid";
+import PageTitleSection from "../components/PageTitleSection/PageTitleSection";
+import ProjectSection from "../components/ProjectSection/ProjectSection";
+import ProjectCard from "../components/ProjectCard/ProjectCard";
 import Head from "../components/head/Head";
 import H2 from "../components/h2/H2";
 

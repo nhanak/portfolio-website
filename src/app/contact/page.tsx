@@ -1,14 +1,14 @@
 "use client";
 
 import { useContext, useState, useRef } from "react";
-import PageSectionContainer from "../../components/pageSectionContainer/PageSectionContainer";
-import { ThemeContext } from "../../components/theme/Theme";
-import ProjectSection from "../../components/projectSection/ProjectSection";
+import PageSectionContainer from "../../components/PageSectionContainer/PageSectionContainer";
+import { ThemeContext } from "../../components/Theme/Theme";
+import ProjectSection from "../../components/ProjectSection/ProjectSection";
 import FlatButton from "../../components/flatButton/FlatButton";
-import H1 from "../../components/h1/H1";
-import P from "../../components/p/P";
+import H1 from "../../components/H1/H1";
+import P from "../../components/P/P";
 import styled from "styled-components";
-import Link_ from "../../components/linkWithUnderlineAnimation/LinkWithUnderlineAnimation";
+import Link_ from "../../components/LinkWithUnderlineAnimation/LinkWithUnderlineAnimation";
 import Head from "../../components/head/Head";
 import ReCAPTCHA from "react-google-recaptcha";
 const axios = require("axios");

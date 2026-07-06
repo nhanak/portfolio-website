@@ -1,10 +1,10 @@
-import PageSectionContainer from "../../components/pageSectionContainer/PageSectionContainer";
-import Link_ from "../../components/linkWithUnderlineAnimation/LinkWithUnderlineAnimation";
-import LongFormTextSection from "../../components/longFormTextSection/LongFormTextSection";
-import PageTitleSection from "../../components/pageTitleSection/PageTitleSection";
-import ProjectSection from "../../components/projectSection/ProjectSection";
+import PageSectionContainer from "../../components/PageSectionContainer/PageSectionContainer";
+import Link_ from "../../components/LinkWithUnderlineAnimation/LinkWithUnderlineAnimation";
+import LongFormTextSection from "../../components/LongFormTextSection/LongFormTextSection";
+import PageTitleSection from "../../components/PageTitleSection/PageTitleSection";
+import ProjectSection from "../../components/ProjectSection/ProjectSection";
 import Head from "../../components/head/Head";
-import P from "../../components/p/P";
+import P from "../../components/P/P";
 
 export default function About() {
   return (

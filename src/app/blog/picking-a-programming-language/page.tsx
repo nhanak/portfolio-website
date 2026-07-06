@@ -1,12 +1,12 @@
 "use client";
 
-import PageSectionContainer from "../../../components/pageSectionContainer/PageSectionContainer";
-import LongFormTextSection from "../../../components/longFormTextSection/LongFormTextSection";
+import PageSectionContainer from "../../../components/PageSectionContainer/PageSectionContainer";
+import LongFormTextSection from "../../../components/LongFormTextSection/LongFormTextSection";
 import BlogSubSectionTitle from "../../../components/blogSubSectionTitle/BlogSubSectionTitle";
 import BlogTitleSection from "../../../components/blogTitleSection/BlogTitleSection";
-import ProjectSection from "../../../components/projectSection/ProjectSection";
+import ProjectSection from "../../../components/ProjectSection/ProjectSection";
 import Head from "../../../components/head/Head";
-import P from "../../../components/p/P";
+import P from "../../../components/P/P";
 import UL from "../../../components/ul/UL";
 import LI from "../../../components/li/LI";
 import dynamic from "next/dynamic";

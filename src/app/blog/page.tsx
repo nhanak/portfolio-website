@@ -1,8 +1,8 @@
-import PageSectionContainer from "../../components/pageSectionContainer/PageSectionContainer";
-import PageTitleSection from "../../components/pageTitleSection/PageTitleSection";
-import ProjectCardsGrid from "../../components/projectCardsGrid/ProjectCardsGrid";
-import ProjectSection from "../../components/projectSection/ProjectSection";
-import ProjectCard from "../../components/projectCard/ProjectCard";
+import PageSectionContainer from "../../components/PageSectionContainer/PageSectionContainer";
+import PageTitleSection from "../../components/PageTitleSection/PageTitleSection";
+import ProjectCardsGrid from "../../components/ProjectCardsGrid/ProjectCardsGrid";
+import ProjectSection from "../../components/ProjectSection/ProjectSection";
+import ProjectCard from "../../components/ProjectCard/ProjectCard";
 import Head from "../../components/head/Head";
 
 export default function Blog() {

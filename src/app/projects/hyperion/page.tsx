@@ -1,13 +1,13 @@
-import ProjectPageDescription from "../../../components/projectPageDescription/ProjectPageDescription";
-import PageSectionContainer from "../../../components/pageSectionContainer/PageSectionContainer";
-import ProjectPageMediaGrid from "../../../components/projectPageMediaGrid/ProjectPageMediaGrid";
-import Link_ from "../../../components/linkWithUnderlineAnimation/LinkWithUnderlineAnimation";
-import PageTitleSection from "../../../components/pageTitleSection/PageTitleSection";
-import ProjectPageGrid from "../../../components/projectPageGrid/ProjectPageGrid";
-import ProjectSection from "../../../components/projectSection/ProjectSection";
+import ProjectPageDescription from "../../../components/ProjectPageDescription/ProjectPageDescription";
+import PageSectionContainer from "../../../components/PageSectionContainer/PageSectionContainer";
+import ProjectPageMediaGrid from "../../../components/ProjectPageMediaGrid/ProjectPageMediaGrid";
+import Link_ from "../../../components/LinkWithUnderlineAnimation/LinkWithUnderlineAnimation";
+import PageTitleSection from "../../../components/PageTitleSection/PageTitleSection";
+import ProjectPageGrid from "../../../components/ProjectPageGrid/ProjectPageGrid";
+import ProjectSection from "../../../components/ProjectSection/ProjectSection";
 import Head from "../../../components/head/Head";
 import H3 from "../../../components/h3/H3";
-import P from "../../../components/p/P";
+import P from "../../../components/P/P";
 
 export default function Hyperion() {
   const primary = "/images/projects/hyperion/Hyperion_Splash_Square.png";

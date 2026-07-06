@@ -1,7 +1,7 @@
-import Link_ from "../linkWithUnderlineAnimation/LinkWithUnderlineAnimation";
+import Link_ from "../LinkWithUnderlineAnimation/LinkWithUnderlineAnimation";
 import styled, { keyframes } from "styled-components";
 import { enableBodyScroll } from "body-scroll-lock";
-import { ThemeContext } from "../theme/Theme";
+import { ThemeContext } from "../Theme/Theme";
 import React, { PropsWithChildren } from "react";
 import Link from "next/link";
 

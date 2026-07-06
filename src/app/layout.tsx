@@ -1,11 +1,11 @@
 "use client";
 
 import { ViewTransition, useRef, useState } from "react";
-import Navbar from "../components/navbar/Navbar";
-import Footer from "../components/footer/Footer";
+import Navbar from "../components/Navbar/Navbar";
+import Footer from "../components/Footer/Footer";
 import "./styles.css";
-import NavbarMobile from "../components/navbarMobile/NavbarMobile";
-import NavButtonMobile from "../components/navButtonMobile/NavButtonMobile";
+import NavbarMobile from "../components/NavbarMobile/NavbarMobile";
+import NavButtonMobile from "../components/NavButtonMobile/NavButtonMobile";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const themeScript = `

@@ -1,5 +1,5 @@
-import PageSectionContainer from "../pageSectionContainer/PageSectionContainer";
-import Link_ from "../linkWithUnderlineAnimation/LinkWithUnderlineAnimation";
+import PageSectionContainer from "../PageSectionContainer/PageSectionContainer";
+import Link_ from "../LinkWithUnderlineAnimation/LinkWithUnderlineAnimation";
 import ThemeToggle from "../themeToggle/ThemeToggle";
 import FlatButton from "../flatButton/FlatButton";
 import Link from "next/link";

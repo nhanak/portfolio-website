@@ -1,10 +1,10 @@
-import PageSectionContainer from "../pageSectionContainer/PageSectionContainer";
-import Link_ from "../linkWithUnderlineAnimation/LinkWithUnderlineAnimation";
+import PageSectionContainer from "../PageSectionContainer/PageSectionContainer";
+import Link_ from "../LinkWithUnderlineAnimation/LinkWithUnderlineAnimation";
 import { PropsWithChildren } from "react";
 
 export default function Footer() {
   return (
-    <PageSectionContainer marginTop="50px" borderTop="1px solid grey">
+    <PageSectionContainer>
       <div className="flex lg:hidden flex-col items-center gap-y-4 text-primary text-base border-t border-secondary pt-8">
         <div>
           Made with&nbsp;
