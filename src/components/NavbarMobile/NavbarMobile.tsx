@@ -47,36 +47,66 @@ export default class NavbarMobile extends React.Component<{
       >
         <NewNavbarMobileDarkener
           mobileNavbarIsOpen={mobileNavbarIsOpen}
-          // onClick={this.handleExitClick}
+          additionalOnClick={this.handleExitClick}
         />
-        <NewNavbarMobileContent>
-          <Link_ href="/" additionalOnClick={this.handleExitClick}>
+        <NewNavbarMobileContent additionalOnClick={this.handleExitClick}>
+          <Link_
+            href="/"
+            initialAccent
+            additionalOnClick={this.handleExitClick}
+            className="text-xl"
+          >
             Neil Hanak
           </Link_>
 
           <NavbarMobileLinkWrapper>
             <NewNavbarMobileItem>
-              <Link_ href="/" additionalOnClick={this.handleExitClick}>
+              <Link_
+                href="/"
+                initialAccent
+                additionalOnClick={this.handleExitClick}
+                className="text-xl"
+              >
                 Home
               </Link_>
             </NewNavbarMobileItem>
             <NewNavbarMobileItem>
-              <Link_ href="/projects" additionalOnClick={this.handleExitClick}>
+              <Link_
+                href="/projects"
+                initialAccent
+                additionalOnClick={this.handleExitClick}
+                className="text-xl"
+              >
                 Projects
               </Link_>
             </NewNavbarMobileItem>
             <NewNavbarMobileItem>
-              <Link_ href="/blog" additionalOnClick={this.handleExitClick}>
+              <Link_
+                href="/blog"
+                initialAccent
+                additionalOnClick={this.handleExitClick}
+                className="text-xl"
+              >
                 Blog
               </Link_>
             </NewNavbarMobileItem>
             <NewNavbarMobileItem>
-              <Link_ href="/about" additionalOnClick={this.handleExitClick}>
+              <Link_
+                href="/about"
+                initialAccent
+                additionalOnClick={this.handleExitClick}
+                className="text-xl"
+              >
                 About
               </Link_>
             </NewNavbarMobileItem>
             <NewNavbarMobileItem>
-              <Link_ href="/contact" additionalOnClick={this.handleExitClick}>
+              <Link_
+                href="/contact"
+                initialAccent
+                additionalOnClick={this.handleExitClick}
+                className="text-xl"
+              >
                 Contact
               </Link_>
             </NewNavbarMobileItem>
@@ -138,10 +168,14 @@ const slideLeft = keyframes`
 `;
 
 const NewNavbarMobileDarkener = (
-  props: PropsWithChildren & { mobileNavbarIsOpen: boolean },
+  props: PropsWithChildren & {
+    mobileNavbarIsOpen: boolean;
+    additionalOnClick: () => void;
+  },
 ) => {
   return (
     <div
+      onClick={props.additionalOnClick}
       className={`h-full w-[50%] opacity-50  ${props.mobileNavbarIsOpen ? "bg-black opacity-50" : "hidden"}`}
     >
       {props.children}
@@ -154,9 +188,14 @@ const NewNavbarMobileDarkener = (
 //   height: 100%;
 // `;
 
-const NewNavbarMobileContent = (props: PropsWithChildren) => {
+const NewNavbarMobileContent = (
+  props: PropsWithChildren & { additionalOnClick: () => void },
+) => {
   return (
-    <div className="w-full h-full pt-4 pb-3 bg-secondary ">
+    <div
+      className="w-full h-full pt-5 pb-3 bg-canvas pl-8"
+      onClick={props.additionalOnClick}
+    >
       {props.children}
     </div>
   );
