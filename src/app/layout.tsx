@@ -1,9 +1,11 @@
 "use client";
 
-import { ViewTransition } from "react";
+import { ViewTransition, useRef, useState } from "react";
 import Navbar from "../components/navbar/Navbar";
 import Footer from "../components/footer/Footer";
 import "./styles.css";
+import NavbarMobile from "../components/navbarMobile/NavbarMobile";
+import NavButtonMobile from "../components/navButtonMobile/NavButtonMobile";
 
 export default function Layout({ children }: { children: React.ReactNode }) {
   const themeScript = `
@@ -19,6 +21,10 @@ export default function Layout({ children }: { children: React.ReactNode }) {
   })();
 `;
 
+  const [mobileNavbarIsOpen, setMobileNavbarOpen] = useState(false);
+
+  const mobileRef = useRef<any>(null);
+
   return (
     <html suppressHydrationWarning>
       <head>
@@ -33,6 +39,16 @@ export default function Layout({ children }: { children: React.ReactNode }) {
 
       <body className="max-w-6xl flex-col justify-items-center m-auto bg-canvas transition-colors ease-in-out duration-400 overflow-y-scroll">
         <Navbar />
+        <NavbarMobile
+          ref={mobileRef}
+          mobileNavbarIsOpen={mobileNavbarIsOpen}
+          setMobileNavbarOpen={setMobileNavbarOpen}
+        />
+        <NavButtonMobile
+          navRef={mobileRef}
+          mobileNavbarIsOpen={mobileNavbarIsOpen}
+          setMobileNavbarOpen={setMobileNavbarOpen}
+        />
         <ViewTransition exit="slide-down" enter="slide-up">
           {/*todo NavButtonMobile and NavbarMobile */}
           {children}

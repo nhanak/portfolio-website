@@ -1,42 +1,41 @@
-import React, {useContext} from "react";
-import styled from "styled-components";
-import { Squash as Hamburger} from 'hamburger-react'
-import { ThemeContext } from "../theme/Theme";
-import { disableBodyScroll, enableBodyScroll } from 'body-scroll-lock';
+import { disableBodyScroll, enableBodyScroll } from "body-scroll-lock";
+import { Squash as Hamburger } from "hamburger-react";
+import { PropsWithChildren } from "react";
+
 //https://github.com/luukdv/hamburger-react
+export default function NavButtonMobile(props: {
+  navRef: React.RefObject<any>;
+  mobileNavbarIsOpen: boolean;
+  setMobileNavbarOpen: React.Dispatch<React.SetStateAction<boolean>>;
+}) {
+  const { mobileNavbarIsOpen, setMobileNavbarOpen } = props;
 
-export default function NavButtonMobile(props){
-    const context = useContext(ThemeContext);
-    const {mobileNavbarIsOpen, setMobileNavbarOpen} = props;
-
-    function toggleMobileNavBar(val){
-        const {navRef} = props;
-        if (!mobileNavbarIsOpen){
-            disableBodyScroll(navRef.current);
-        }
-        else{
-            enableBodyScroll(navRef.current);
-        }
-        setMobileNavbarOpen(val);
+  function toggleMobileNavBar(val) {
+    const { navRef } = props;
+    if (!mobileNavbarIsOpen) {
+      disableBodyScroll(navRef.current);
+    } else {
+      enableBodyScroll(navRef.current);
     }
+    setMobileNavbarOpen(val);
+  }
 
-    return (
-        <HamburgerDivStyled theme={context}>
-            <Hamburger toggled={mobileNavbarIsOpen} toggle={toggleMobileNavBar} color="white" size={20} />
-        </HamburgerDivStyled>
-    )
+  return (
+    <HamburgerDivStyled>
+      <Hamburger
+        toggled={mobileNavbarIsOpen}
+        toggle={toggleMobileNavBar}
+        color="white"
+        size={20}
+      />
+    </HamburgerDivStyled>
+  );
 }
 
-const HamburgerDivStyled = styled.div`
-    border-radius:100px;
-    position:fixed;
-    bottom:0px;
-    right:0px;
-    background-color:${props=>props.theme.primaryAccentColor}aa;
-    margin:1rem;
-    border:1px solid white;
-
-    @media (min-width:992px){
-        display:none;
-    }
-`
+const HamburgerDivStyled = (props: PropsWithChildren) => {
+  return (
+    <div className="rounded-full fixed bottom-0 right-0 m-4 border-solid border-white border bg-accent lg:hidden z-99">
+      {props.children}
+    </div>
+  );
+};

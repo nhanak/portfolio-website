@@ -1,14 +1,18 @@
-import React from "react";
-import styled, { keyframes, css } from "styled-components";
 import Link_ from "../linkWithUnderlineAnimation/LinkWithUnderlineAnimation";
-import { ThemeContext } from "../theme/Theme";
+import styled, { keyframes } from "styled-components";
 import { enableBodyScroll } from "body-scroll-lock";
+import { ThemeContext } from "../theme/Theme";
+import React, { PropsWithChildren } from "react";
 import Link from "next/link";
 
 // The reason this is a class component instead of a functional component
 // is so that we can get a ref and lock the body from NavButtonMobile
-export default class NavbarMobile extends React.Component {
+export default class NavbarMobile extends React.Component<{
+  setMobileNavbarOpen: React.Dispatch<React.SetStateAction<boolean>>;
+  mobileNavbarIsOpen: boolean;
+}> {
   static contextType = ThemeContext;
+
   constructor(props) {
     super(props);
     this.state = {
@@ -34,84 +38,51 @@ export default class NavbarMobile extends React.Component {
 
   render() {
     const { mobileNavbarIsOpen, setMobileNavbarOpen } = this.props;
-    const { mobileNavbarHasOpened } = this.state;
+    console.log("mobileNavbarIsOpen", mobileNavbarIsOpen);
+    const { mobileNavbarHasOpened } = { mobileNavbarHasOpened: false }; //this.state;
     return (
-      <NavbarMobileWrapper
+      <NewNavbarMobileWrapper
         mobileNavbarIsOpen={mobileNavbarIsOpen}
         mobileNavbarHasOpened={mobileNavbarHasOpened}
       >
-        <NavbarMobileDarkener
+        <NewNavbarMobileDarkener
           mobileNavbarIsOpen={mobileNavbarIsOpen}
-          onClick={this.handleExitClick}
+          // onClick={this.handleExitClick}
         />
-        <NavbarMobileContent
-          theme={this.context}
-          mobileNavbarIsOpen={mobileNavbarIsOpen}
-        >
-          <Link_
-            href="/"
-            initialColor={this.context.primaryAccentColor}
-            hoverColor={this.context.primaryAccentColor}
-            fontSize="2.5rem"
-            additionalOnClick={this.handleExitClick}
-          >
+        <NewNavbarMobileContent>
+          <Link_ href="/" additionalOnClick={this.handleExitClick}>
             Neil Hanak
           </Link_>
 
           <NavbarMobileLinkWrapper>
-            <NavbarMobileItem>
-              <Link_
-                href="/"
-                initialColor={this.context.primaryAccentColor}
-                hoverColor={this.context.primaryTextColor}
-                additionalOnClick={this.handleExitClick}
-              >
+            <NewNavbarMobileItem>
+              <Link_ href="/" additionalOnClick={this.handleExitClick}>
                 Home
               </Link_>
-            </NavbarMobileItem>
-            <NavbarMobileItem>
-              <Link_
-                href="/projects"
-                initialColor={this.context.primaryAccentColor}
-                hoverColor={this.context.primaryTextColor}
-                additionalOnClick={this.handleExitClick}
-              >
+            </NewNavbarMobileItem>
+            <NewNavbarMobileItem>
+              <Link_ href="/projects" additionalOnClick={this.handleExitClick}>
                 Projects
               </Link_>
-            </NavbarMobileItem>
-            <NavbarMobileItem>
-              <Link_
-                href="/blog"
-                initialColor={this.context.primaryAccentColor}
-                hoverColor={this.context.primaryTextColor}
-                additionalOnClick={this.handleExitClick}
-              >
+            </NewNavbarMobileItem>
+            <NewNavbarMobileItem>
+              <Link_ href="/blog" additionalOnClick={this.handleExitClick}>
                 Blog
               </Link_>
-            </NavbarMobileItem>
-            <NavbarMobileItem>
-              <Link_
-                href="/about"
-                initialColor={this.context.primaryAccentColor}
-                hoverColor={this.context.primaryTextColor}
-                additionalOnClick={this.handleExitClick}
-              >
+            </NewNavbarMobileItem>
+            <NewNavbarMobileItem>
+              <Link_ href="/about" additionalOnClick={this.handleExitClick}>
                 About
               </Link_>
-            </NavbarMobileItem>
-            <NavbarMobileItem>
-              <Link_
-                href="/contact"
-                initialColor={this.context.primaryAccentColor}
-                hoverColor={this.context.primaryTextColor}
-                additionalOnClick={this.handleExitClick}
-              >
+            </NewNavbarMobileItem>
+            <NewNavbarMobileItem>
+              <Link_ href="/contact" additionalOnClick={this.handleExitClick}>
                 Contact
               </Link_>
-            </NavbarMobileItem>
+            </NewNavbarMobileItem>
           </NavbarMobileLinkWrapper>
-        </NavbarMobileContent>
-      </NavbarMobileWrapper>
+        </NewNavbarMobileContent>
+      </NewNavbarMobileWrapper>
     );
   }
 }
@@ -166,39 +137,63 @@ const slideLeft = keyframes`
   }
 `;
 
-const NavbarMobileDarkener = styled.div`
-  width: 50%;
-  height: 100%;
-`;
+const NewNavbarMobileDarkener = (
+  props: PropsWithChildren & { mobileNavbarIsOpen: boolean },
+) => {
+  return (
+    <div
+      className={`h-full w-[50%] opacity-50  ${props.mobileNavbarIsOpen ? "bg-black opacity-50" : "hidden"}`}
+    >
+      {props.children}
+    </div>
+  );
+};
 
-const NavbarMobileContent = styled.div`
-  padding-top: 4rem;
-  padding-left: 3rem;
-  width: 100%;
-  height: 100%;
-  background-color: ${(props) => props.theme.secondaryBackgroundColor};
-  animation: ${(props) =>
-    props.mobileNavbarIsOpen
-      ? css`
-          ${slideLeft} 0.5s ease
-        `
-      : css`
-          ${slideRight} 0.30s ease
-        `};
-  transform: ${(props) =>
-    props.mobileNavbarIsOpen
-      ? "translateX(0%) translateZ(0px)"
-      : "translateX(100%) translateZ(0px)"};
+// const NavbarMobileDarkener = styled.div`
+//   width: 50%;
+//   height: 100%;
+// `;
 
-  @media (min-width: 768px) {
-    padding-left: 4rem;
-  }
-`;
+const NewNavbarMobileContent = (props: PropsWithChildren) => {
+  return (
+    <div className="w-full h-full pt-4 pb-3 bg-secondary ">
+      {props.children}
+    </div>
+  );
+};
 
-const NavbarMobileItem = styled.div`
-  margin-bottom: 1rem;
-  margin-top: 1rem;
-`;
+// const NavbarMobileContent = styled.div`
+//   padding-top: 4rem;
+//   padding-left: 3rem;
+//   width: 100%;
+//   height: 100%;
+//   background-color: ${(props) => props.theme.secondaryBackgroundColor};
+//   animation: ${(props) =>
+//     props.mobileNavbarIsOpen
+//       ? css`
+//           ${slideLeft} 0.5s ease
+//         `
+//       : css`
+//           ${slideRight} 0.30s ease
+//         `};
+//   transform: ${(props) =>
+//     props.mobileNavbarIsOpen
+//       ? "translateX(0%) translateZ(0px)"
+//       : "translateX(100%) translateZ(0px)"};
+
+//   @media (min-width: 768px) {
+//     padding-left: 4rem;
+//   }
+// `;
+
+const NewNavbarMobileItem = (props: PropsWithChildren) => {
+  return <div className="my-2">{props.children}</div>;
+};
+
+// const NavbarMobileItem = styled.div`
+//   margin-bottom: 1rem;
+//   margin-top: 1rem;
+// `;
 
 const NavbarMobileLinkWrapper = styled.div`
   display: flex;
@@ -211,26 +206,41 @@ const NavbarMobileLinkWrapper = styled.div`
   }
 `;
 
-const NavbarMobileWrapper = styled.div`
-  width: 100vw;
-  height: 100%;
-  position: fixed;
-  display: flex;
-  top: 0;
-  transform: ${(props) =>
-    props.mobileNavbarIsOpen
-      ? "translateX(0%) translateZ(0px)"
-      : "translateX(100%) translateZ(0px)"};
-  animation: ${(props) =>
-    props.mobileNavbarIsOpen
-      ? css`
-          ${darken} 0.5s ease, ${slideLeft} 0s
-        `
-      : props.mobileNavbarHasOpened
-      ? css`
-          ${lighten} 0.3s ease, ${dissapear} 0.3s
-        `
-      : ""};
-  background-color: ${(props) =>
-    props.mobileNavbarIsOpen ? "rgba(0,0,0,0.5)" : "rgba(0,0,0,0)"};
-`;
+const NewNavbarMobileWrapper = (
+  props: PropsWithChildren & {
+    mobileNavbarIsOpen: boolean;
+    mobileNavbarHasOpened: boolean;
+  },
+) => {
+  return (
+    <div
+      className={`lg:hidden h-full w-screen fixed flex top-0 z-99 ${props.mobileNavbarIsOpen ? "" : "hidden"}`}
+    >
+      {props.children}
+    </div>
+  );
+};
+
+// const NavbarMobileWrapper = styled.div`
+//   width: 100vw;
+//   height: 100%;
+//   position: fixed;
+//   display: flex;
+//   top: 0;
+//   transform: ${(props) =>
+//     props.mobileNavbarIsOpen
+//       ? "translateX(0%) translateZ(0px)"
+//       : "translateX(100%) translateZ(0px)"};
+//   animation: ${(props) =>
+//     props.mobileNavbarIsOpen
+//       ? css`
+//           ${darken} 0.5s ease, ${slideLeft} 0s
+//         `
+//       : props.mobileNavbarHasOpened
+//         ? css`
+//             ${lighten} 0.3s ease, ${dissapear} 0.3s
+//           `
+//         : ""};
+//   background-color: ${(props) =>
+//     props.mobileNavbarIsOpen ? "rgba(0,0,0,0.5)" : "rgba(0,0,0,0)"};
+// `;
